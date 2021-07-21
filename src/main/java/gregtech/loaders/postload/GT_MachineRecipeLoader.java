@@ -1954,6 +1954,11 @@ public class GT_MachineRecipeLoader implements Runnable {
         this.addRecipesMay2017OilRefining();
         this.addPyrometallurgicalRecipes();
         this.addPolybenzimidazoleRecipes();
+        this.observeroftimerecipes();
+    }
+
+    public void observeroftimerecipes(){
+        new GT_CustomRecipeLoader().run();
     }
 
     public void addProcess(ItemStack tCrop, Materials aMaterial, int chance, boolean aMainOutput) {
