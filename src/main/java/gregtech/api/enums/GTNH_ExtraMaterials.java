@@ -2,6 +2,8 @@ package gregtech.api.enums;
 
 import gregtech.api.interfaces.IMaterialHandler;
 
+import java.util.Arrays;
+
 import static gregtech.GT_Mod.GT_FML_LOGGER;
 
 public class GTNH_ExtraMaterials implements IMaterialHandler {
@@ -41,6 +43,7 @@ public class GTNH_ExtraMaterials implements IMaterialHandler {
     public static Materials SolutionNickelSulfate   = new Materials(  -1, TextureSet.SET_NONE              ,   1.0F,      0,  2, 0                         , 255, 255, 255,   0,   "SolutionNickelSulfate"   ,   "Nickel Sulfate Solution"       ,    0,       0,         -1,    0, false, false,   3,   1,   1, Dyes._NULL          );
     public static Materials Lodestone               = new Materials(  -1, TextureSet.SET_NONE              ,   1.0F,      0,  1, 1    |8                   , 255, 255, 255,   0,   "Lodestone"               ,   "Lodestone"                     ,    0,       0,         -1,    0, false, false,   1,   1,   1, Dyes._NULL          );
     public static Materials Luminite                = new Materials(  -1, TextureSet.SET_NONE              ,   1.0F,      0,  1, 1    |8                   , 250, 250, 250,   0,   "Luminite"                ,   "Luminite"                      ,    0,       0,         -1,    0, false, false,   3,   1,   1, Dyes.dyeWhite       );
+    public static Materials TurbineSteel            = new Materials( 856, TextureSet.SET_DULL              ,  48.0F, 10485760,8, 1|2  |8   |32|64|128      , 189, 213, 172,   0,   "TurbineSteel"            ,   "Turbine Steel"                 ,    0,       0,         9000,  9000,true, false,  20,   1,   1, Dyes.dyeWhite       , Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 4), new TC_Aspects.TC_AspectStack(TC_Aspects.VITREUS, 3), new TC_Aspects.TC_AspectStack(TC_Aspects.ALIENIS, 2)));
 
     private static void initSubTags() {
         SubTag.METAL.addTo(Signalum, Lumium, EnrichedCopper, DiamondCopper);
