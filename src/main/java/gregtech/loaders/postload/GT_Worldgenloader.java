@@ -142,7 +142,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.redstone", true, 5, 40, 60, 6, 32, true, true, false, Materials.Redstone, Materials.Redstone, Materials.Ruby, Materials.Cinnabar);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.soapstone", true, 20, 50, 40, 6, 32, true, false, false, Materials.Soapstone, Materials.Talc, Materials.Glauconite, Materials.Pentlandite);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.nickel", true, 10, 40, 40, 6, 32, false, false, true, Materials.Garnierite, Materials.Nickel, Materials.Cobaltite, Materials.Pentlandite);
-        new GT_Worldgen_GT_Ore_Layer("ore.mix.platinum", true, 40, 50, 5, 6, 32, false, false, false, Materials.Cooperite, Materials.Palladium, Materials.Platinum, Materials.Iridium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.platinum", true, 40, 50, 60, 6, 32, false, false, false, Materials.Cooperite, Materials.Palladium, Materials.Platinum, Materials.Iridium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.pitchblende", true, 30, 60, 40, 6, 32, false, false, false, Materials.Pitchblende, Materials.Pitchblende, Materials.Uraninite, Materials.Uraninite);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.monazite", true, 20, 40, 30, 6, 32, false, false, false, Materials.Bastnasite, Materials.Bastnasite, Materials.Monazite, Materials.Neodymium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.molybdenum", true, 20, 50, 5, 6, 32, false, true, true, Materials.Wulfenite, Materials.Molybdenite, Materials.Molybdenum, Materials.Powellite);
@@ -158,7 +158,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.beryllium", true, 5, 30, 30, 6, 32, false, true, true, Materials.Beryllium, Materials.Beryllium, Materials.Emerald, Materials.Thorium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.uranium", true, 20, 30, 20, 6, 32, false, false, false, Materials.Uraninite, Materials.Uraninite, Materials.Uranium, Materials.Uranium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.oilsand", true, 50, 80, 40, 6, 32, true, false, false, Materials.Oilsands, Materials.Oilsands, Materials.Oilsands, Materials.Oilsands);
-        
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.actualplatinum", true, 5, 210, 80, 6, 32, true, true, true, Materials.Platinum, Materials.Palladium, Materials.Platinum, Materials.Palladium);
         /*
          * TODO: custom GTNH OreMixes
          * WARNING: NO DUPLICATS IN aName OR DEPRECATED MATERIALS IN HERE.
