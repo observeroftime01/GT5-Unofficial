@@ -123,6 +123,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_SmallPieces("ore.small.certusquartz",true,5,115,16,false, true, false, Materials.CertusQuartz);
         new GT_Worldgen_GT_Ore_SmallPieces("ore.small.jade",true,5,35,2,false, false, false, Materials.Jade);
         new GT_Worldgen_GT_Ore_SmallPieces("ore.small.deepiron",true,5,40,8,false, false, false, Materials.DeepIron);
+        new GT_Worldgen_GT_Ore_SmallPieces("ore.small.indium", true, 5, 230, 16, true, true, true, Materials.Indium);
 
         //GT Default Veins
 
@@ -207,6 +208,8 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.TFgalena", true, 5, 35, 40, 6, 32, false, false, false, Materials.Galena, Materials.Galena, Materials.Silver, Materials.Lead);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.luvtantalite", true, 20, 30, 10, 6, 32, false, false, false, Materials.Pyrolusite, Materials.Apatite, Materials.Tantalite, Materials.Pyrochlore);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.galliumarsenide", true, 10, 50, 40, 6, 32, true, true, true, Materials.Arsenic, Materials.Gallium, Materials.Americium, Materials.Gallium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.indiumaluminium", true, 10, 230, 60, 6, 32, true, true, true, Materials.Indium, Materials.Aluminium, Materials.Indium, Materials.Niobium);
+
         //DO NOT DELETE V THIS V - this is needed so that gregtech generates its Ore Layer's first (the ones up there), which can then be transformed into "GT_Worldgen_GT_Ore_Layer_Space". Also Reflexion is slow.
         try {
             Class clazz = Class.forName("bloodasp.galacticgreg.WorldGenGaGT");
