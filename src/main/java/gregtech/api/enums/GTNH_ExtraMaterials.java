@@ -48,7 +48,6 @@ public class GTNH_ExtraMaterials implements IMaterialHandler {
 
 
 
-
     private static void initSubTags() {
         SubTag.METAL.addTo(Signalum, Lumium, EnrichedCopper, DiamondCopper);
         SubTag.NO_SMASHING.addTo(TarPitch);
