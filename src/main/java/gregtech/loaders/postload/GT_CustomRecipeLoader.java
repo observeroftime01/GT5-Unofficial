@@ -28,6 +28,7 @@ public class GT_CustomRecipeLoader implements Runnable {
             //Mixer Recipes
             GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, StainlessSteel, 4), GT_OreDictUnificator.get(OrePrefixes.dust, Electrum, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Carbon, 12), GT_OreDictUnificator.get(OrePrefixes.dust, Oriharukon, 6), null, null, GT_OreDictUnificator.get(OrePrefixes.dust, TurbineSteel, 11), 4800, 500000);
             GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, TurbineSteel, 10), GT_OreDictUnificator.get(OrePrefixes.dust, Neutronium, 1),GT_OreDictUnificator.get(OrePrefixes.dust, Indium, 2), GT_OreDictUnificator.get(OrePrefixes.dust, InfinityCatalyst,1), null, null, GT_OreDictUnificator.get(OrePrefixes.dust, ExtremeTurbineSteel, 14), 4800, 2000000);
+            GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Ichorium, 1), null, null, null, null, null, GT_OreDictUnificator.get(OrePrefixes.dust, Blaze, 1), 20, 32);
 
             //Fluid Extractor Recipes
             GT_Values.RA.addFluidExtractionRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Aluminium, 1), null, Aluminium.getFluid(144L), 100, 20, 480);

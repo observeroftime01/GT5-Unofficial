@@ -209,6 +209,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.luvtantalite", true, 20, 30, 10, 6, 32, false, false, false, Materials.Pyrolusite, Materials.Apatite, Materials.Tantalite, Materials.Pyrochlore);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.galliumarsenide", true, 10, 50, 40, 6, 32, true, true, true, Materials.Arsenic, Materials.Gallium, Materials.Americium, Materials.Gallium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.indiumaluminium", true, 10, 230, 120, 12, 32, true, true, true, Materials.Indium, Materials.Infinity, Materials.Aluminium, Materials.Niobium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.enderpealichor", true, 5, 120, 60, 6, 32, true, true, true, Materials.EnderPearl, Materials.Ichorium, Materials.EnderPearl, Materials.Ichorium);
 
         //DO NOT DELETE V THIS V - this is needed so that gregtech generates its Ore Layer's first (the ones up there), which can then be transformed into "GT_Worldgen_GT_Ore_Layer_Space". Also Reflexion is slow.
         try {
