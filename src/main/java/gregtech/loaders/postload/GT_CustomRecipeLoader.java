@@ -34,6 +34,10 @@ public class GT_CustomRecipeLoader implements Runnable {
             GT_Values.RA.addFluidExtractionRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Aluminium, 1), null, Aluminium.getFluid(144L), 100, 20, 480);
             GT_Values.RA.addFluidExtractionRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot,Aluminium, 1), null, Aluminium.getFluid(288L), 100, 60, 480);
 
+            //Grinder Recipes
+            GT_Values.RA.addGrinderRecipe(GT_OreDictUnificator.get(OrePrefixes.ore, EnderPearl, 1), null, GT_OreDictUnificator.get(OrePrefixes.crushed, EnderPearl, 2), GT_OreDictUnificator.get(OrePrefixes.gem, EnderPearl,1), null, null);
+            GT_Values.RA.addPulveriserRecipe(GT_OreDictUnificator.get(OrePrefixes.ore, EnderPearl, 1), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, EnderPearl, 2), GT_OreDictUnificator.get(OrePrefixes.gem, EnderPearl, 1)}, new int[]{10000, 1000}, 400, 2);
+
             //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
             //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Redstone.getMolten(120L), Neutronium.getPlasma(240L), 20, 131072, 320000000);
