@@ -1513,6 +1513,7 @@ public enum ItemList implements IItemContainer {
     OreDrill2,
     OreDrill3,
     OreDrill4,
+    OreDrill5,
     PyrolyseOven,
     OilCracker,
     Crop_Drop_UUMBerry,
