@@ -406,15 +406,16 @@ public class ItemComb extends Item {
 		addCentrifugeToItemStack(CombType.VEGA, new ItemStack[] {ItemList.FR_Wax.get(1L), GT_ModHandler.getModItem("dreamcraft", "item.VegaBStoneDust", 1L, 0)}, new int[]{50 * 100, 30 * 100 }, Voltage.ZPM, 300);
 
 		//Infinity Line
-		addCentrifugeToMaterial(CombType.COSMICNEUTRONIUM, new Materials[] {Materials.CosmicNeutronium, Materials.Neutronium}, new int[] {(int) (0.5 * 100), 1 * 100}, new int[] {}, Voltage.UHV, 12000, NI, 50 * 100);
-		addCentrifugeToMaterial(CombType.INFINITYCATALYST, new Materials[] {Materials.InfinityCatalyst, Materials.Neutronium}, new int[] {(int) (0.05 * 100), 1 * 100}, new int[] {}, Voltage.UEV, 48000, NI, 50 * 100);
-		addCentrifugeToMaterial(CombType.INFINITY, new Materials[] {Materials.Infinity, Materials.InfinityCatalyst}, new int[] {(int) (0.01 * 100), (int) (0.05 * 100)}, new int[] {}, Voltage.UIV, 96000, NI, 50 * 100);
+		addCentrifugeToMaterial(CombType.COSMICNEUTRONIUM, new Materials[] {Materials.CosmicNeutronium, Materials.Neutronium}, new int[] {(int) (30 * 100), 15 * 100}, new int[] {}, Voltage.UHV, 12000, NI, 50 * 100);
+		addCentrifugeToMaterial(CombType.INFINITYCATALYST, new Materials[] {Materials.InfinityCatalyst, Materials.Neutronium}, new int[] {(int) (30 * 100), 15 * 100}, new int[] {}, Voltage.UEV, 48000, NI, 50 * 100);
+		addCentrifugeToMaterial(CombType.INFINITY, new Materials[] {Materials.Infinity, Materials.InfinityCatalyst}, new int[] {(int) (30 * 100), (int) (15 * 100)}, new int[] {}, Voltage.UIV, 96000, NI, 50 * 100);
 
 		//Custom Recipes
 		addFluidExtractorProcess(CombType.PLATINUM, Materials.Platinum, 144L, 600, Voltage.LUV);
 		addFluidExtractorProcess(CombType.OSMIUM, Materials.Osmium, 144L, 700, Voltage.LUV);
 		addFluidExtractorProcess(CombType.IRIDIUM, Materials.Iridium, 144L, 800, Voltage.ZPM);
 		addFluidExtractorProcess(CombType.TRINIUM, Materials.Trinium, 144L, 900, Voltage.UV);
+		addFluidExtractorProcess(CombType.QUANTIUM, Materials.Quantium,  144L, 600, Voltage.IV);
 
 	}
 	
