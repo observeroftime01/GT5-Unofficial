@@ -144,9 +144,10 @@ public enum CombType {
     VEGA("vega",true, Materials._NULL, 10,0x1A2036, 0xB5C0DE),
 
     //Infinity
-    COSMICNEUTRONIUM("cosmicneutronium",true, Materials._NULL, 5,0x484848, 0x323232),
-    INFINITYCATALYST("infinitycatalyst",true, Materials._NULL, 2,0xFFFFFF, 0xFFFFFF),
-    INFINITY("infinity",true, Materials._NULL, 1,0xFFFFFF, 0xFFFFFF),
+    COSMICNEUTRONIUM("cosmicneutronium",true, Materials.CosmicNeutronium, 5,0x484848, 0x323232),
+    INFINITYCATALYST("infinitycatalyst",true, Materials.InfinityCatalyst, 2,0xFFFFFF, 0xFFFFFF),
+    INFINITY("infinity",true, Materials.Infinity, 1,0xFFFFFF, 0xFFFFFF),
+
 
     //HEE
     ENDDUST("enddust", true, Materials._NULL, 50,0x003A7D, 0xCC00FA),
