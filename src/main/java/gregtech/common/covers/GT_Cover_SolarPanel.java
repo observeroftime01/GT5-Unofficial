@@ -49,7 +49,7 @@ public class GT_Cover_SolarPanel extends GT_CoverBehavior {
             }
         }
         if (coverState == 1 ) {
-            aTileEntity.injectEnergyUnits((byte) 6, ((100L-(long)coverNum)*((long)this.mVoltage))/100L, 1L);
+            aTileEntity.injectEnergyUnits((byte) 6, ((100L-(long)coverNum)*((long)this.mVoltage))/100L, 4L);
             
         }
         if(aTimer % 28800L == 0L && coverNum<100 && (coverNum>10 || XSTR_INSTANCE.nextInt(3)==2))

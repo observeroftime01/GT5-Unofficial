@@ -1848,7 +1848,8 @@ public class Textures {
         TURBINE,
         TURBINE_SMALL,
         TURBINE_LARGE,
-        TURBINE_HUGE;
+        TURBINE_HUGE,
+        TURBINE_EX;
 
         public static final IIconContainer[]
                 DURABILITY_BAR = {
