@@ -65,7 +65,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 0), 0.30f);
                 beeSpecies.addProduct(new ItemStack(Items.clay_ball, 1), 0.15f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("BiomesOPlenty", "mudball", 1, 0), 0.05f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
@@ -83,7 +83,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 15), 0.30f);
                 beeSpecies.addProduct(new ItemStack(Items.slime_ball, 1), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.STICKY), 0.05f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 if (Loader.isModLoaded("TConstruct")) {
                     beeSpecies.addProduct(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1, 0), 0.10f);
@@ -163,7 +163,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 0), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.OIL), 0.15f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -207,8 +207,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem("ExtraBees", "honeyComb", 1, 9), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ASH), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, Speed.NORMAL);
@@ -227,7 +227,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem("ExtraBees", "honeyComb", 1, 9), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.APATITE), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, Speed.FASTEST);
@@ -248,8 +248,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.DarkAsh, 1), 0.2f);
                 beeSpecies.addSpecialty(ItemList.FR_Fertilizer.get(1), 0.3f);
                 beeSpecies.addSpecialty(ItemList.IC2_Fertilizer.get(1), 0.3f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, Speed.FASTEST);
@@ -321,7 +321,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STONE), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.DIAMOND), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
@@ -335,8 +335,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STONE), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.RUBY), 0.15f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.REDGARNET), 0.05f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -374,7 +374,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.EMERALD), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ALUMINIUM), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
@@ -388,8 +388,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STONE), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.REDGARNET), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.PYROPE), 0.05f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -406,8 +406,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STONE), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.YELLOWGARNET), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.GROSSULAR), 0.05f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -423,8 +423,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STONE), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.FIRESTONE), 0.15f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -472,8 +472,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.LEAD), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SULFUR), 0.05f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -501,7 +501,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.STEEL), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.IRON), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -545,7 +545,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SILVER), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SULFUR), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -559,7 +559,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.GOLD), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.NICKEL), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -573,7 +573,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.ARSENIC), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -588,8 +588,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.ALUMINIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.BAUXITE), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -602,8 +602,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.TITANIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ALMANDINE), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -616,8 +616,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.CHROME), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.MAGNESIUM), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -630,8 +630,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MANGANESE), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.IRON), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -644,8 +644,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.TUNGSTEN), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.MOLYBDENUM), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -658,8 +658,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.PLATINUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.IRIDIUM), 0.02f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -672,8 +672,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.IRIDIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.OSMIUM), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
@@ -687,8 +687,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.OSMIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.IRIDIUM), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
@@ -703,7 +703,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SALT), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.LITHIUM), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -717,7 +717,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.LITHIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SALT), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -731,7 +731,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ELECTROTINE), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.REDSTONE), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, SPEED, Speed.SLOWER),
             dis -> {
@@ -745,8 +745,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 4), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.COOLANT), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -768,7 +768,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem("ExtraBees", "honeyComb", 1, 12), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENERGY), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -791,8 +791,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.LAPIS), 0.20f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENERGY), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.LAPOTRON), 0.10f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -815,8 +815,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.ENERGY), 0.20f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.PYROTHEUM), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -837,8 +837,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.COOLANT), 0.20f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.CRYOTHEUM), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -892,8 +892,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.CONDUCTIVEIRON), 0.15f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(WARM);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -909,7 +909,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENERGETICALLOY), 0.15f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
@@ -925,7 +925,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.VIBRANTALLOY), 0.15f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -944,7 +944,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ELECTRICALSTEEL), 0.15f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
@@ -961,7 +961,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.DARKSTEEL), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, Speed.FAST);
@@ -976,7 +976,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 7), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.PULSATINGIRON), 0.15f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
@@ -995,7 +995,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.STAINLESSSTEEL), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.CHROME), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, Speed.FAST);
@@ -1013,7 +1013,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENDERIUM), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.CHROME), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> {
                 AlleleHelper.instance.set(template, SPEED, GT_Bees.speedBlinding);
@@ -1286,7 +1286,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.URANIUM), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> {
@@ -1304,7 +1304,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.LEAD), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.PLUTONIUM), 0.15f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> {
@@ -1320,8 +1320,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.NAQUADAH), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1339,8 +1339,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SLAG), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.NAQUADAH), 0.20f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.NAQUADRIA), 0.15f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1377,7 +1377,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.THORIUM), 0.75f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> {
@@ -1426,8 +1426,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     NEUTRONIUM(GT_BranchDefinition.RADIOACTIVE, "Neutronium", false, new Color(0xFFF0F0), new Color(0xFAFAFA),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.NEUTRONIUM), 0.0001f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -1445,7 +1445,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SALISMUNDUS), 0.02f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.NAGA), 0.10f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1462,7 +1462,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SALISMUNDUS), 0.04f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.LICH), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1479,8 +1479,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SALISMUNDUS), 0.06f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.HYDRA), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -1496,8 +1496,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SALISMUNDUS), 0.08f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.URGHAST), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
                 beeSpecies.setNocturnal();
             },
@@ -1516,8 +1516,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SALISMUNDUS), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SNOWQUEEN), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
                 beeSpecies.setNocturnal();
             },
@@ -1535,7 +1535,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENDDUST), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1557,7 +1557,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENDIUM), 0.10f);
                 beeSpecies.addSpecialty(GT_Bees.propolis.getStackForType(PropolisType.Endium), 0.15f);
                 beeSpecies.addSpecialty(GT_Bees.drop.getStackForType(DropType.ENDERGOO), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1574,7 +1574,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.STARDUST), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1595,7 +1595,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ECTOPLASMA), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1618,7 +1618,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ARCANESHARD), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1640,7 +1640,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.DRAGONESSENCE), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1662,8 +1662,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.FIREESSENSE), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -1684,7 +1684,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ENDERMAN), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1706,7 +1706,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.SILVERFISH), 0.10f);
-                beeSpecies.setHumidity(ARID);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -1729,8 +1729,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_ModHandler.getModItem(GT_Values.MOD_ID_FR, "beeCombs", 1, 8), 0.30f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.RUNEI), 0.0025f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.RUNEII), 0.00125f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -1752,8 +1752,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     SPACE(GT_BranchDefinition.SPACE, "Space", true, new Color(0x003366), new Color(0xC0C0C0),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.02f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> {
@@ -1767,8 +1767,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.04f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.METEORICIRON), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> {
@@ -1783,8 +1783,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.06f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.DESH), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, EFFECT, AlleleEffect.effectIgnition),
@@ -1802,7 +1802,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.10f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.LEDOX), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, EFFECT, getEffect(EXTRABEES, "freezing")),
@@ -1821,7 +1821,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.10f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.CALLISTOICE), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, EFFECT, getEffect(EXTRABEES, "freezing")),
@@ -1860,8 +1860,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.16f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.QUANTIUM), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1881,8 +1881,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.26f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ORIHARUKON), 0.10f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> {
@@ -1901,8 +1901,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.42f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.MYSTERIOUSCRYSTAL), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1922,8 +1922,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SPACE), 0.68f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.BLACKPLUTONIUM), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1944,7 +1944,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.TRINIUM), 0.75f);
                 beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.QUANTIUM), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1965,7 +1965,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 if (Loader.isModLoaded("dreamcraft"))
                     beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.MoonStoneDust", 1, 0), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1981,8 +1981,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MARS), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.MarsStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -1999,8 +1999,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MARS), 0.25f);
                 if (Loader.isModLoaded("dreamcraft"))
                     beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.PhobosStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2015,8 +2015,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MARS), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.DeimosStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2031,8 +2031,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.JUPITER), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.CeresStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2052,8 +2052,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EuropaStoneDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EuropaIceDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.GanymedeStoneDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -2069,8 +2069,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.JUPITER), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.IoStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2087,7 +2087,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EuropaStoneDust", 1, 0), 0.10f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EuropaIceDust", 1, 0), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2103,8 +2103,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.JUPITER), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.GanymedeStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2119,8 +2119,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.JUPITER), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.CallistoStoneDust", 1, 0), 0.10f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.CallistoIceDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2138,7 +2138,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EnceladusStoneDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EnceladusIceDust", 1, 0), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2155,7 +2155,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EnceladusStoneDust", 1, 0), 0.10f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.EnceladusIceDust", 1, 0), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2170,8 +2170,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.SATURN), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.TitanStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2187,7 +2187,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.MirandaStoneDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.OberonStoneDust", 1, 0), 0.05f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2202,8 +2202,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.URANUS), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.MirandaStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2218,8 +2218,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.URANUS), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.OberonStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2234,8 +2234,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.NEPTUN), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.ProteusStoneDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.TritonStoneDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -2252,7 +2252,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.NEPTUN), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.ProteusStoneDust", 1, 0), 0.10f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2267,8 +2267,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.NEPTUN), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.TritonStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2284,8 +2284,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.PLUTO), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.PlutoStoneDust", 1, 0), 0.10f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.PlutoIceDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -2301,8 +2301,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.HAUMEA), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.HaumeaStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2316,8 +2316,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MAKEMAKE), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.MakeMakeStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2331,8 +2331,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.CENTAURI), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.CentauriASurfaceDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2347,8 +2347,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.CENTAURI), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.CentauriASurfaceDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             new Consumer<GT_BeeDefinition>() {
@@ -2365,7 +2365,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.TCETI), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.TCetiEStoneDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
@@ -2382,7 +2382,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.TCETI), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.TCetiEStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(DAMP);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
                 beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
@@ -2399,8 +2399,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.BARNARDA), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.BarnardaEStoneDust", 1, 0), 0.05f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.BarnardaFStoneDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2414,8 +2414,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     BARNARDAC(GT_BranchDefinition.PLANET, "BarnardaC", false, new Color(0x0D5A0D), new Color(0x473f0a),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.BARNARDA), 0.25f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2430,8 +2430,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.BARNARDA), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.BarnardaEStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2446,8 +2446,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.BARNARDA), 0.25f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.BarnardaFStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HOT);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2462,8 +2462,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.VEGA), 0.50f);
                 beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.VegaBStoneDust", 1, 0), 0.05f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2480,8 +2480,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.VEGA), 0.50f);
                 if (Loader.isModLoaded("dreamcraft"))
                     beeSpecies.addSpecialty(GT_ModHandler.getModItem("dreamcraft", "item.VegaBStoneDust", 1, 0), 0.10f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(COLD);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
             dis -> {
@@ -2495,8 +2495,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     MERCURY(GT_BranchDefinition.PLANET, "Mercury", false, new Color(0x4A4033), new Color(0xB5A288),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.MERCURY), 0.50f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2510,8 +2510,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     VENUS(GT_BranchDefinition.PLANET, "Venus", false, new Color(0x4A4033), new Color(0xB5A288),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.VENUS), 0.50f);
-                beeSpecies.setHumidity(ARID);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setHasEffect();
             },
             template -> AlleleHelper.instance.set(template, LIFESPAN, Lifespan.SHORTEST),
@@ -2527,8 +2527,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     COSMICNEUTRONIUM(GT_BranchDefinition.PLANET, "CosmicNeutronium", false, new Color(0x484848), new Color(0x323232),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM), 0.25f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -2542,8 +2542,8 @@ public enum GT_BeeDefinition implements IBeeDefinition {
     INFINITYCATALYST(GT_BranchDefinition.PLANET, "InfinityCatalyst", false, new Color(0xFFFFFF), new Color(0xFFFFFF),
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.INFINITYCATALYST), 0.0000005f);
-                beeSpecies.setHumidity(DAMP);
-                beeSpecies.setTemperature(HELLISH);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },
@@ -2561,7 +2561,7 @@ public enum GT_BeeDefinition implements IBeeDefinition {
             beeSpecies -> {
                 beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.INFINITY), 0.00000005f);
                 beeSpecies.setHumidity(EnumHumidity.NORMAL);
-                beeSpecies.setTemperature(ICY);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
                 beeSpecies.setNocturnal();
                 beeSpecies.setHasEffect();
             },

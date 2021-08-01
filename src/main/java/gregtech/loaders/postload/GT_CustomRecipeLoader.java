@@ -1,16 +1,20 @@
 package gregtech.loaders.postload;
 
-import cpw.mods.fml.common.Loader;
-import crazypants.enderio.material.Material;
-import gregtech.api.enums.*;
-import gregtech.api.util.GT_ModHandler;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.enums.GTNH_ExtraMaterials.*;
+
+import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
+import static gregtech.api.enums.GTNH_ExtraMaterials.TurbineSteel;
+import static gregtech.api.enums.GT_Values.V;
 import static gregtech.api.enums.Materials.*;
+
+
 
 
 
@@ -42,7 +46,25 @@ public class GT_CustomRecipeLoader implements Runnable {
             //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Redstone.getMolten(120L), Neutronium.getPlasma(240L), 20, 131072, 320000000);
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(272L), Helium_3.getGas(272L), Radon.getPlasma(545L), 20, 131072, 480000000);
+
+            //Test Recipes
+            GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
     }
+
+        enum Voltage {
+                ULV, LV, MV,
+                HV, EV, IV,
+                LUV, ZPM, UV,
+                UHV, UEV, UIV,
+                UMV, UXV, OpV,
+                MAX;
+                public int getVoltage() {
+                        return (int) (V[this.ordinal()] / 1.5);
+                }
+
+        }
 
 
 }
+
+
