@@ -19,7 +19,7 @@ public class GT_MetaTileEntity_OreDrillingPlant5 extends GT_MetaTileEntity_OreDr
 
     @Override
     protected GT_Multiblock_Tooltip_Builder createTooltip() {
-        return createTooltip("IV");
+        return createTooltip("V");
     }
 
     @Override

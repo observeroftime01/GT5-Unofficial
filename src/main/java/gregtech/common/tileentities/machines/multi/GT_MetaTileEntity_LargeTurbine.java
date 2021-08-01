@@ -110,9 +110,9 @@ public abstract class GT_MetaTileEntity_LargeTurbine extends GT_MetaTileEntity_E
 
     @Override
     public boolean checkRecipe(ItemStack aStack) {
-        if ((counter & 7) == 0 && (aStack == null || !(aStack.getItem() instanceof GT_MetaGenerated_Tool) || aStack.getItemDamage() < 170 || aStack.getItemDamage() > 179)) {
-            stopMachine();
-            return false;
+    	if((counter&7)==0 && (aStack==null || !(aStack.getItem() instanceof GT_MetaGenerated_Tool)  || aStack.getItemDamage() < 170 || aStack.getItemDamage() >181)) {
+    	    stopMachine();
+    	    return false;
         }
         ArrayList<FluidStack> tFluids = getStoredFluids();
         if (tFluids.size() > 0) {
