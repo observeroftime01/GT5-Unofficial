@@ -108,6 +108,7 @@ import static gregtech.api.enums.GT_Values.MOD_ID_FR;
                 " after:UndergroundBiomes;" +
                 " after:TConstruct;" +
                 " after:Translocator;")
+//test
 public class GT_Mod implements IGT_Mod {
     public static final int VERSION = 509, SUBVERSION = 33;
     public static final int TOTAL_VERSION = calculateTotalGTVersion(VERSION, SUBVERSION);
