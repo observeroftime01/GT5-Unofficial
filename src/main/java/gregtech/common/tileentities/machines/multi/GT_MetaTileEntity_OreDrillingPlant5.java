@@ -17,8 +17,8 @@ public class GT_MetaTileEntity_OreDrillingPlant5 extends GT_MetaTileEntity_OreDr
     }
 
     @Override
-    public String[] getDescription() {
-        return getDescriptionInternal("V");
+    protected GT_Multiblock_Tooltip_Builder createTooltip() {
+        return createTooltip("V");
     }
 
     @Override
