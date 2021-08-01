@@ -266,16 +266,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addFluidCannerRecipe(ItemList.Battery_Hull_HV.get(1L), ItemList.Battery_SU_HV_SulfuricAcid.getWithCharge(1L, Integer.MAX_VALUE), Materials.SulfuricAcid.getFluid(16000L), GT_Values.NF);
         GT_Values.RA.addFluidCannerRecipe(ItemList.TF_Vial_FieryTears.get(1L), ItemList.Bottle_Empty.get(1L), GT_Values.NF, Materials.FierySteel.getFluid(250L));
 
-        GT_Values.RA.addFluidCannerRecipe(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Concrete, 1L), ItemList.Cell_Empty.get(1L), GT_Values.NF, Materials.Concrete.getMolten(144L));
-        GT_Values.RA.addFluidCannerRecipe(ItemList.Cell_Empty.get(1L), (GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Concrete, 1L)), Materials.Concrete.getMolten(144L), GT_Values.NF);
-
-        GT_Values.RA.addFluidCannerRecipe(ItemList.Cell_Empty.get(1L), (GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Redstone, 1L)), Materials.Redstone.getMolten(144L), GT_Values.NF);
-        GT_Values.RA.addFluidCannerRecipe(ItemList.Cell_Empty.get(1L), (GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Glass, 1L)), Materials.Glass.getMolten(144L), GT_Values.NF);
-        GT_Values.RA.addFluidCannerRecipe(ItemList.Cell_Empty.get(1L), (GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Blaze, 1L)), Materials.Blaze.getMolten(144L), GT_Values.NF);
-        GT_Values.RA.addFluidCannerRecipe(GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Redstone, 1L), ItemList.Cell_Empty.get(1L), GT_Values.NF, Materials.Redstone.getMolten(144L));
-        GT_Values.RA.addFluidCannerRecipe(GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Glass, 1L), ItemList.Cell_Empty.get(1L), GT_Values.NF, Materials.Glass.getMolten(144L));
-        GT_Values.RA.addFluidCannerRecipe(GT_OreDictUnificator.get(OrePrefixes.cellMolten, Materials.Blaze, 1L), ItemList.Cell_Empty.get(1L), GT_Values.NF, Materials.Blaze.getMolten(144L));
-
         Materials tMaterial = Materials.Iron;
         if (tMaterial.mStandardMoltenFluid != null) {
             GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Casing.get(0L), tMaterial.getMolten(72L), ItemList.IC2_Item_Casing_Iron.get(1L), 16, 8);
@@ -2502,8 +2492,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                 tKey = "GT_FILL_WATER_BUCKET";
                 GT_LanguageManager.addStringLocalization(GT_MachineRecipeLoader.aTextTCGTPage + tKey, "You have discovered a way of filling a bucket with aqua essentia in order to simply get water.");
                 GregTech_API.sThaumcraftCompat.addResearch(tKey, "Water Transmutation", "Filling buckets with water", null, "ALCHEMY", GT_OreDictUnificator.get(OrePrefixes.bucket, Materials.Water, 1L), 2, 0, 16, 5, Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.PERMUTATIO, 4L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L)), null, new Object[]{GT_MachineRecipeLoader.aTextTCGTPage + tKey, 
-                		GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.bucket, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.bucket, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L))), GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.capsule, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.capsule, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L))), 
-                		GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L)))});
+                        GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.bucket, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.bucket, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L))),
+                        GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.bucketClay, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.bucketClay, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L))),
+                        GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.capsule, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.capsule, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L))),
+                        GregTech_API.sThaumcraftCompat.addCrucibleRecipe(tKey, GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1L), GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Water, 1L), Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 4L)))});
 
                 tKey = "GT_TRANSZINC";
                 GT_LanguageManager.addStringLocalization(GT_MachineRecipeLoader.aTextTCGTPage + tKey, "You have discovered a way to multiply zinc by steeping zinc nuggets in metallum harvested from other metals.");
