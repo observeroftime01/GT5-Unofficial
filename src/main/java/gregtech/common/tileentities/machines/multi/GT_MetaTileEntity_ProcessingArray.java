@@ -67,7 +67,7 @@ public class GT_MetaTileEntity_ProcessingArray extends GT_MetaTileEntity_CubicMu
         tt.addMachineType("Processing Array")
                 .addInfo("Runs supplied machines as if placed in the world")
                 .addInfo("Place up to 64 singleblock GT machines into the controller")
-                .addInfo("Note that tou still need to supply power to them all")
+                .addInfo("Note that you still need to supply power to them all")
                 .addInfo("Use a screwdriver to enable separate input busses")
                 .addInfo("Maximal overclockedness of machines inside: Tier 9")
                 .addInfo("Doesn't work on certain machines, deal with it")
@@ -128,7 +128,6 @@ public class GT_MetaTileEntity_ProcessingArray extends GT_MetaTileEntity_CubicMu
         }
     }
     */
-
     @Override
     public GT_Recipe_Map getRecipeMap() {
         if (isCorrectMachinePart(mInventory[1])) {
