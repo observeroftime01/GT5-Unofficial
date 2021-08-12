@@ -198,7 +198,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.netherstar", true, 20, 60, 60, 12, 32, false, false, false, Materials.GarnetSand, Materials.NetherStar, Materials.GarnetRed, Materials.GarnetYellow);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.garnet", true, 10, 30, 40, 12, 32, false, false, false, Materials.GarnetRed, Materials.GarnetYellow, Materials.Chrysotile, Materials.Realgar);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.rareearth", true, 30, 60, 40, 12, 32, false, false, false, Materials.Cadmium, Materials.Caesium, Materials.Lanthanum, Materials.Cerium);
-        new GT_Worldgen_GT_Ore_Layer("ore.mix.richnuclear", true, 55, 120, 5, 12, 32, false, false, false, Materials.Uranium, Materials.Plutonium, Materials.Thorium, Materials.Thorium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.richnuclear", true, 55, 120, 80, 24, 32, false, false, false, Materials.Uranium, Materials.Plutonium, Materials.Thorium, Materials.Thorium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.heavypentele", true, 40, 60, 60, 12, 32, false, false, false, Materials.Arsenic, Materials.Bismuth, Materials.Antimony, Materials.Antimony);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.europa", true, 55, 65, 110, 12, 32, false, false, false, Materials.Magnesite, Materials.BandedIron, Materials.Sulfur, Materials.Opal);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.europacore", true, 5, 15, 5, 12, 32, false, false, false, Materials.Chrome, Materials.Tungstate, Materials.Molybdenum, Materials.Manganese);
@@ -211,6 +211,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.indiumaluminium", true, 10, 230, 120, 12, 32, true, true, true, Materials.Indium, Materials.Infinity, Materials.Aluminium, Materials.Niobium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.enderpealichor", true, 5, 120, 60, 12, 32, true, true, true, Materials.EnderPearl, Materials.Ichorium, Materials.EnderPearl, Materials.Ichorium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.raremetals", true, 5, 230, 60, 12, 32, false, false, false, Materials.Osmium, Materials.Iridium, Materials.Platinum, Materials.Palladium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.fusion", true, 5 ,230, 90, 24 ,32, false, false, false, Materials.Plutonium, Materials.Beryllium, Materials.Plutonium, Materials.Beryllium);
         //DO NOT DELETE V THIS V - this is needed so that gregtech generates its Ore Layer's first (the ones up there), which can then be transformed into "GT_Worldgen_GT_Ore_Layer_Space". Also Reflexion is slow.
         try {
             Class clazz = Class.forName("bloodasp.galacticgreg.WorldGenGaGT");
