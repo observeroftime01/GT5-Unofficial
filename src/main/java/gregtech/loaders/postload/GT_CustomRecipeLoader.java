@@ -9,6 +9,8 @@ import net.minecraft.item.ItemStack;
 
 import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
 import static gregtech.api.enums.GTNH_ExtraMaterials.TurbineSteel;
+import static gregtech.api.enums.GT_Values.NI;
+import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.V;
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.OrePrefixes.*;
@@ -43,6 +45,13 @@ public class GT_CustomRecipeLoader implements Runnable {
             //Grinder Recipes
             GT_Values.RA.addGrinderRecipe(GT_OreDictUnificator.get(ore, EnderPearl, 1), null, GT_OreDictUnificator.get(crushed, EnderPearl, 2), GT_OreDictUnificator.get(gem, EnderPearl,1), null, null);
             GT_Values.RA.addPulveriserRecipe(GT_OreDictUnificator.get(ore, EnderPearl, 1), new ItemStack[]{GT_OreDictUnificator.get(crushed, EnderPearl, 2), GT_OreDictUnificator.get(gem, EnderPearl, 1)}, new int[]{10000, 1000}, Voltage.HV.getVoltage(), 2);
+
+            //Centrifuge Recipes
+            GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust,Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 750}, 20, Voltage.LV.getVoltage());
+
+            //Electrolyzer Recipes
+            GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000},20, Voltage.MV.getVoltage());
+
 
             //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
             //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
