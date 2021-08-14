@@ -2,16 +2,17 @@ package gregtech.loaders.postload;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
 
+
+
 import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
 import static gregtech.api.enums.GTNH_ExtraMaterials.TurbineSteel;
-import static gregtech.api.enums.GT_Values.NI;
-import static gregtech.api.enums.GT_Values.NF;
-import static gregtech.api.enums.GT_Values.V;
+import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.OrePrefixes.*;
 
@@ -51,7 +52,7 @@ public class GT_CustomRecipeLoader implements Runnable {
 
             //Electrolyzer Recipes
             GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000},20, Voltage.MV.getVoltage());
-
+            GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), NI, NI, NI, NI, null, 20, Voltage.MV.getVoltage());
 
             //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
             //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
@@ -60,6 +61,10 @@ public class GT_CustomRecipeLoader implements Runnable {
 
             //Test Recipes
             GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
+
+
+
+
     }
 
         enum Voltage {
