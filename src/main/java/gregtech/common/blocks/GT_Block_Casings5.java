@@ -108,7 +108,7 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
             case 10:
                 return UHV;
             case 11:
-                return UMV;
+                return MAX;
             default:
                 return None;
         }
@@ -138,7 +138,7 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
                 return 9;
             case UHV:
                 return 10;
-            case UMV:
+            case MAX:
                 return 11;
             default:
                 return 0;
