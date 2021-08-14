@@ -42,6 +42,7 @@ import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
 
 public class GT_MetaTileEntity_ElectricBlastFurnace extends GT_MetaTileEntity_AbstractMultiFurnace<GT_MetaTileEntity_ElectricBlastFurnace> implements IConstructable {
     private int mHeatingCapacity = 0;
+    private HeatingCoilLevel coilTier;
     protected final ArrayList<GT_MetaTileEntity_Hatch_Output> mPollutionOutputHatches = new ArrayList<>();
     protected final FluidStack[] pollutionFluidStacks = {Materials.CarbonDioxide.getGas(1000),
             Materials.CarbonMonoxide.getGas(1000), Materials.SulfurDioxide.getGas(1000)};
@@ -63,6 +64,10 @@ public class GT_MetaTileEntity_ElectricBlastFurnace extends GT_MetaTileEntity_Ab
 
     public GT_MetaTileEntity_ElectricBlastFurnace(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
+    }
+
+    public HeatingCoilLevel getCoilTier() {
+        return coilTier;
     }
 
     public GT_MetaTileEntity_ElectricBlastFurnace(String aName) {
@@ -180,7 +185,13 @@ public class GT_MetaTileEntity_ElectricBlastFurnace extends GT_MetaTileEntity_Ab
             if (this.mMaxProgresstime < 1)
                 this.mMaxProgresstime = 1;//no eu efficiency correction
         }
-        this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime);
+
+        //if (getCoilTier().getTier() > 11)
+        if (getCoilLevel() == HeatingCoilLevel.MAX){
+            this.mMaxProgresstime = 1;
+        } else {
+            this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime);
+        }
         this.mOutputItems = new ItemStack[]{
                 tRecipe.getOutput(0),
                 tRecipe.getOutput(1)
