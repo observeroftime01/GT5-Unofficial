@@ -33,6 +33,7 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".8.name", "Awakened Draconium Coil Block");
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".9.name", "HSS-S Coil Block");
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".10.name", "Trinium Coil Block");
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".11.name", "Infinity Coil Block");
 
         ItemList.Casing_Coil_Cupronickel.set(new ItemStack(this, 1, 0));
         ItemList.Casing_Coil_Kanthal.set(new ItemStack(this, 1, 1));
@@ -45,6 +46,7 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
         ItemList.Casing_Coil_AwakenedDraconium.set(new ItemStack(this, 1, 8));
         ItemList.Casing_Coil_HSSS.set(new ItemStack(this, 1, 9));
         ItemList.Casing_Coil_Trinium.set(new ItemStack(this, 1, 10));
+        ItemList.Casing_Coil_Infinity.set(new ItemStack(this, 1, 11));
     }
 
     @Override
@@ -73,6 +75,8 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
                 return Textures.BlockIcons.MACHINE_COIL_HSSS.getIcon();
             case 10:
                 return Textures.BlockIcons.MACHINE_COIL_TRINIUM.getIcon();
+            case 11:
+                return Textures.BlockIcons.MACHINE_COIL_INFINITY.getIcon();
         }
         return Textures.BlockIcons.MACHINE_COIL_CUPRONICKEL.getIcon();
     }
@@ -103,6 +107,8 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
                 return LuV;
             case 10:
                 return UHV;
+            case 11:
+                return UMV;
             default:
                 return None;
         }
@@ -132,6 +138,8 @@ public class GT_Block_Casings5 extends GT_Block_Casings_Abstract implements IHea
                 return 9;
             case UHV:
                 return 10;
+            case UMV:
+                return 11;
             default:
                 return 0;
         }

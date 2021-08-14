@@ -16,8 +16,7 @@ public enum HeatingCoilLevel {
         UHV,  //TRINIUM             9001
         UEV,  //ELECTRUMFLUX        9901
         UIV,  //AWAKENEDDRACONIUM  10801
-        //Not Implemented yet
-        UMV,
+        UMV,  //INFINITY
         UXV,
         OpV,
         MAX,
