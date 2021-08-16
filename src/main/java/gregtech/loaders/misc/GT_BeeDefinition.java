@@ -2572,6 +2572,27 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                     tMutation.requireResource(GameRegistry.findBlock("avaritiaddons", "InfinityChest"), 0);
             }
     ),
+    REPAIRING(GT_BranchDefinition.THAUMIC, "Repairing", true, new Color(0xFF38FF00, true), new Color(0x00FFC6),
+            beeSpecies -> {
+                beeSpecies.addProduct(GT_ModHandler.getModItem("MagicBees", "comb", 1, 8), 0.30f);
+                beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.THAUMIUMDUST), 0.30f);
+                beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.THAUMIUMSHARD), 0.20f);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
+            },
+            template -> {
+                AlleleHelper.instance.set(template, SPEED, GT_Bees.speedBlinding);
+                AlleleHelper.instance.set(template, LIFESPAN, Lifespan.LONGEST);
+                AlleleHelper.instance.set(template, TEMPERATURE_TOLERANCE, Tolerance.BOTH_2);
+                AlleleHelper.instance.set(template, EFFECT, getEffect(MAGICBEES, "NodeConversionPure"));
+                AlleleHelper.instance.set(template, HUMIDITY_TOLERANCE, Tolerance.BOTH_2);
+                AlleleHelper.instance.set(template, FLOWER_PROVIDER, getFlowers(MAGICBEES, "flowerAuraNode"));
+            },
+            dis -> {
+                IBeeMutationCustom tMutation = dis.registerMutation(THAUMIUMDUST, TAINTED, 10);
+                tMutation.requireResource("blockIchorium");
+            }
+    ),
     ;
     private final GT_BranchDefinition branch;
     private final GT_AlleleBeeSpecies species;
