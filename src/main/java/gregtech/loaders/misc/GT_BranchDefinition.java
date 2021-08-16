@@ -56,6 +56,16 @@ public enum GT_BranchDefinition {
         AlleleHelper.instance.set(alleles, LIFESPAN, Lifespan.LONGEST);
     }
     ),
+    CHEATY("Arcanis", alleles -> {
+        AlleleHelper.instance.set(alleles, FERTILITY, Fertility.LOW);
+        AlleleHelper.instance.set(alleles, TEMPERATURE_TOLERANCE, Tolerance.BOTH_2);
+        AlleleHelper.instance.set(alleles, HUMIDITY_TOLERANCE, Tolerance.BOTH_2);
+        AlleleHelper.instance.set(alleles, FLOWER_PROVIDER, getFlowers(EXTRABEES, "AuraNode"));
+        AlleleHelper.instance.set(alleles, FLOWERING, Flowering.FASTEST);
+        AlleleHelper.instance.set(alleles, LIFESPAN, Lifespan.LONGEST);
+    }
+    ),
+
     GEM("Ornamentis", alleles -> {
         AlleleHelper.instance.set(alleles, TEMPERATURE_TOLERANCE, Tolerance.NONE);
         AlleleHelper.instance.set(alleles, NOCTURNAL, false);
