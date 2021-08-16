@@ -2584,9 +2584,9 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 AlleleHelper.instance.set(template, SPEED, GT_Bees.speedBlinding);
                 AlleleHelper.instance.set(template, LIFESPAN, Lifespan.LONGEST);
                 AlleleHelper.instance.set(template, TEMPERATURE_TOLERANCE, Tolerance.BOTH_2);
-                AlleleHelper.instance.set(template, EFFECT, getEffect(MAGICBEES, "NodeConversionPure"));
+                AlleleHelper.instance.set(template, EFFECT, getEffect(MAGICBEES, "NodePurifying"));
                 AlleleHelper.instance.set(template, HUMIDITY_TOLERANCE, Tolerance.BOTH_2);
-                AlleleHelper.instance.set(template, FLOWER_PROVIDER, getFlowers(MAGICBEES, "flowerAuraNode"));
+                AlleleHelper.instance.set(template, FLOWER_PROVIDER, getFlowers(MAGICBEES, "AuraNode"));
             },
             dis -> {
                 IBeeMutationCustom tMutation = dis.registerMutation(THAUMIUMDUST, TAINTED, 10);
