@@ -1214,6 +1214,12 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Sodalite.setOreMultiplier(6).setSmeltingMultiplier(6).setByProductMultiplier(4);
         Lazurite.setOreMultiplier(6).setSmeltingMultiplier(6).setByProductMultiplier(4);
         Monazite.setOreMultiplier(8).setSmeltingMultiplier(8).setByProductMultiplier(2);
+        Aluminium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Platinum.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Palladium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Osmium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Iridium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Plutonium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
     }
 
     private static void setEnchantmentKnockbackTools() {
