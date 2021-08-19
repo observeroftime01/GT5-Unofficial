@@ -57,6 +57,8 @@ public class GT_CustomRecipeLoader implements Runnable {
             //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
             //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Redstone.getMolten(120L), Neutronium.getPlasma(240L), 20, 131072, 320000000);
+            GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Gallium.getMolten(120L), Neutronium.getPlasma(240L), 20, 131072, 320000000);
+            GT_Values.RA.addFusionReactorRecipe(Beryllium.getMolten(120L), Gallium.getMolten(120L), DraconiumAwakened.getPlasma(240L), 20, 524288, 320000000);
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(272L), Helium_3.getGas(272L), Radon.getPlasma(545L), 20, 131072, 480000000);
 
             //Test Recipes

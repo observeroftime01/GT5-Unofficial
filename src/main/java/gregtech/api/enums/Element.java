@@ -106,7 +106,7 @@ public enum Element {
     U(92, 146, 0, -1, null, "Uranium", false),
     U_235(92, 143, 0, -1, null, "Uranium-235", true),
     Np(93, 144, 0, -1, null, "Neptunium", false),
-    Pu(900, 1000, 0, -1, null, "Plutonium", false),
+    Pu(94, 152, 0, -1, null, "Plutonium", false),
     Pu_241(94, 149, 0, -1, null, "Plutonium-241", true),
     Am(95, 150, 0, -1, null, "Americium", false),
     Cm(96, 153, 0, -1, null, "Curium", false),
@@ -141,6 +141,7 @@ public enum Element {
     Ma(0, 0, 100, -1, null, "Magic", false),
     Nq(130, 200, 0, -1, null, "Naquadah", false),
     Nt(0, 1000, 0, -1, null, "Neutronium", false),
+    DSp(0, 1500, 0, -1, null, "Awakened Draconium",false),
 
     $H(-1, -0, 0, -1, null, "Anti-Hydrogen", false),
     $D(-1, -1, 0, -1, "H", "Anti-Deuterium", true),
@@ -239,7 +240,7 @@ public enum Element {
     $U(-92, -146, 0, -1, null, "Anti-Uranium", false),
     $U_235(-92, -143, 0, -1, null, "Anti-Uranium-235", true),
     $Np(-93, -144, 0, -1, null, "Anti-Neptunium", false),
-    $Pu(-1000, -1000, 0, -1, null, "Anti-Plutonium", false),
+    $Pu(-94, -152, 0, -1, null, "Anti-Plutonium", false),
     $Pu_241(-94, -149, 0, -1, null, "Anti-Plutonium-241", true),
     $Am(-95, -150, 0, -1, null, "Anti-Americium", false),
     $Cm(-96, -153, 0, -1, null, "Anti-Curium", false),
@@ -273,7 +274,8 @@ public enum Element {
 
     $Ma(0, 0, -100, -1, null, "Anti-Magic", false),
     $Nq(-130, -200, 0, -1, null, "Anti-Naquadah", false),
-    $Nt(0, -10000, 0, -1, null, "Anti-Neutronium", false);
+    $Nt(0, -10000, 0, -1, null, "Anti-Neutronium", false),
+    $DSp(0, -15000, 0, -1, null, "Anti-Awakened Draconium",false);
 
     public static volatile int VERSION = 509;
     public final long mProtons, mNeutrons, mAdditionalMass, mHalfLifeSeconds;
