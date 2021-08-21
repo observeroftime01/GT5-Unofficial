@@ -6,8 +6,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
-
-
+import net.minecraftforge.fluids.FluidRegistry;
 
 
 import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
@@ -49,6 +48,10 @@ public class GT_CustomRecipeLoader implements Runnable {
 
             //Centrifuge Recipes
             GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust,Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 750}, 20, Voltage.LV.getVoltage());
+            GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, Lava.getFluid(100L), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 80, 80);
+            GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, FluidRegistry.getFluidStack("ic2pahoehoelava", 100), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 40, 80);
+
+
 
             //Electrolyzer Recipes
             GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000},20, Voltage.MV.getVoltage());
