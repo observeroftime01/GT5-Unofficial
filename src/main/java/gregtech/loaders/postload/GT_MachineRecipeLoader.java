@@ -1153,7 +1153,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         //Fluid input,Fluid input,Fluid output,ticks,EU/t,Startup
         //FT1, FT2, FT3 - fusion tier required, + - requires different startup recipe (startup cost bigger than available on the tier)
         GT_Values.RA.addFusionReactorRecipe(Materials.Lithium.getMolten(16), Materials.Tungsten.getMolten(16), Materials.Iridium.getMolten(16), 64, 32700, 300000000); //FT1+ - utility
-        GT_Values.RA.addFusionReactorRecipe(Materials.Deuterium.getGas(125), Materials.Tritium.getGas(125), Materials.Helium.getPlasma(125), 16, 4096, 40000000);  //FT1 Cheap - farmable
+        GT_Values.RA.addFusionReactorRecipe(Materials.Helium_3.getGas(125), Materials.Tritium.getGas(125), Materials.Helium.getPlasma(125), 16, 4096, 40000000);  //FT1 Cheap - farmable
         GT_Values.RA.addFusionReactorRecipe(Materials.Deuterium.getGas(125), Materials.Helium_3.getGas(125), Materials.Helium.getPlasma(125), 16, 2048, 60000000); //FT1 Expensive //
         GT_Values.RA.addFusionReactorRecipe(Materials.Carbon.getMolten(125), Materials.Helium_3.getGas(125), Materials.Oxygen.getPlasma(125), 32, 4096, 80000000); //FT1 Expensive //
         GT_Values.RA.addFusionReactorRecipe(Materials.Aluminium.getMolten(16), Materials.Lithium.getMolten(16), Materials.Sulfur.getPlasma(144), 32, 10240, 240000000); //FT1+ Cheap
