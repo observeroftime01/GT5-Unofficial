@@ -63,7 +63,7 @@ public class GT_CustomRecipeLoader implements Runnable {
             GT_Values.RA.addFusionReactorRecipe(Beryllium.getMolten(120L), Gallium.getMolten(120L), DraconiumAwakened.getPlasma(240L), 20, 524288, 320000000);
             GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(272L), Helium_3.getGas(272L), Radon.getPlasma(545L), 20, 131072, 480000000);
 
-            GT_Values.RA.addFusionReactorRecipe(Deuterium.getGas(72L), Tritium.getGas(72L), Radon.getPlasma(144L), 20, 524288, 320000000);
+            GT_Values.RA.addFusionReactorRecipe(Deuterium.getGas(72L), Tritium.getGas(72L), Radon.getPlasma(144L), 20, 131072, 320000000);
 
             //Test Recipes
             GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
