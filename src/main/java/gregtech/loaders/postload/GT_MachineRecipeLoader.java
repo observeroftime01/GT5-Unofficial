@@ -2425,10 +2425,8 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_Module.get(1), 288000, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 32L),
-                new Object[]{OrePrefixes.circuit.get(Materials.Superconductor), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Superconductor), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Superconductor), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Superconductor), 1},
+                //new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 4},
+                ItemList.Circuit_Crystalmainframe.get(4L),
                 ItemList.Energy_Module.get(8L),
                 ItemList.Field_Generator_ZPM.get(2),
                 ItemList.Circuit_Wafer_HPIC.get(64),
@@ -2439,6 +2437,37 @@ public class GT_MachineRecipeLoader implements Runnable {
                 Materials.SolderingAlloy.getMolten(2880),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)},
                 ItemList.Energy_Cluster.get(1), 2000, 200000);
+
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_Module.get(1), 288000, new Object[]{
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 32L),
+                        //new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 4},
+                        ItemList.Circuit_Wetwaresupercomputer.get(4L),
+                        ItemList.Energy_Module.get(8L),
+                        ItemList.Field_Generator_ZPM.get(2),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Parts_DiodeASMD.get(16),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 32),},
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(2880),
+                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)},
+                ItemList.Energy_Cluster.get(1), 2000, 200000);
+
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_Module.get(1), 288000, new Object[]{
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 32L),
+                        //new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 4},
+                        ItemList.Circuit_Biowarecomputer.get(4L),
+                        ItemList.Energy_Module.get(8L),
+                        ItemList.Field_Generator_ZPM.get(2),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Parts_DiodeASMD.get(16),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 32),},
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(2880),
+                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)},
+                ItemList.Energy_Cluster.get(1), 2000, 200000);
+
 
             GT_Values.RA.addAssemblylineRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1), 144000, new Object[]{
             		ItemList.Casing_Fusion_Coil.get(1),

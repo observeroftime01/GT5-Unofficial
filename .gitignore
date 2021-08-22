@@ -7,6 +7,9 @@ thumbs.db
 
 *.class
 
+### Keystore ###
+*.keystore
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -95,3 +98,4 @@ libs/
 *.errored
 /build/
 /run
+
