@@ -2409,10 +2409,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb2.get(1), 288000, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 16L),
-                new Object[]{OrePrefixes.circuit.get(Materials.Ultimate), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Ultimate), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Ultimate), 1},
-                new Object[]{OrePrefixes.circuit.get(Materials.Ultimate), 1},
+                new Object[]{OrePrefixes.circuit.get(Materials.Ultimate), 4},
                 ItemList.Energy_LapotronicOrb2.get(8L),
                 ItemList.Field_Generator_LuV.get(2),
                 ItemList.Circuit_Wafer_SoC2.get(64),
