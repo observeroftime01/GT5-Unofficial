@@ -137,7 +137,17 @@ public class GT_Loader_Item_Block_And_Fluid implements Runnable {
             ItemList.NaquadahCell_1.set(new GT_RadioactiveCellIC_Item("Naquadahcell", "Fuel Rod (Naquadah)", 1, 100000, 2F, 1, 1F, ItemList.Depleted_Naquadah_1.get(1, new Object[0]), false));
             ItemList.NaquadahCell_2.set(new GT_RadioactiveCellIC_Item("Double_Naquadahcell", "Dual Fuel Rod (Naquadah)", 2, 100000, 2F, 1, 1F, ItemList.Depleted_Naquadah_2.get(1, new Object[0]), false));
             ItemList.NaquadahCell_4.set(new GT_RadioactiveCellIC_Item("Quad_Naquadahcell", "Quad Fuel Rod (Naquadah)", 4, 100000, 2F, 1, 1F, ItemList.Depleted_Naquadah_4.get(1, new Object[0]), false));
-            
+
+            ItemList.Depleted_IFCell_1.set(new GT_DepletetCell_Item("Depleted_IFCell_1", "Depleted 1x Infinity Fuel Rod", 1));
+            ItemList.Depleted_IFCell_2.set(new GT_DepletetCell_Item("Depleted_IFCell_2", "Depleted 2x Infinity Fuel Rod", 1));
+            ItemList.Depleted_IFCell_4.set(new GT_DepletetCell_Item("Depleted_IFCell_4", "Depleted 4x Infinity Fuel Rod", 1));
+
+            ItemList.IFCell_1.set(new GT_RadioactiveCellIC_Item("IFCell_1", "Infinity Fuel Rod 1x", 1, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_1.get(1, new Object[0]), false));
+            ItemList.IFCell_2.set(new GT_RadioactiveCellIC_Item("IFCell_2", "Infinity Fuel Rods 2x", 2, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_2.get(1, new Object[0]), false));
+            ItemList.IFCell_4.set(new GT_RadioactiveCellIC_Item("IFCell_4", "Infinity Fuel Rods 4x", 4, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_4.get(1, new Object[0]), false));
+
+
+
             GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_Naquadah_1.get(1), null,null,null,
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L),

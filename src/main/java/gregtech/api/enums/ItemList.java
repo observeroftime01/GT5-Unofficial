@@ -1748,6 +1748,17 @@ public enum ItemList implements IItemContainer {
     MNqCell_2,
     MNqCell_4,
 
+    Depleted_IFCell_1,
+    Depleted_IFCell_2,
+    Depleted_IFCell_4,
+
+
+    IFCell_1,
+    IFCell_2,
+    IFCell_4,
+
+
+
     VOLUMETRIC_FLASK;
     public static final ItemList[]
             DYE_ONLY_ITEMS = {
