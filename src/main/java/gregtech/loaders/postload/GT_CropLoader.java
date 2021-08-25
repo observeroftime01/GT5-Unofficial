@@ -6,6 +6,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_BaseCrop;
 import gregtech.api.util.GT_Log;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -389,6 +390,12 @@ public class GT_CropLoader implements Runnable {
                     "Bush"
             }, Materials.Mica, ItemList.Crop_Drop_Mica.get(1L), null);
             if (Loader.isModLoaded("dreamcraft")){
+                new GT_BaseCrop(180, "Space Seaweed", "MamiTomoe", CustomItemList.TCetiESeaweedExtract.get(1L), 10, 4, 0, 1, 4, 2, 0, 3, 0, 0, new String[] {
+                        "Food",
+                        "Weed",
+                        "Space",
+                        "Alien"
+                }, CustomItemList.TCetiESeaweedExtract.get(1L), new ItemStack[]{GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L, 0), GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 5L, 3), GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 5L, 4), GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 5L, 5), GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 5L, 2)});
 
             }
         } catch (Throwable e) {
