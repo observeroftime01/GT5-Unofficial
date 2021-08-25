@@ -1757,6 +1757,29 @@ public enum ItemList implements IItemContainer {
     IFCell_2,
     IFCell_4,
 
+    Cover_SolarPanel_LV_MultiAmp,
+    Cover_SolarPanel_MV_MultiAmp,
+    Cover_SolarPanel_HV_MultiAmp,
+    Cover_SolarPanel_EV_MultiAmp,
+    Cover_SolarPanel_IV_MultiAmp,
+    Cover_SolarPanel_LUV_MultiAmp,
+    Cover_SolarPanel_ZPM_MultiAmp,
+    Cover_SolarPanel_UV_MultiAmp,
+    Cover_SolarPanel_UHV_MultiAmp,
+    Cover_SolarPanel_UEV_MultiAmp,
+    Cover_SolarPanel_UIV_MultiAmp,
+    Cover_SolarPanel_UMV_MultiAmp,
+
+
+
+
+
+
+
+
+
+
+
 
 
     VOLUMETRIC_FLASK;

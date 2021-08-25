@@ -9,12 +9,16 @@ import net.minecraft.item.ItemStack;
 
 import static gregtech.api.objects.XSTR.XSTR_INSTANCE;
 
-public class GT_Cover_SolarPanel extends GT_CoverBehavior {
+public class GT_Cover_SolarPanel_MultiAmp extends GT_CoverBehavior {
     private final int mVoltage;
+    private final int mAmps;
 
-    public GT_Cover_SolarPanel(int aVoltage) {
+
+    public GT_Cover_SolarPanel_MultiAmp(int aVoltage, int aAmps) {
         this.mVoltage = aVoltage;
+        this.mAmps = aAmps;
     }
+
 
     @Override
     public boolean isRedstoneSensitive(byte aSide, int aCoverID, int aCoverVariable, ICoverable aTileEntity, long aTimer) {
@@ -23,7 +27,7 @@ public class GT_Cover_SolarPanel extends GT_CoverBehavior {
 
     @Override
     public int doCoverThings(byte aSide, byte aInputRedstone, int aCoverID, int aCoverVariable, ICoverable aTileEntity, long aTimer) {
-        if(aSide != 1)return 0;
+        //if(aSide != 1)return 0;       Removed cover facing upwards check, gives more flexibility for placing these around machines.
         int coverState=aCoverVariable&0x3;
         int coverNum=aCoverVariable>>2;
         if (aTimer % 100L == 0L) {
@@ -49,7 +53,7 @@ public class GT_Cover_SolarPanel extends GT_CoverBehavior {
             }
         }
         if (coverState == 1 ) {
-            aTileEntity.injectEnergyUnits((byte) 6, ((100L-(long)coverNum)*((long)this.mVoltage))/100L, 1L);
+            aTileEntity.injectEnergyUnits((byte) 6, ((100L-(long)coverNum)*((long)this.mVoltage))/100L, mAmps);
             
         }
         if(aTimer % 28800L == 0L && coverNum<100 && (coverNum>10 || XSTR_INSTANCE.nextInt(3)==2))

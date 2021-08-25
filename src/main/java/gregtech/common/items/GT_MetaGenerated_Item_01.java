@@ -818,6 +818,39 @@ public class GT_MetaGenerated_Item_01 extends GT_MetaGenerated_Item_X32 {
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_UV.get(1L), TextureFactory.of(SOLARPANEL_UV), new GT_Cover_SolarPanel(524288));
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_UHV.get(1L), TextureFactory.of(SOLARPANEL_UV), new GT_Cover_SolarPanel(2097152));
 
+
+
+        ItemList.Cover_SolarPanel_LV_MultiAmp.set(addItem(tLastID = 780, "Multi-Amp (4A) Solar Panel (LV)", "Low Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 4L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 4L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 4L)));
+        ItemList.Cover_SolarPanel_MV_MultiAmp.set(addItem(tLastID = 781, "Multi-Amp (4A) Solar Panel (MV)", "Medium Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 8L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 8L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 8L)));
+        ItemList.Cover_SolarPanel_HV_MultiAmp.set(addItem(tLastID = 782, "Multi-Amp (4A) Solar Panel (HV)", "High Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 16L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 16L)));
+        ItemList.Cover_SolarPanel_EV_MultiAmp.set(addItem(tLastID = 783, "Multi-Amp (4A) Solar Panel (EV)", "Extreme Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 32L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 32L)));
+        ItemList.Cover_SolarPanel_IV_MultiAmp.set(addItem(tLastID = 784, "Multi-Amp (4A) Solar Panel (IV)", "Insane Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_LUV_MultiAmp.set(addItem(tLastID = 785, "Multi-Amp (4A) Solar Panel (LuV)", "Ludicrous Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_ZPM_MultiAmp.set(addItem(tLastID = 786, "Multi-Amp (4A) Solar Panel (ZPM)", "ZPM Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_UV_MultiAmp.set(addItem(tLastID = 787, "Multi-Amp (4A) Solar Panel (UV)", "Ultimate Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_UHV_MultiAmp.set(addItem(tLastID = 788, "Multi-Amp (4A) Solar Panel (UHV)", "Ultimate High Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_UEV_MultiAmp.set(addItem(tLastID = 789, "Multi-Amp (4A) Solar Panel (UEV)", "Ultimate Extreme Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_UIV_MultiAmp.set(addItem(tLastID = 790, "Multi-Amp (4A) Solar Panel (UIV)", "Ultimate Insane Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Cover_SolarPanel_UMV_MultiAmp.set(addItem(tLastID = 791, "Multi-Amp (4A) Solar Panel (UMV)", "Mega Ultimate Voltage Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+
+
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_LV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_LV_MULTI), new GT_Cover_SolarPanel_MultiAmp(32, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_MV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_MV_MULTI), new GT_Cover_SolarPanel_MultiAmp(128, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_HV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_HV_MULTI), new GT_Cover_SolarPanel_MultiAmp(512, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_EV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_EV_MULTI), new GT_Cover_SolarPanel_MultiAmp(2048, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_IV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_IV_MULTI), new GT_Cover_SolarPanel_MultiAmp(8192, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_LUV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_LUV_MULTI), new GT_Cover_SolarPanel_MultiAmp(32768, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_ZPM_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_ZPM_MULTI), new GT_Cover_SolarPanel_MultiAmp(131072, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_UV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UV_MULTI), new GT_Cover_SolarPanel_MultiAmp(524288, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_UHV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UHV_MULTI), new GT_Cover_SolarPanel_MultiAmp(2097152, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_UEV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UEV_MULTI), new GT_Cover_SolarPanel_MultiAmp(8388608, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_UIV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UIV_MULTI), new GT_Cover_SolarPanel_MultiAmp(33554432, 4));
+        GregTech_API.registerCover(ItemList.Cover_SolarPanel_UMV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UMV_MULTI), new GT_Cover_SolarPanel_MultiAmp(134217728, 4));
+
+
+
+
+
         ItemList.Tool_Sonictron.set(addItem(tLastID = 760, "Sonictron", "Bring your Music with you", Behaviour_Sonictron.INSTANCE, new TC_Aspects.TC_AspectStack(TC_Aspects.SENSUS, 4L)));
         ItemList.Tool_Cheat.set(addItem(tLastID = 761, "Debug Scanner", "Also an Infinite Energy Source", Behaviour_Scanner.INSTANCE, new TC_Aspects.TC_AspectStack(TC_Aspects.NEBRISUM, 64L)));
         setElectricStats(32000 + tLastID, -2000000000L, 1000000000L, -1L, -3L, false);
