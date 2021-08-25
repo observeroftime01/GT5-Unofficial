@@ -142,9 +142,9 @@ public class GT_Loader_Item_Block_And_Fluid implements Runnable {
             ItemList.Depleted_IFCell_2.set(new GT_DepletetCell_Item("Depleted_IFCell_2", "Depleted 2x Infinity Fuel Rod", 1));
             ItemList.Depleted_IFCell_4.set(new GT_DepletetCell_Item("Depleted_IFCell_4", "Depleted 4x Infinity Fuel Rod", 1));
 
-            ItemList.IFCell_1.set(new GT_RadioactiveCellIC_Item("IFCell_1", "Infinity Fuel Rod 1x", 1, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_1.get(1, new Object[0]), false));
-            ItemList.IFCell_2.set(new GT_RadioactiveCellIC_Item("IFCell_2", "Infinity Fuel Rods 2x", 2, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_2.get(1, new Object[0]), false));
-            ItemList.IFCell_4.set(new GT_RadioactiveCellIC_Item("IFCell_4", "Infinity Fuel Rods 4x", 4, 999999, 2F, 1, 1F, ItemList.Depleted_IFCell_4.get(1, new Object[0]), false));
+            ItemList.IFCell_1.set(new GT_RadioactiveCellIC_Item("IFCell_1", "Infinity Fuel Rod 1x", 1, 388800, 2F, 1, 1F, ItemList.Depleted_IFCell_1.get(1, new Object[0]), false));
+            ItemList.IFCell_2.set(new GT_RadioactiveCellIC_Item("IFCell_2", "Infinity Fuel Rods 2x", 2, 388800, 2F, 1, 1F, ItemList.Depleted_IFCell_2.get(1, new Object[0]), false));
+            ItemList.IFCell_4.set(new GT_RadioactiveCellIC_Item("IFCell_4", "Infinity Fuel Rods 4x", 4, 388800, 2F, 1, 1F, ItemList.Depleted_IFCell_4.get(1, new Object[0]), false));
 
 
 
