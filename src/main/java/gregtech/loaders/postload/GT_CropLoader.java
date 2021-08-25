@@ -1,5 +1,6 @@
 package gregtech.loaders.postload;
 
+import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -9,6 +10,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import com.dreammaster.gthandler.CustomItemList;
 
 public class GT_CropLoader implements Runnable {
     @Override
@@ -386,6 +388,9 @@ public class GT_CropLoader implements Runnable {
                     "Mica",
                     "Bush"
             }, Materials.Mica, ItemList.Crop_Drop_Mica.get(1L), null);
+            if (Loader.isModLoaded("dreamcraft")){
+
+            }
         } catch (Throwable e) {
             GT_Log.err.println("GT_Mod: Failed to register Crops to IC2.");
             e.printStackTrace(GT_Log.err);
