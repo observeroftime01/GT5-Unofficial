@@ -57,9 +57,30 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 750}, 20, Voltage.LV.getVoltage());
                 GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, Lava.getFluid(100L), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 80, 80);
                 GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, FluidRegistry.getFluidStack("ic2pahoehoelava", 100), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 40, 80);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_1.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dustSmall, Infinity, 1L), GT_OreDictUnificator.get(dustTiny, Infinity, 1L), GT_OreDictUnificator.get(dust, Neutronium, 16L), GT_OreDictUnificator.get(dust, Draconium, 1L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},500,2000);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_2.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 2L), GT_OreDictUnificator.get(dust, Infinity, 2L), GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dustTiny, Infinity, 4L), GT_OreDictUnificator.get(dust, Neutronium, 32L), GT_OreDictUnificator.get(dust, Draconium, 2L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},1000,2000);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_4.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 4L), GT_OreDictUnificator.get(dust, Infinity, 4L), GT_OreDictUnificator.get(dustSmall, Infinity, 8L), GT_OreDictUnificator.get(dust, Neutronium,64L), GT_OreDictUnificator.get(dust, Neutronium, 12L), GT_OreDictUnificator.get(dust, Draconium, 4L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},2000,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_1.get(1), null,null,null,
+                        GT_OreDictUnificator.get(dust, Infinity, 1L),
+                        GT_OreDictUnificator.get(dust, Infinity, 1L),
+                        GT_OreDictUnificator.get(dustSmall, Infinity, 1L),
+                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 1L),
+                        GT_OreDictUnificator.get(dust, Neutronium, 8L),
+                        GT_OreDictUnificator.get(dust, Draconium, 1L),
+                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},500,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_2.get(1), null,null,null,
+                        GT_OreDictUnificator.get(dust, Infinity, 2L),
+                        GT_OreDictUnificator.get(dust, Infinity, 2L),
+                        GT_OreDictUnificator.get(dust, Infinity, 1L),
+                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 4L),
+                        GT_OreDictUnificator.get(dust, Neutronium, 16L),
+                        GT_OreDictUnificator.get(dust, Draconium, 2L),
+                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},1000,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_4.get(1), null,null,null,
+                        GT_OreDictUnificator.get(dust, Infinity, 4L),
+                        GT_OreDictUnificator.get(dust, Infinity, 4L),
+                        GT_OreDictUnificator.get(dust, Infinity, 2L),
+                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 8L),
+                        GT_OreDictUnificator.get(dust, Neutronium, 32L),
+                        GT_OreDictUnificator.get(dust, Draconium, 4L),
+                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},2000,2000);
 
                 //Electrolyzer Recipes
                 GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000}, 20, Voltage.MV.getVoltage());
