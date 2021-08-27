@@ -16,6 +16,7 @@ import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.covers.GT_Cover_Conveyor;
 import gregtech.common.covers.GT_Cover_SolarPanel_MultiAmp;
 import gregtech.common.items.behaviors.Behaviour_Arrow;
 import net.minecraft.dispenser.IBlockSource;
@@ -364,6 +365,7 @@ public class GT_MetaGenerated_Item_02 extends GT_MetaGenerated_Item_X32 {
         ItemList.Cover_SolarPanel_UEV_MultiAmp.set(addItem(tLastID = 589, "Multi-Amp (4A) Solar Panel (UEV)", "Ultimate Extreme Voltage Multi-Amp Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
         ItemList.Cover_SolarPanel_UIV_MultiAmp.set(addItem(tLastID = 590, "Multi-Amp (4A) Solar Panel (UIV)", "Ultimate Insane Voltage Multi-Amp Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
         ItemList.Cover_SolarPanel_UMV_MultiAmp.set(addItem(tLastID = 591, "Multi-Amp (4A) Solar Panel (UMV)", "Mega Ultimate Voltage Multi-Amp Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
+        ItemList.Conveyor_Module_UIV.set(addItem(tLastID = 592, "Conveyor Module (UIV)", "64 Stacks every 1/20 sec (as Cover)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.MACHINA, 512L), new TC_Aspects.TC_AspectStack(TC_Aspects.ITER, 512L)));
 
 
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_LV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_LV_MULTI), new GT_Cover_SolarPanel_MultiAmp(32, 4));
@@ -378,6 +380,8 @@ public class GT_MetaGenerated_Item_02 extends GT_MetaGenerated_Item_X32 {
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_UEV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UEV_MULTI), new GT_Cover_SolarPanel_MultiAmp(8388608, 4));
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_UIV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UIV_MULTI), new GT_Cover_SolarPanel_MultiAmp(33554432, 4));
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_UMV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_UMV_MULTI), new GT_Cover_SolarPanel_MultiAmp(134217728, 4));
+        GregTech_API.registerCover(ItemList.Conveyor_Module_UIV.get(1L), TextureFactory.of(MACHINE_CASINGS[11][0], TextureFactory.of(OVERLAY_CONVEYOR)), new GT_Cover_Conveyor(1, 64));
+
 
 
 
