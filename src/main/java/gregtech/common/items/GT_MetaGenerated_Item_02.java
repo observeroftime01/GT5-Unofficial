@@ -366,6 +366,7 @@ public class GT_MetaGenerated_Item_02 extends GT_MetaGenerated_Item_X32 {
         ItemList.Cover_SolarPanel_UIV_MultiAmp.set(addItem(tLastID = 590, "Multi-Amp (4A) Solar Panel (UIV)", "Ultimate Insane Voltage Multi-Amp Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
         ItemList.Cover_SolarPanel_UMV_MultiAmp.set(addItem(tLastID = 591, "Multi-Amp (4A) Solar Panel (UMV)", "Mega Ultimate Voltage Multi-Amp Solar Panel (Needs cleaning with right click)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 64L), new TC_Aspects.TC_AspectStack(TC_Aspects.TENEBRAE, 64L)));
         ItemList.Conveyor_Module_UIV.set(addItem(tLastID = 592, "Conveyor Module (UIV)", "64 Stacks every 1/20 sec (as Cover)", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.MACHINA, 512L), new TC_Aspects.TC_AspectStack(TC_Aspects.ITER, 512L)));
+        ItemList.Electric_Motor_UIV.set(addItem(tLastID = 593, "Electric Motor (UIV)", "", new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.MACHINA, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.MOTUS, 1024L)));
 
 
         GregTech_API.registerCover(ItemList.Cover_SolarPanel_LV_MultiAmp.get(1L), TextureFactory.of(SOLARPANEL_LV_MULTI), new GT_Cover_SolarPanel_MultiAmp(32, 4));
