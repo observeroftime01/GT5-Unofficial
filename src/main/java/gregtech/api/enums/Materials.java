@@ -1221,6 +1221,11 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Iridium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
         Plutonium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
         Gallium.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Arsenic.setOreMultiplier(3);
+        Tritanium.setOreMultiplier(3);
+        Duranium.setOreMultiplier(3);
+        Copper.setOreMultiplier(2);
+        Titanium.setOreMultiplier(2);
     }
 
     private static void setEnchantmentKnockbackTools() {
