@@ -141,6 +141,7 @@ public enum Element {
     Ma(0, 0, 100, -1, null, "Magic", false),
     Nq(130, 200, 0, -1, null, "Naquadah", false),
     Nt(0, 1000, 0, -1, null, "Neutronium", false),
+    SpNt(0, 4000, 0, -1, null, "Cosmic Neutronium", false),
     DSp(0, 1500, 0, -1, null, "Awakened Draconium",false),
 
     $H(-1, -0, 0, -1, null, "Anti-Hydrogen", false),
@@ -275,6 +276,7 @@ public enum Element {
     $Ma(0, 0, -100, -1, null, "Anti-Magic", false),
     $Nq(-130, -200, 0, -1, null, "Anti-Naquadah", false),
     $Nt(0, -10000, 0, -1, null, "Anti-Neutronium", false),
+    $SpNt(0, -4000, 0, -1, null, "Cosmic Neutronium", false),
     $DSp(0, -15000, 0, -1, null, "Anti-Awakened Draconium",false);
 
     public static volatile int VERSION = 509;
