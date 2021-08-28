@@ -25,7 +25,7 @@ import static gregtech.api.enums.Textures.BlockIcons.*;
 public class GT_MetaTileEntity_Replicator
         extends GT_MetaTileEntity_BasicMachine {
     public static final HashMap<Materials, Long> MASS_OVERRIDES = new HashMap<>();
-    public static final double EXPONENT = GregTech_API.sOPStuff.get("Replicator", "Nerf Exponent", 1.2D);
+    public static final double EXPONENT = GregTech_API.sOPStuff.get("Replicator", "Nerf Exponent", 1.0D);
     private static int sHeaviestElementMass = 0;
 
     static {
