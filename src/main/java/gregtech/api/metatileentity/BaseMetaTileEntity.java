@@ -132,7 +132,7 @@ public class BaseMetaTileEntity extends BaseTileEntity implements IGregTechTileE
         try {
             super.writeToNBT(aNBT);
         } catch (Throwable e) {
-            GT_Log.err.println("Encountered CRITICAL ERROR while saving MetaTileEntity, the Chunk whould've been corrupted by now, but I prevented that. Please report immediately to GregTech Intergalactical!!!");
+            GT_Log.err.println("Encountered CRITICAL ERROR while saving MetaTileEntity, the Chunk whould've been corrupted by now, but I prevented that. Please report immediately to GregTech New Horizons!!!");
             e.printStackTrace(GT_Log.err);
         }
         try {
