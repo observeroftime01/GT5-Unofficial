@@ -1189,6 +1189,7 @@ public enum ItemList implements IItemContainer {
     Machine_LuV_Boxinator,
     Machine_ZPM_Boxinator,
     Machine_UV_Boxinator,
+    Machine_UHV_Boxinator,
 
     Machine_LV_Unboxinator,
     Machine_MV_Unboxinator,
