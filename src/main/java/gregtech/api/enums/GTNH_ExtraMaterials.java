@@ -47,6 +47,7 @@ public class GTNH_ExtraMaterials implements IMaterialHandler {
     public static Materials ExtremeTurbineSteel     = new Materials( 958, TextureSet.SET_SHINY              ,  1024.0F, 20485760,13,    1|2    |32|64|128   , 189, 172, 213,   0,   "ExtremeTurbineSteel"    ,   "Extreme Turbine Steel"        ,    0,       0,         9000,  9000,true, false,  20,   1,   1, Dyes.dyeWhite       , Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 4), new TC_Aspects.TC_AspectStack(TC_Aspects.VITREUS, 3), new TC_Aspects.TC_AspectStack(TC_Aspects.ALIENIS, 2)));
     public static Materials SuperExtremeTestmat     = new Materials(  112, TextureSet.SET_DULL             ,  1024F,    50000,   8,     1|2|8|16|32|64|128   ,100, 255, 100, 100,   "ExtremeTestMat"          ,   "Extreme Test Material"           , 4,       8000,      4500, 4500, true, false,  1,    1,   1, Dyes.dyeBlack       , Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.CORPUS, 1)));
 
+    //TODO: Delete TGregworks.cfg material-id section every time I add a new material with a new ID, otherwise Tgregworks & Bartworks is going to throw a fit upon loading. Took a while to figure that one out...
 
     private static void initSubTags() {
         SubTag.METAL.addTo(Signalum, Lumium, EnrichedCopper, DiamondCopper);
