@@ -693,6 +693,7 @@ public enum ItemList implements IItemContainer {
     Generator_Steam_Turbine_LV,
     Generator_Steam_Turbine_MV,
     Generator_Steam_Turbine_HV,
+    Generator_Naquadah_Mark_0,
     Generator_Naquadah_Mark_I,
     Generator_Naquadah_Mark_II,
     Generator_Naquadah_Mark_III,

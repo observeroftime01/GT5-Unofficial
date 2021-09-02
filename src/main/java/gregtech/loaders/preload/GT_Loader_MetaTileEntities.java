@@ -891,6 +891,8 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
         GT_ModHandler.addCraftingRecipe(ItemList.Generator_Steam_Turbine_MV.get(1L), bitsd, new Object[]{"PCP", "RMR", aTextMotorWire, 'M', ItemList.Hull_MV, 'E', ItemList.Electric_Motor_MV, 'R', OrePrefixes.rotor.get(Materials.Bronze), 'C', OrePrefixes.circuit.get(Materials.Good), 'W', OrePrefixes.cableGt01.get(Materials.AnyCopper), 'P', OrePrefixes.pipeMedium.get(Materials.Steel)});
         GT_ModHandler.addCraftingRecipe(ItemList.Generator_Steam_Turbine_HV.get(1L), bitsd, new Object[]{"PCP", "RMR", aTextMotorWire, 'M', ItemList.Hull_HV, 'E', ItemList.Electric_Motor_HV, 'R', OrePrefixes.rotor.get(Materials.Steel), 'C', OrePrefixes.circuit.get(Materials.Advanced), 'W', OrePrefixes.cableGt01.get(Materials.Gold), 'P', OrePrefixes.pipeMedium.get(Materials.StainlessSteel)});
 
+
+        ItemList.Generator_Naquadah_Mark_0.set(new GT_MetaTileEntity_NaquadahReactor(516, "basicgenerator.naquadah.tier.03",new String[]{"Requires Naquadah Dust"}, "Naquadah Reactor Mark 0", 3).getStackForm(1L));
         ItemList.Generator_Naquadah_Mark_I.set(new GT_MetaTileEntity_NaquadahReactor(1190, "basicgenerator.naquadah.tier.04",new String[]{"Requires Enriched Naquadah Bolts"}, "Naquadah Reactor Mark I", 4).getStackForm(1L));
         ItemList.Generator_Naquadah_Mark_II.set(new GT_MetaTileEntity_NaquadahReactor(1191, "basicgenerator.naquadah.tier.05",new String[]{"Requires Enriched Naquadah Rods"}, "Naquadah Reactor Mark II", 5).getStackForm(1L));
         ItemList.Generator_Naquadah_Mark_III.set(new GT_MetaTileEntity_NaquadahReactor(1192, "basicgenerator.naquadah.tier.06",new String[]{"Requires Enriched Naquadah Long Rods"}, "Naquadah Reactor Mark III", 6).getStackForm(1L));

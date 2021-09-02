@@ -17,7 +17,7 @@ public class GT_MetaTileEntity_NaquadahReactor extends GT_MetaTileEntity_BasicGe
 
     public GT_MetaTileEntity_NaquadahReactor(int aID, String aName, String[] aDescription, String aNameRegional, int aTier) {
         super(aID, aName, aNameRegional, aTier, aDescription);
-        if (aTier > 8 || aTier < 4) {
+        if (aTier > 8 || aTier < 3) {
             new Exception("Tier without Recipe Map!").printStackTrace();
         }
         onConfigLoad();
@@ -25,7 +25,7 @@ public class GT_MetaTileEntity_NaquadahReactor extends GT_MetaTileEntity_BasicGe
 
     public GT_MetaTileEntity_NaquadahReactor(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
         super(aName, aTier, aDescription, aTextures);
-        if (aTier > 8 || aTier < 4) {
+        if (aTier > 8 || aTier < 3) {
             new Exception("Tier without Recipe Map!").printStackTrace();
         }
         onConfigLoad();
@@ -45,6 +45,10 @@ public class GT_MetaTileEntity_NaquadahReactor extends GT_MetaTileEntity_BasicGe
     public GT_Recipe.GT_Recipe_Map getRecipes() {
         GT_Recipe.GT_Recipe_Map ret;
         switch (mTier) {
+            case 3: {
+                ret = GT_Recipe.GT_Recipe_Map.sTinyNaquadahReactorFuels;
+                break;
+            }
             case 4: {
                 ret = GT_Recipe.GT_Recipe_Map.sSmallNaquadahReactorFuels;
                 break;
@@ -85,7 +89,7 @@ public class GT_MetaTileEntity_NaquadahReactor extends GT_MetaTileEntity_BasicGe
     }
 
     private int getBaseEff() {
-        return mTier == 4 ? 80 : 100 + (50 * (mTier - 5));
+        return mTier == 3 ? 80 : 100 + (50 * (mTier - 5));
     }
 
     public int onConfigLoad() {
