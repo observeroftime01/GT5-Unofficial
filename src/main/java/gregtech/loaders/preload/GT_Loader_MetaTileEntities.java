@@ -892,12 +892,12 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
         GT_ModHandler.addCraftingRecipe(ItemList.Generator_Steam_Turbine_HV.get(1L), bitsd, new Object[]{"PCP", "RMR", aTextMotorWire, 'M', ItemList.Hull_HV, 'E', ItemList.Electric_Motor_HV, 'R', OrePrefixes.rotor.get(Materials.Steel), 'C', OrePrefixes.circuit.get(Materials.Advanced), 'W', OrePrefixes.cableGt01.get(Materials.Gold), 'P', OrePrefixes.pipeMedium.get(Materials.StainlessSteel)});
 
 
-        ItemList.Generator_Naquadah_Mark_0.set(new GT_MetaTileEntity_NaquadahReactor(516, "basicgenerator.naquadah.tier.03",new String[]{"Requires Naquadah Dust"}, "Naquadah Reactor Mark 0", 3).getStackForm(1L));
-        ItemList.Generator_Naquadah_Mark_I.set(new GT_MetaTileEntity_NaquadahReactor(1190, "basicgenerator.naquadah.tier.04",new String[]{"Requires Enriched Naquadah Bolts"}, "Naquadah Reactor Mark I", 4).getStackForm(1L));
-        ItemList.Generator_Naquadah_Mark_II.set(new GT_MetaTileEntity_NaquadahReactor(1191, "basicgenerator.naquadah.tier.05",new String[]{"Requires Enriched Naquadah Rods"}, "Naquadah Reactor Mark II", 5).getStackForm(1L));
-        ItemList.Generator_Naquadah_Mark_III.set(new GT_MetaTileEntity_NaquadahReactor(1192, "basicgenerator.naquadah.tier.06",new String[]{"Requires Enriched Naquadah Long Rods"}, "Naquadah Reactor Mark III", 6).getStackForm(1L));
-        ItemList.Generator_Naquadah_Mark_IV.set(new GT_MetaTileEntity_NaquadahReactor(1188, "basicgenerator.naquadah.tier.07",new String[]{"Requires Naquadria Bolts"}, "Naquadah Reactor Mark IV", 7).getStackForm(1L));
-        ItemList.Generator_Naquadah_Mark_V.set(new GT_MetaTileEntity_NaquadahReactor(1189, "basicgenerator.naquadah.tier.08",new String[]{"Requires Naquadria Rods"}, "Naquadah Reactor Mark V", 8).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_0.set(new GT_MetaTileEntity_NaquadahReactor(516, "basicgenerator.naquadah.tier.03",new String[]{"Requires Naquadah Dust"}, "Naquadah Reactor Mark I", 3).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_I.set(new GT_MetaTileEntity_NaquadahReactor(1190, "basicgenerator.naquadah.tier.04",new String[]{"Requires Enriched Naquadah Bolts"}, "Naquadah Reactor Mark II", 4).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_II.set(new GT_MetaTileEntity_NaquadahReactor(1191, "basicgenerator.naquadah.tier.05",new String[]{"Requires Enriched Naquadah Rods"}, "Naquadah Reactor Mark III", 5).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_III.set(new GT_MetaTileEntity_NaquadahReactor(1192, "basicgenerator.naquadah.tier.06",new String[]{"Requires Enriched Naquadah Long Rods"}, "Naquadah Reactor Mark IV", 6).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_IV.set(new GT_MetaTileEntity_NaquadahReactor(1188, "basicgenerator.naquadah.tier.07",new String[]{"Requires Naquadria Bolts"}, "Naquadah Reactor Mark V", 7).getStackForm(1L));
+        ItemList.Generator_Naquadah_Mark_V.set(new GT_MetaTileEntity_NaquadahReactor(1189, "basicgenerator.naquadah.tier.08",new String[]{"Requires Naquadria Rods"}, "Naquadah Reactor Mark VI", 8).getStackForm(1L));
 
         ItemList.MagicEnergyConverter_LV.set(new GT_MetaTileEntity_MagicEnergyConverter(1123, "basicgenerator.magicenergyconverter.tier.01", "Novice Magic Energy Converter", 1).getStackForm(1L));
         ItemList.MagicEnergyConverter_MV.set(new GT_MetaTileEntity_MagicEnergyConverter(1124, "basicgenerator.magicenergyconverter.tier.02", "Adept Magic Energy Converter", 2).getStackForm(1L));
