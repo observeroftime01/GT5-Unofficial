@@ -48,6 +48,18 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addAssemblerRecipe(new ItemStack[] {ItemList.IFCell_1.get(2L), GT_OreDictUnificator.get(stick, Neutronium, 4L), GT_Utility.getIntegratedCircuit(2)}, null, ItemList.IFCell_2.get(1L), 100, 400);
                 GT_Values.RA.addAssemblerRecipe(new ItemStack[] {ItemList.IFCell_1.get(4L), GT_OreDictUnificator.get(stickLong, Neutronium, 6L), GT_Utility.getIntegratedCircuit(4)}, null, ItemList.IFCell_4.get(1L), 150, 400);
                 GT_Values.RA.addAssemblerRecipe(new ItemStack[] {ItemList.IFCell_2.get(2L), GT_OreDictUnificator.get(stick, Neutronium, 4L), GT_Utility.getIntegratedCircuit(5)}, null, ItemList.IFCell_4.get(1L), 100, 400);
+                //Fuel rod disassembly recipes, because centrifuging singles gives great resources while centrifuging 2x and 4x rods gives shit all comparatively.
+                //I can't be bothered to do the math for each rod type, so disassemble your spent rods instead! Apparently this behaviour is intended. Well, not anymore.
+                GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("IC2", "reactorUraniumQuaddepleted", 1L, 0), GT_Utility.getIntegratedCircuit(1), GT_ModHandler.getModItem("IC2", "reactorUraniumSimpledepleted", 4L, 0), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("IC2", "reactorUraniumDualdepleted", 1L, 0), GT_Utility.getIntegratedCircuit(1), GT_ModHandler.getModItem("IC2", "reactorUraniumSimpledepleted", 2L, 0), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_Thorium_4.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_Thorium_1.get(4L), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_Thorium_2.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_Thorium_1.get(2L), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("IC2", "reactorMOXQuaddepleted", 1L, 0), GT_Utility.getIntegratedCircuit(1), GT_ModHandler.getModItem("IC2", "reactorMOXSimpledepleted", 4L, 0), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("IC2", "reactorMOXDualdepleted", 1L, 0), GT_Utility.getIntegratedCircuit(1), GT_ModHandler.getModItem("IC2", "reactorMOXSimpledepleted", 2L, 0), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_IFCell_4.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_IFCell_1.get(4L), 20, Voltage.HV.getVoltage());
+                GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_IFCell_2.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_IFCell_1.get(2L), 20, Voltage.HV.getVoltage());
+
+
 
                 //Grinder Recipes
                 GT_Values.RA.addGrinderRecipe(GT_OreDictUnificator.get(ore, EnderPearl, 1), null, GT_OreDictUnificator.get(crushed, EnderPearl, 2), GT_OreDictUnificator.get(gem, EnderPearl, 1), null, null);
@@ -57,30 +69,9 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 750}, 20, Voltage.LV.getVoltage());
                 GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, Lava.getFluid(100L), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 80, 80);
                 GT_Values.RA.addCentrifugeRecipe(GT_Values.NI, GT_Values.NI, FluidRegistry.getFluidStack("ic2pahoehoelava", 100), GT_Values.NF, GT_OreDictUnificator.get(nugget, Copper, 1L), GT_OreDictUnificator.get(nugget, Tin, 1L), GT_OreDictUnificator.get(nugget, Gold, 1L), GT_OreDictUnificator.get(nugget, Silver, 1L), GT_OreDictUnificator.get(nugget, Tantalum, 1L), GT_OreDictUnificator.get(dustSmall, Tungstate, 1L), new int[]{2000, 1000, 250, 250, 250, 250}, 40, 80);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_1.get(1), null,null,null,
-                        GT_OreDictUnificator.get(dust, Infinity, 1L),
-                        GT_OreDictUnificator.get(dust, Infinity, 1L),
-                        GT_OreDictUnificator.get(dustSmall, Infinity, 1L),
-                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 1L),
-                        GT_OreDictUnificator.get(dust, Neutronium, 8L),
-                        GT_OreDictUnificator.get(dust, Draconium, 1L),
-                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},500,2000);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_2.get(1), null,null,null,
-                        GT_OreDictUnificator.get(dust, Infinity, 2L),
-                        GT_OreDictUnificator.get(dust, Infinity, 2L),
-                        GT_OreDictUnificator.get(dust, Infinity, 1L),
-                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 4L),
-                        GT_OreDictUnificator.get(dust, Neutronium, 16L),
-                        GT_OreDictUnificator.get(dust, Draconium, 2L),
-                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},1000,2000);
-                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_4.get(1), null,null,null,
-                        GT_OreDictUnificator.get(dust, Infinity, 4L),
-                        GT_OreDictUnificator.get(dust, Infinity, 4L),
-                        GT_OreDictUnificator.get(dust, Infinity, 2L),
-                        GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 8L),
-                        GT_OreDictUnificator.get(dust, Neutronium, 32L),
-                        GT_OreDictUnificator.get(dust, Draconium, 4L),
-                        new int[]{10_000,5_000,5_000,2_500,10_000,10_000},2000,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_1.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dustSmall, Infinity, 1L), GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 1L), GT_OreDictUnificator.get(dust, Neutronium, 8L), GT_OreDictUnificator.get(dust, Draconium, 1L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},500,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_2.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 2L), GT_OreDictUnificator.get(dust, Infinity, 2L), GT_OreDictUnificator.get(dust, Infinity, 1L), GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 4L), GT_OreDictUnificator.get(dust, Neutronium, 16L), GT_OreDictUnificator.get(dust, Draconium, 2L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},1000,2000);
+                GT_Values.RA.addCentrifugeRecipe(ItemList.Depleted_IFCell_4.get(1), null,null,null, GT_OreDictUnificator.get(dust, Infinity, 4L), GT_OreDictUnificator.get(dust, Infinity, 4L), GT_OreDictUnificator.get(dust, Infinity, 2L), GT_OreDictUnificator.get(dustTiny, CosmicNeutronium, 8L), GT_OreDictUnificator.get(dust, Neutronium, 32L), GT_OreDictUnificator.get(dust, Draconium, 4L), new int[]{10_000,5_000,5_000,2_500,10_000,10_000},2000,2000);
 
                 //Electrolyzer Recipes
                 GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000}, 20, Voltage.MV.getVoltage());
@@ -93,8 +84,10 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(272L), Helium_3.getGas(272L), Radon.getPlasma(545L), 20, 131000, 480000000);
                 GT_Values.RA.addFusionReactorRecipe(Deuterium.getGas(72L), Tritium.getGas(72L), Radon.getPlasma(144L), 20, 131000, 320000000);
                 GT_Values.RA.addFusionReactorRecipe(Neutronium.getMolten(72L), Radon.getGas(72L), CosmicNeutronium.getPlasma(144L), 20, 196608,  640000000);
+
                 //Test Recipes
                 GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
+
 
 
         }
