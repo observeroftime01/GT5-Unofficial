@@ -143,6 +143,7 @@ public enum Element {
     Nt(0, 1000, 0, -1, null, "Neutronium", false),
     SpNt(0, 4000, 0, -1, null, "Cosmic Neutronium", false),
     DSp(0, 1500, 0, -1, null, "Awakened Draconium",false),
+    Testmat(1250, 625, 0, -1, null, "Extreme Test Material", false),
 
     $H(-1, -0, 0, -1, null, "Anti-Hydrogen", false),
     $D(-1, -1, 0, -1, "H", "Anti-Deuterium", true),
@@ -277,7 +278,9 @@ public enum Element {
     $Nq(-130, -200, 0, -1, null, "Anti-Naquadah", false),
     $Nt(0, -10000, 0, -1, null, "Anti-Neutronium", false),
     $SpNt(0, -4000, 0, -1, null, "Cosmic Neutronium", false),
-    $DSp(0, -15000, 0, -1, null, "Anti-Awakened Draconium",false);
+    $DSp(0, -15000, 0, -1, null, "Anti-Awakened Draconium",false),
+    $Testmat(-1250, -625, 0, -1, null, "Anti-Extreme Test Material", false);
+
 
     public static volatile int VERSION = 509;
     public final long mProtons, mNeutrons, mAdditionalMass, mHalfLifeSeconds;
