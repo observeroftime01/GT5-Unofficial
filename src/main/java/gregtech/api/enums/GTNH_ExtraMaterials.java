@@ -58,14 +58,25 @@ public class GTNH_ExtraMaterials implements IMaterialHandler {
 
     //TODO: Delete TGregworks.cfg material-id section every time I add a new material with a new ID, otherwise Tgregworks & Bartworks is going to throw a fit upon loading. Took a while to figure that one out...
 
-    private static void initSubTags() {
-        SubTag.METAL.addTo(Signalum, Lumium, EnrichedCopper, DiamondCopper);
-        SubTag.NO_SMASHING.addTo(TarPitch);
-    }
+
 
     @Override
     public void onMaterialsInit() {
         initSubTags();
+        overrideChemicalFormulas();
+    }
+
+    private static void overrideChemicalFormulas() {
+        UraniumHexafluorideGT5u.mChemicalFormula = "UF6";
+        UraniumTetrafluorideGT5u.mChemicalFormula = "UF4";
+        UranylNitrate.mChemicalFormula = "UO2(NO3)";
+        AmmoniumDiuranate.mChemicalFormula = "(NH4)2 U2O7";
+        UraniumDioxide.mChemicalFormula = "UO2";
+    }
+
+    private static void initSubTags() {
+        SubTag.METAL.addTo(Signalum, Lumium, EnrichedCopper, DiamondCopper);
+        SubTag.NO_SMASHING.addTo(TarPitch);
     }
 
     @Override
