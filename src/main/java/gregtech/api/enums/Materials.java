@@ -24,6 +24,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static gregtech.GT_Mod.GT_FML_LOGGER;
 import static gregtech.api.enums.GT_Values.M;
 
 @SuppressWarnings("ALL")
@@ -2153,6 +2154,7 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         for (Materials aMaterial : MATERIALS_ARRAY) {
             if (aMaterial.mMetaItemSubID >= 0) {
                 if (aMaterial.mMetaItemSubID < 1000) {
+                    GT_FML_LOGGER.warn("MATID DUMP: " + aMaterial + "," + aMaterial.mMetaItemSubID + "," + aMaterial.mName);
                     if (aMaterial.mHasParentMod) {
                         if (GregTech_API.sGeneratedMaterials[aMaterial.mMetaItemSubID] == null) {
                             GregTech_API.sGeneratedMaterials[aMaterial.mMetaItemSubID] = aMaterial;
