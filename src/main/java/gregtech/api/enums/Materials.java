@@ -2154,7 +2154,7 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         for (Materials aMaterial : MATERIALS_ARRAY) {
             if (aMaterial.mMetaItemSubID >= 0) {
                 if (aMaterial.mMetaItemSubID < 1000) {
-                    GT_FML_LOGGER.warn("MATID DUMP: " + aMaterial + "," + aMaterial.mMetaItemSubID + "," + aMaterial.mName);
+                    GT_FML_LOGGER.info("MATID DUMP: " + aMaterial.mName + "," + aMaterial.mMetaItemSubID + "," + aMaterial.mDefaultLocalName + "," + aMaterial.mToolQuality + "," + aMaterial.mToolSpeed + "," + aMaterial.mDurability + "," + aMaterial.mMeltingPoint + "," + aMaterial.getMass() + "," + aMaterial.getProtons());
                     if (aMaterial.mHasParentMod) {
                         if (GregTech_API.sGeneratedMaterials[aMaterial.mMetaItemSubID] == null) {
                             GregTech_API.sGeneratedMaterials[aMaterial.mMetaItemSubID] = aMaterial;
