@@ -259,7 +259,7 @@ public class GT_CropLoader implements Runnable {
                     "Coal",
                     "Thorium"
             }, Materials.Thorium, ItemList.Crop_Drop_Thorium.get(1), null);
-            new GT_BaseCrop(158, "Transformium", "unknown", null, 12, 4, 2500, 1, 4, 6, 2, 1, 6, 1, new String[] {
+            new GT_BaseCrop(158, "Transformium", "unknown", null, 8, 4, 0, 1, 4, 6, 2, 1, 6, 1, new String[] {
                     "Transform",
                     "Coal",
                     "Reed"

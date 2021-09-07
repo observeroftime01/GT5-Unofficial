@@ -99,5 +99,13 @@ public class GT_ScrapboxDropLoader implements Runnable {
         GT_ModHandler.addScrapboxDrop(0.05F, GT_OreDictUnificator.get(OrePrefixes.gem, Materials.GreenSapphire, 1L));
         GT_ModHandler.addScrapboxDrop(0.05F, GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Emerald, 1L));
         GT_ModHandler.addScrapboxDrop(0.05F, GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L));
+        GT_ModHandler.addScrapboxDrop(0.0001F, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Neutronium, 1L));
+        GT_ModHandler.addScrapboxDrop(0.00001F, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 1L));
+        GT_ModHandler.addScrapboxDrop(0.00001F, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Neutronium, 1L));
+        GT_ModHandler.addScrapboxDrop(0.000001F, GT_ModHandler.getModItem("berriespp", "Modifier", 1, 2));
+
+
+
+
     }
 }
