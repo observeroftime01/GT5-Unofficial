@@ -61,6 +61,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import gregtech.common.tileentities.machines.multi.GT_MetaTileEntity_Cleanroom;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -373,6 +374,8 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mExplosionItemDrop = tMainConfig.get("general", "ExplosionItemDrops", false).getBoolean(false);
         gregtechproxy.mUndergroundOil.getConfig(tMainConfig, "undergroundfluid");
         gregtechproxy.mEnableCleanroom = tMainConfig.get("general", "EnableCleanroom", true).getBoolean(true);
+        if (gregtechproxy.mEnableCleanroom)
+            GT_MetaTileEntity_Cleanroom.loadConfig(tMainConfig);
         gregtechproxy.mLowGravProcessing = Loader.isModLoaded(GT_Values.MOD_ID_GC_CORE) && tMainConfig.get("general", "LowGravProcessing", true).getBoolean(true);
         gregtechproxy.mUseGreatlyShrukenReplacementList = tMainConfig.get("general", "GTNH Optimised Material Loading", true).getBoolean(true);
         Calendar now = Calendar.getInstance();
