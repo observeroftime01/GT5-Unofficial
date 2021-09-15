@@ -188,8 +188,14 @@ public class GT_MetaTileEntity_ProcessingArray extends GT_MetaTileEntity_CubicMu
                     mMult = 4;//u need 16x less machines and they will use 16x less power
                     break;
                 case 12:
+                    tTier = 12;
+                    mMult = 4;
                 case 13:
+                    tTier = 13;
+                    mMult = 6;
                 case 14:
+                    tTier = 14;
+                    mMult = 8;
                 case 15:
                     tTier = 9;
                     mMult = 6;//u need 64x less machines and they will use 64x less power
