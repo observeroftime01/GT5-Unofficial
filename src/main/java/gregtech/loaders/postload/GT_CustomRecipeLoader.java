@@ -7,6 +7,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 
 import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
@@ -88,6 +89,20 @@ public class GT_CustomRecipeLoader implements Runnable {
                 //Test Recipes
                 GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
 
+                // Assembly line recipes
+                GT_Values.RA.addAssemblylineRecipe(ItemList.OreDrill4.get(1), 432000, new Object[]{
+                        ItemList.OreDrill4.get(1),
+                        GT_OreDictUnificator.get(frameGt, Infinity, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 4L),
+                        ItemList.Electric_Motor_UV.get(4L),
+                        ItemList.Electric_Pump_UV.get(4L),
+                        ItemList.Conveyor_Module_UV.get(4L),
+                        ItemList.Field_Generator_UV.get(2),
+                        GT_OreDictUnificator.get(gearGt, Neutronium, 4L),
+                        GT_OreDictUnificator.get(wireGt04, SuperconductorUV, 32),
+                }, new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(2880)
+                }, ItemList.OreDrill5.get(1), 18000, Voltage.UV.getVoltage());
 
 
         }

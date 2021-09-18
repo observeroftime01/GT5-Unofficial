@@ -746,6 +746,8 @@ public enum ItemList implements IItemContainer {
     Casing_ZPM,
     Casing_UV,
     Casing_MAX,
+    Casing_MiningInfinity,
+    Casing_Test2,
     Casing_BronzePlatedBricks,
     Casing_HeatProof,
     Casing_Coil_Cupronickel_Deprecated,

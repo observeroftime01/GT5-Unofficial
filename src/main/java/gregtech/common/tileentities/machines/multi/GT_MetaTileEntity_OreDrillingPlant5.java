@@ -28,18 +28,16 @@ public class GT_MetaTileEntity_OreDrillingPlant5 extends GT_MetaTileEntity_OreDr
     }
 
     @Override
-    protected ItemList getCasingBlockItem() {
-        return ItemList.Casing_MiningOsmiridium;
-    }
+    protected ItemList getCasingBlockItem() { return ItemList.Casing_MiningInfinity; }
 
     @Override
     protected Materials getFrameMaterial() {
-        return Materials.Osmiridium;
+        return Materials.Infinity;
     }
 
     @Override
     protected int getCasingTextureIndex() {
-        return 62;
+        return 181;
     }
 
     @Override

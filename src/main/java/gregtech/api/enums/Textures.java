@@ -278,6 +278,8 @@ public class Textures {
         MACHINE_CASING_DRAGONEGG,
         MACHINE_CASING_DRAGONEGG_GLOW,
         MACHINE_CASING_SOLID_STEEL,
+        CASING_MINING_INFINITY,
+        CASING_TEST2,
 
         MACHINE_CASING_FROST_PROOF,
         MACHINE_CASING_PUMP,
@@ -1745,6 +1747,7 @@ public class Textures {
             casingTexturePages[0] = new ITexture[128];
             //adds some known pages, modders also can do it...
             GT_Utility.addTexturePage((byte) 1);
+            GT_Utility.addTexturePage((byte) 7);
             GT_Utility.addTexturePage((byte) 8);
         }
 
