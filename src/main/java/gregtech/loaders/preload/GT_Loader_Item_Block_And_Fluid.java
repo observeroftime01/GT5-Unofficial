@@ -380,6 +380,10 @@ public class GT_Loader_Item_Block_And_Fluid implements Runnable {
                 Materials.Shadow
         }, OrePrefixes.block, gregtech.api.enums.Textures.BlockIcons.STORAGE_BLOCKS8);
 
+        GregTech_API.sBlockMetal9 = new GT_Block_Metal("gt.blockmetal9", new Materials[]{
+                Materials.Infinity,
+        }, OrePrefixes.block, gregtech.api.enums.Textures.BlockIcons.STORAGE_BLOCKS12);
+
         GregTech_API.sBlockGem1 = new GT_Block_Metal("gt.blockgem1", new Materials[]{
                 Materials.InfusedAir,
                 Materials.Amber,
