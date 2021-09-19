@@ -1063,6 +1063,8 @@ public class Textures {
         BLOCK_CHARCOAL,
         BLOCK_BLAZE,
         BLOCK_INFINITY,
+        BLOCK_TURBINESTEEL,
+        BLOCK_EXTREMETURBINESTEEL,
         MARBLE_STONE,
         MARBLE_COBBLE,
 
@@ -1597,7 +1599,9 @@ public class Textures {
                         BLOCK_BLAZE
                 },
                 STORAGE_BLOCKS12 = {
-                        BLOCK_INFINITY
+                        BLOCK_INFINITY,
+                        BLOCK_TURBINESTEEL,
+                        BLOCK_EXTREMETURBINESTEEL
                 };
 
         public static ITexture[] HIDDEN_TEXTURE = {

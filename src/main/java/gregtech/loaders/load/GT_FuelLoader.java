@@ -1,10 +1,7 @@
 package gregtech.loaders.load;
 
 import gregtech.GT_Mod;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -12,6 +9,7 @@ import gregtech.api.util.GT_Recipe;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 public class GT_FuelLoader implements Runnable {
     @Override
@@ -44,6 +42,11 @@ public class GT_FuelLoader implements Runnable {
         GT_Values.RA.addFuel(new ItemStack(Items.ghast_tear, 1), null, 50, 5);
         GT_Values.RA.addFuel(new ItemStack(Blocks.beacon, 1), null, Materials.NetherStar.mFuelPower * 2, Materials.NetherStar.mFuelType);
         GT_Values.RA.addFuel(GT_ModHandler.getModItem("EnderIO", "bucketRocket_fuel", 1), null, 250, 1);
+
+        // Attempt at adding random plasma fuels
+        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addFuel(GTNH_ExtraMaterials.TurbineSteel.getMolten(1000L), Materials.Iron.getMolten(1000L), 50000);
+        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addFuel(GT_OreDictUnificator.get(OrePrefixes.cell, GTNH_ExtraMaterials.ExtremeTurbineSteel, 1L), ItemList.Cell_Empty.get(1L), 450000);
+        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addRecipe(true, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.cell, GTNH_ExtraMaterials.TurbineSteel, 1L)}, new ItemStack[]{ItemList.Cell_Empty.get(1L)}, null, null, null, 0, 0, 250000);
 
     }
 }

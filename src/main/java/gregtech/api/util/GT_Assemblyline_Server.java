@@ -7,6 +7,7 @@ import java.util.Map;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import gregtech.api.GregTech_API;
+import gregtech.api.enums.GTNH_ExtraMaterials;
 import gregtech.api.enums.Materials;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
@@ -265,7 +266,9 @@ public class GT_Assemblyline_Server {
 							break;
 						case 9:
 							mMats = new Materials[]{
-									Materials.Infinity
+									Materials.Infinity,
+									GTNH_ExtraMaterials.TurbineSteel,
+									GTNH_ExtraMaterials.ExtremeTurbineSteel
 							};
 							break;
 					}
