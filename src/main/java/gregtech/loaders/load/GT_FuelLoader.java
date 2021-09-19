@@ -2,10 +2,7 @@ package gregtech.loaders.load;
 
 import gregtech.GT_Mod;
 import gregtech.api.enums.*;
-import gregtech.api.util.GT_Log;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -43,10 +40,9 @@ public class GT_FuelLoader implements Runnable {
         GT_Values.RA.addFuel(new ItemStack(Blocks.beacon, 1), null, Materials.NetherStar.mFuelPower * 2, Materials.NetherStar.mFuelType);
         GT_Values.RA.addFuel(GT_ModHandler.getModItem("EnderIO", "bucketRocket_fuel", 1), null, 250, 1);
 
-        // Attempt at adding random plasma fuels
-        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addFuel(GTNH_ExtraMaterials.TurbineSteel.getMolten(1000L), Materials.Iron.getMolten(1000L), 50000);
-        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addFuel(GT_OreDictUnificator.get(OrePrefixes.cell, GTNH_ExtraMaterials.ExtremeTurbineSteel, 1L), ItemList.Cell_Empty.get(1L), 450000);
-        GT_Recipe.GT_Recipe_Map.sPlasmaFuels.addRecipe(true, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.cell, GTNH_ExtraMaterials.TurbineSteel, 1L)}, new ItemStack[]{ItemList.Cell_Empty.get(1L)}, null, null, null, 0, 0, 250000);
+        // Add custom plasma fuels here, make sure the material has cells associated with it (16)
+        GT_Values.RA.addFuel(GTNH_ExtraMaterials.ExtremeTurbineSteel.getCells(1), Materials.Empty.getCells(1), 8192000, 4);
+        GT_Values.RA.addFuel(GTNH_ExtraMaterials.TurbineSteel.getCells(1), Materials.Empty.getCells(1), 6144000, 4);
 
     }
 }
