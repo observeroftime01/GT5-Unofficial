@@ -221,6 +221,7 @@ public enum ItemList implements IItemContainer {
     Large_Fluid_Cell_Iridium,
     Large_Fluid_Cell_Osmium,
     Large_Fluid_Cell_Neutronium,
+    Large_Fluid_Cell_Infinity,
     ThermosCan_Empty,
     ThermosCan_Dark_Coffee,
     ThermosCan_Dark_Cafe_au_lait,
