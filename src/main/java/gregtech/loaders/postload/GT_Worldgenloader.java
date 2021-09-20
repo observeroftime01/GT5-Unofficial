@@ -160,6 +160,9 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.uranium", true, 20, 30, 40, 4, 16, false, false, false, Materials.Uraninite, Materials.Uraninite, Materials.Uranium, Materials.Uranium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.oilsand", true, 50, 80, 1, 4, 16, true, false, false, Materials.Oilsands, Materials.Oilsands, Materials.Oilsands, Materials.Oilsands);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.actualplatinum", true, 5, 210, 40, 4, 16, true, true, true, Materials.Platinum, Materials.Palladium, Materials.Platinum, Materials.Palladium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.electrum", true, 5, 160, 40, 4, 16, true, false, false, Materials.Electrum, Materials.ElectrumFlux, Materials.Naquadah, Materials.Naquadria);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.acentauri", true, 5, 160, 40, 4, 16, true, false, false, Materials.Pyrotheum, Materials.Cryotheum, Materials.Pyrotheum, Materials.Cryotheum);
+
 
         new GT_Worldgen_GT_Ore_Layer("ore.mix.neutronium", true, 5, 30, 40, 4, 16, false, false, false, Materials.Neutronium, Materials.Adamantium, Materials.Naquadah, Materials.Titanium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.aquaignis", true, 5, 35, 5, 4, 16, false, false, false, Materials.InfusedWater, Materials.InfusedFire, Materials.Amber, Materials.Cinnabar);
