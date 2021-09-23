@@ -60,7 +60,11 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_IFCell_4.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_IFCell_1.get(4L), 20, Voltage.HV.getVoltage());
                 GT_Values.RA.addAssemblerRecipe(ItemList.Depleted_IFCell_2.get(1L), GT_Utility.getIntegratedCircuit(1), ItemList.Depleted_IFCell_1.get(2L), 20, Voltage.HV.getVoltage());
 
+                //Sifter Recipes
+                GT_Values.RA.addSifterRecipe(GT_OreDictUnificator.get(dust, Cinnabar, 1L), new ItemStack[]{GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3), GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 1L, 3)}, new int[]{100, 300, 500, 1000, 1000, 1500, 2300, 2500, 3500}, 800, 16);
 
+                //Compressor Recipes
+                GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 9L, 3),GT_ModHandler.getModItem("thaumicbases", "quicksilverBlock", 1L), 300, 2);
 
                 //Grinder Recipes
                 GT_Values.RA.addGrinderRecipe(GT_OreDictUnificator.get(ore, EnderPearl, 1), null, GT_OreDictUnificator.get(crushed, EnderPearl, 2), GT_OreDictUnificator.get(gem, EnderPearl, 1), null, null);
