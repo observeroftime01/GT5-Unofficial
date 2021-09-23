@@ -1228,6 +1228,7 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Duranium.setOreMultiplier(3);
         Copper.setOreMultiplier(2);
         Titanium.setOreMultiplier(2);
+        MysteriousCrystal.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
     }
 
     private static void setEnchantmentKnockbackTools() {
@@ -1534,6 +1535,7 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Lithium.addOreByProducts(Lithium);
         Silicon.addOreByProducts(SiliconDioxide);
         InfusedGold.addOreByProduct(Gold);
+        MysteriousCrystal.addOreByProducts(Uranium, Plutonium);
     }
 
     private static void setColors() {
