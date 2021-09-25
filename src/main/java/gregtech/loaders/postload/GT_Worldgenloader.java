@@ -211,6 +211,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.fusion", true, 5 ,230, 40, 4 ,16, false, false, false, Materials.Plutonium, Materials.Beryllium, Materials.Plutonium, Materials.Beryllium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.mysterious", true, 5 ,230, 40, 4 ,16, false, false, false, Materials.MysteriousCrystal, Materials.MysteriousCrystal, Materials.Plutonium, Materials.Beryllium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.graphene", true, 5 ,230, 40, 4 ,16, false, false, false, Materials.Graphene, Materials.Graphene, Materials.Graphite, Materials.Carbon);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.calcium", true, 5, 140, 40, 4, 16, true, false, false, Materials.Calcium, Materials.Calcite, Materials.TricalciumPhosphate, Materials.Calcite);
 
 
 

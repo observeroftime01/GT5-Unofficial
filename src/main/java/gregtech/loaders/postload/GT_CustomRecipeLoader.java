@@ -82,6 +82,13 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), GT_OreDictUnificator.get(dust, Tungsten, 1L), NI, NI, NI, new int[]{10000, 10000, 1000}, 20, Voltage.MV.getVoltage());
                 GT_Values.RA.addElectrolyzerRecipe(GT_OreDictUnificator.get(dust, Tungstate, 7L), NI, NF, Oxygen.getGas(576L), GT_OreDictUnificator.get(dust, Tungsten, 1L), GT_OreDictUnificator.get(dust, Lithium, 2L), NI, NI, NI, NI, null, 20, Voltage.MV.getVoltage());
 
+                //Chem Reactor Recipes
+                GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(gem, CertusQuartz, 9), GT_OreDictUnificator.get(dust, Gold, 1), GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 9L, 1), 400, Voltage.HV.getVoltage());
+                GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(gem, CertusQuartz, 1), GT_Utility.getIntegratedCircuit(1), GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 1), 1000, Voltage.ZPM.getVoltage());
+
+                //Autoclave Recipes
+                GT_Values.RA.addAutoclaveRecipe(GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 7), GT_Utility.getIntegratedCircuit(3), Materials.Void.getMolten(16L), GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 12), 10000, 100, Voltage.EV.getVoltage(), false);
+
                 //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
                 //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
                 GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Gallium.getMolten(120L), Neutronium.getPlasma(240L), 20, 131000, 320000000);
