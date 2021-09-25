@@ -1229,6 +1229,8 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Copper.setOreMultiplier(2);
         Titanium.setOreMultiplier(2);
         MysteriousCrystal.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
+        Graphene.setOreMultiplier(5).setSmeltingMultiplier(5);
+
     }
 
     private static void setEnchantmentKnockbackTools() {
