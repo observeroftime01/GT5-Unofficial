@@ -209,7 +209,7 @@ public class GT_Worldgenloader implements Runnable {
         new GT_Worldgen_GT_Ore_Layer("ore.mix.enderpealichor", true, 5, 120, 40, 4, 16, true, true, true, Materials.EnderPearl, Materials.Ichorium, Materials.EnderPearl, Materials.Ichorium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.raremetals", true, 5, 230, 40, 4, 16, false, false, false, Materials.Osmium, Materials.Iridium, Materials.Platinum, Materials.Palladium);
         new GT_Worldgen_GT_Ore_Layer("ore.mix.fusion", true, 5 ,230, 40, 24 ,32, false, false, false, Materials.Plutonium, Materials.Beryllium, Materials.Plutonium, Materials.Beryllium);
-        new GT_Worldgen_GT_Ore_Layer("ore.mix.mysterious", true, 5 ,230, 40, 24 ,32, false, false, false, Materials.MysteriousCrystal, Materials.MysteriousCrystal, Materials.Plutonium, Materials.Beryllium);
+        new GT_Worldgen_GT_Ore_Layer("ore.mix.mysterious", true, 5 ,230, 40, 24 ,32, false, false, false, Materials.MysteriousCrystal, Materials.MysteriousCrystal, Materials.Graphene, Materials.Graphene);
 
 
 
