@@ -34,7 +34,9 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
 
     private static final boolean aBoolConst_0 = false;
 	private static final Boolean isNEILoaded = Loader.isModLoaded("NotEnoughItems");
-	
+
+    //FREE ID's: 5360 - 5399, 5460 - 5499
+
     private static void run1() {
 		GT_ModHandler.addCraftingRecipe(ItemList.Casing_Pipe_Polytetrafluoroethylene.get(1L), bits, new Object[]{"PIP", "IFI", "PIP", 'P', OrePrefixes.plate.get(Materials.Polytetrafluoroethylene), 'F', OrePrefixes.frameGt.get(Materials.Polytetrafluoroethylene), 'I', OrePrefixes.pipeMedium.get(Materials.Polytetrafluoroethylene)});
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_ULV.get(1L), bits, new Object[]{aTextPlate, aTextPlateWrench, aTextPlate, 'P', OrePrefixes.plate.get(Materials.WroughtIron)});
@@ -1210,6 +1212,7 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
         generateItemPipes(Materials.Cobalt, Materials.Cobalt.mName, 5710, 2);
         generateItemPipes(Materials.Aluminium, Materials.Aluminium.mName, 5720, 2);
 
+        //FREE ID's: 5360 - 5399, 5460 - 5499 is free
 
         ItemList.Automation_ChestBuffer_ULV.set(new GT_MetaTileEntity_ChestBuffer(9230, "automation.chestbuffer.tier.00", "Ultra Low Voltage Chest Buffer", 0).getStackForm(1L));
         ItemList.Automation_ChestBuffer_LV.set(new GT_MetaTileEntity_ChestBuffer(9231, "automation.chestbuffer.tier.01", "Low Voltage Chest Buffer", 1).getStackForm(1L));

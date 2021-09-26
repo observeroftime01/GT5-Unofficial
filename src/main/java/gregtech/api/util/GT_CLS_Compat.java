@@ -65,7 +65,7 @@ public class GT_CLS_Compat {
 
             if (sizeStep == 0) {
                 if (size % 5 == 0)
-                    GT_Mod.GT_FML_LOGGER.info("Baking: " + size + "%");
+                    GT_Mod.GT_FML_LOGGER.info("Registering Materials: " + size + "%");
                 sizeStep = mEvents.size() / 100 - 1;
                 size++;
             }
