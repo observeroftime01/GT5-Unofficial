@@ -37,14 +37,14 @@ public class GT_MetaTileEntity_AdvancedLargeChemicalReactor extends GT_MetaTileE
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addOutputToMachineList, CASING_INDEX, 1),
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addMaintenanceToMachineList, CASING_INDEX, 1),
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addEnergyInputToMachineList, CASING_INDEX, 1),
-                    onElementPass(GT_MetaTileEntity_AdvancedLargeChemicalReactor::onCasingAdded, ofBlock(GregTech_API.sBlockCasings8, 11))
+                    onElementPass(GT_MetaTileEntity_AdvancedLargeChemicalReactor::onCasingAdded, ofBlock(GregTech_API.sBlockCasings8, 0))
             ))
             .addElement('x', ofChain(
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addInputToMachineList, CASING_INDEX, 2),
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addOutputToMachineList, CASING_INDEX, 2),
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addMaintenanceToMachineList, CASING_INDEX, 2),
                     ofHatchAdder(GT_MetaTileEntity_AdvancedLargeChemicalReactor::addEnergyInputToMachineList, CASING_INDEX, 2),
-                    onElementPass(GT_MetaTileEntity_AdvancedLargeChemicalReactor::onCoilAdded, ofBlock(GregTech_API.sBlockCasings5, 0)),
+                    onElementPass(GT_MetaTileEntity_AdvancedLargeChemicalReactor::onCoilAdded, ofBlock(GregTech_API.sBlockCasings5, 11)),
                     onElementPass(GT_MetaTileEntity_AdvancedLargeChemicalReactor::onCasingAdded, ofBlock(GregTech_API.sBlockCasings8, 0))
             ))
             .build();
