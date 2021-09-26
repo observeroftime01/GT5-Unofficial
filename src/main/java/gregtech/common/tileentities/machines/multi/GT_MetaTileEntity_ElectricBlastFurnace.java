@@ -186,9 +186,10 @@ public class GT_MetaTileEntity_ElectricBlastFurnace extends GT_MetaTileEntity_Ab
                 this.mMaxProgresstime = 1;//no eu efficiency correction
         }
 
+
         //if (getCoilTier().getTier() > 11)
         if (getCoilLevel() == HeatingCoilLevel.MAX){
-            this.mMaxProgresstime = Math.min(40, this.mProgresstime);
+            this.mMaxProgresstime = 1;
         } else {
             this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime);
         }
