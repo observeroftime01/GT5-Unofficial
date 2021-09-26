@@ -110,11 +110,27 @@ public class GT_CustomRecipeLoader implements Runnable {
                         ItemList.Conveyor_Module_UV.get(4L),
                         ItemList.Field_Generator_ZPM.get(2),
                         GT_OreDictUnificator.get(gearGt, Neutronium, 4L),
-                        GT_OreDictUnificator.get(wireGt04, SuperconductorUV, 32),
-                }, new FluidStack[]{
-                        Materials.SolderingAlloy.getMolten(2880)
-                }, ItemList.OreDrill5.get(1), 18000, Voltage.UV.getVoltage());
+                        GT_OreDictUnificator.get(wireGt04, SuperconductorUV, 32)}, new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(2880)},
+                        ItemList.OreDrill5.get(1),
+                        18000, Voltage.UV.getVoltage());
 
+                GT_Values.RA.addAssemblylineRecipe(ItemList.Machine_Multi_LargeChemicalReactor.get(1L), 450000, new Object[]{
+                        ItemList.Machine_Multi_LargeChemicalReactor.get(1L),
+                        ItemList.Hull_MAX.get(16L),
+                        GT_OreDictUnificator.get(rotor, Infinity, 4L),
+                        GT_OreDictUnificator.get(pipeHuge, Oriharukon, 8),
+                        ItemList.Electric_Motor_UHV.get(4L),
+                        ItemList.Robot_Arm_UHV.get(2L),
+                        ItemList.Field_Generator_ZPM.get(2L),
+                        GT_OreDictUnificator.get(plateDense, Polytetrafluoroethylene, 8L),
+                        GT_OreDictUnificator.get(plateDense, Polytetrafluoroethylene, 8L),
+                        GT_OreDictUnificator.get(circuit, Infinite, 8L),
+                        GT_OreDictUnificator.get(wireFine, Gold, 64L)}, new FluidStack[]{
+                        SolderingAlloy.getMolten(2304),
+                        Polytetrafluoroethylene.getMolten(4608)},
+                        ItemList.Machine_Multi_Advanced_LargeChemicalReactor.get(1L),
+                        15000, Voltage.UHV.getVoltage());
 
         }
 

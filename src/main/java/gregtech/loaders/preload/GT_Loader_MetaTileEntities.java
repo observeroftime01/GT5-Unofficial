@@ -1089,6 +1089,9 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
                 'P', OrePrefixes.pipeLarge.get(Materials.Polytetrafluoroethylene),
                 'M', ItemList.Electric_Motor_HV,
                 'B', ItemList.Hull_HV});
+
+        ItemList.Machine_Multi_Advanced_LargeChemicalReactor.set(new GT_MetaTileEntity_LargeChemicalReactor(1167, "multimachine.advancedchemicalreactor", "Advanced Chemical Reactor").getStackForm(1));
+
     }
 
     private static void run4() {
