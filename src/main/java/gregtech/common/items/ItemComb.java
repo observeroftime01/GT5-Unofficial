@@ -409,6 +409,7 @@ public class ItemComb extends Item {
 		addCentrifugeToMaterial(CombType.COSMICNEUTRONIUM, new Materials[] {Materials.CosmicNeutronium, Materials.Neutronium}, new int[] {(int) (30 * 100), 15 * 100}, new int[] {}, Voltage.UHV, 12000, NI, 50 * 100);
 		addCentrifugeToMaterial(CombType.INFINITYCATALYST, new Materials[] {Materials.InfinityCatalyst, Materials.Neutronium}, new int[] {(int) (30 * 100), 15 * 100}, new int[] {}, Voltage.UEV, 48000, NI, 50 * 100);
 		addCentrifugeToMaterial(CombType.INFINITY, new Materials[] {Materials.Infinity, Materials.InfinityCatalyst}, new int[] {(int) (30 * 100), (int) (15 * 100)}, new int[] {}, Voltage.UIV, 96000, NI, 50 * 100);
+		addCentrifugeToMaterial(CombType.CALCIUM, new Materials[]{Materials.Calcium, Materials.Calcite}, new int[]{ 9000, 4500}, new int[] {}, Voltage.HV, 250, NI, 5000);
 
 		//Custom Recipes
 		addFluidExtractorProcess(CombType.PLATINUM, Materials.Platinum, 144L, 600, Voltage.LUV);

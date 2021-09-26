@@ -147,6 +147,7 @@ public enum CombType {
     COSMICNEUTRONIUM("cosmicneutronium",true, Materials.CosmicNeutronium, 5,0x484848, 0x323232),
     INFINITYCATALYST("infinitycatalyst",true, Materials.InfinityCatalyst, 2,0xFFFFFF, 0xFFFFFF),
     INFINITY("infinity",true, Materials.Infinity, 1,0xFFFFFF, 0xFFFFFF),
+    CALCIUM("calcium",true, Materials.Calcium, 90,0xFF9C9C9C, 0xECECEC),
 
 
     //HEE

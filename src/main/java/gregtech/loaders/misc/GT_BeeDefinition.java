@@ -2614,6 +2614,26 @@ public enum GT_BeeDefinition implements IBeeDefinition {
                 tMutation.requireResource("blockIchorium");
             }
     ),
+    CALCIUM(GT_BranchDefinition.CHEATY, "Calcium", true, new Color(0xFF9C9C9C, true), new Color(0xECECEC),
+            beeSpecies -> {
+                beeSpecies.addProduct(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Calcium, 1L), 0.30f);
+                beeSpecies.addProduct(GT_Bees.combs.getStackForType(CombType.CALCIUM), 0.30f);
+                beeSpecies.addSpecialty(GT_Bees.combs.getStackForType(CombType.ASH), 0.20f);
+                beeSpecies.setHumidity(EnumHumidity.NORMAL);
+                beeSpecies.setTemperature(EnumTemperature.NORMAL);
+            },
+            template -> {
+                AlleleHelper.instance.set(template, SPEED, GT_Bees.speedBlinding);
+                AlleleHelper.instance.set(template, LIFESPAN, Lifespan.LONGEST);
+                AlleleHelper.instance.set(template, TEMPERATURE_TOLERANCE, Tolerance.BOTH_2);
+                AlleleHelper.instance.set(template, HUMIDITY_TOLERANCE, Tolerance.BOTH_2);
+                AlleleHelper.instance.set(template, FLOWER_PROVIDER, Flowers.VANILLA);
+            },
+            dis -> {
+                IBeeMutationCustom tMutation = dis.registerMutation(CLAY, REDSTONE, 10);
+                tMutation.requireResource("blockCalcium");
+            }
+    ),
     ;
     private final GT_BranchDefinition branch;
     private final GT_AlleleBeeSpecies species;
