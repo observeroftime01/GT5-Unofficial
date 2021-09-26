@@ -1368,7 +1368,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
             tEvent = i$.next();
             sizeStep--;
             if(sizeStep == 0) {
-                GT_Mod.GT_FML_LOGGER.info("Baking : " + size + "%", new Object[0]);
+                GT_Mod.GT_FML_LOGGER.info("Registering Materials: " + size + "%", new Object[0]);
                 sizeStep = mEvents.size()/20-1;
                 size += 5;
             }
