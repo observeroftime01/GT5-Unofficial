@@ -1090,7 +1090,7 @@ public class GT_Loader_MetaTileEntities implements Runnable {//TODO CHECK CIRCUI
                 'M', ItemList.Electric_Motor_HV,
                 'B', ItemList.Hull_HV});
 
-        ItemList.Machine_Multi_Advanced_LargeChemicalReactor.set(new GT_MetaTileEntity_LargeChemicalReactor(1167, "multimachine.advancedchemicalreactor", "Advanced Chemical Reactor").getStackForm(1));
+        ItemList.Machine_Multi_Advanced_LargeChemicalReactor.set(new GT_MetaTileEntity_AdvancedLargeChemicalReactor(1167, "multimachine.advancedchemicalreactor", "Advanced Chemical Reactor").getStackForm(1));
 
     }
 

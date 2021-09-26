@@ -166,9 +166,8 @@ public class GT_MetaTileEntity_AdvancedLargeChemicalReactor extends GT_MetaTileE
                 //In case recipe is too OP for that machine
                 if (mMaxProgresstime == Integer.MAX_VALUE - 1 && mEUt == Integer.MAX_VALUE - 1)
                     return false;
-                // Do everything in 1 tick. This reactor only makes sense for late game recipes that won't hit 1 tick through overclocks.
-                // It is nonsensical for just about everything else, as the LCR already overclocks most recipes to 1 tick at UHV. But hey, for those 5 recipes, it will be AMAZING...
-                this.mMaxProgresstime = 1;
+                // Do everything in < 40 ticks. This machine has a maximum processing time of 2 seconds.
+                this.mMaxProgresstime = Math.min(40, this.mMaxProgresstime);
                 if (this.mEUt > 0) {
                     this.mEUt = (-this.mEUt);
                 }
