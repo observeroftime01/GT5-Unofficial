@@ -417,7 +417,7 @@ public class ItemComb extends Item {
 		addFluidExtractorProcess(CombType.IRIDIUM, Materials.Iridium, 144L, 800, Voltage.ZPM);
 		addFluidExtractorProcess(CombType.TRINIUM, Materials.Trinium, 144L, 900, Voltage.UV);
 		addFluidExtractorProcess(CombType.QUANTIUM, Materials.Quantium,  144L, 600, Voltage.IV);
-
+		addFluidExtractorProcess(CombType.CALCIUM, Materials.Calcium, 144L, 400, Voltage.EV);
 	}
 	
 	/**
