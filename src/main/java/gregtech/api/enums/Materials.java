@@ -1230,6 +1230,7 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
         Titanium.setOreMultiplier(2);
         MysteriousCrystal.setOreMultiplier(5).setSmeltingMultiplier(5).setByProductMultiplier(2);
         Graphene.setOreMultiplier(5).setSmeltingMultiplier(5);
+        Calcium.setOreMultiplier(5).setSmeltingMultiplier(2);
 
     }
 
