@@ -143,6 +143,8 @@ public enum Element {
     Nt(0, 1000, 0, -1, null, "Neutronium", false),
     SpNt(0, 4000, 0, -1, null, "Cosmic Neutronium", false),
     DSp(0, 1500, 0, -1, null, "Awakened Draconium",false),
+    If(0, 1250, 0, -1, null, "Infinity", false),
+    IfCat(0, 750, 0, -1, null, "Infinity Catalyst", false),
     Testmat(1250, 625, 0, -1, null, "Extreme Test Material", false),
 
     $H(-1, -0, 0, -1, null, "Anti-Hydrogen", false),
@@ -279,6 +281,8 @@ public enum Element {
     $Nt(0, -10000, 0, -1, null, "Anti-Neutronium", false),
     $SpNt(0, -4000, 0, -1, null, "Cosmic Neutronium", false),
     $DSp(0, -15000, 0, -1, null, "Anti-Awakened Draconium",false),
+    $If(0, -1250, 0, -1, null, "Anti-Infinity", false),
+    $IfCat(0, -750, 0, -1, null, "Anti-Infinity Catalyst", false),
     $Testmat(-1250, -625, 0, -1, null, "Anti-Extreme Test Material", false);
 
 

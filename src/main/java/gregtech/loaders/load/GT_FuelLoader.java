@@ -41,8 +41,11 @@ public class GT_FuelLoader implements Runnable {
         GT_Values.RA.addFuel(GT_ModHandler.getModItem("EnderIO", "bucketRocket_fuel", 1), null, 250, 1);
 
         // Add custom plasma fuels here, make sure the material has cells associated with it (16)
+        GT_Log.out.println("GT5u-ex: Trying to add custom plasma generator fuels.");
         GT_Values.RA.addFuel(GTNH_ExtraMaterials.ExtremeTurbineSteel.getCells(1), Materials.Empty.getCells(1), 8192000, 4);
         GT_Values.RA.addFuel(GTNH_ExtraMaterials.TurbineSteel.getCells(1), Materials.Empty.getCells(1), 6144000, 4);
+        GT_Log.out.println("GT5u-ex: Here's what we got so far:");
+        GT_Log.out.println("GT5u-ex: sPlasmaFuels Recipe list: " + GT_Recipe.GT_Recipe_Map.sPlasmaFuels.mRecipeList);
 
     }
 }
