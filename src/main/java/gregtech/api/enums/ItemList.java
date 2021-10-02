@@ -1548,6 +1548,9 @@ public enum ItemList implements IItemContainer {
     MicroTransmitter_LUV,
     MicroTransmitter_ZPM,
     MicroTransmitter_UV,
+    MicroTransmitter_UHV,
+    MicroTransmitter_UMV,
+
 
     Crop_Drop_Bauxite,
     Crop_Drop_Ilmenite,
