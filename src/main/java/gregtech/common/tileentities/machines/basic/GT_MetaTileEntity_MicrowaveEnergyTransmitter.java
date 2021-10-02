@@ -49,7 +49,12 @@ public class GT_MetaTileEntity_MicrowaveEnergyTransmitter extends GT_MetaTileEnt
     public TileEntity tTile = null;
 
     public GT_MetaTileEntity_MicrowaveEnergyTransmitter(int aID, String aName, String aNameRegional, int aTier) {
-        super(aID, aName, aNameRegional, aTier, 3, new String[]{"Transmits Energy Wirelessly", "Use Nitrogen Plasma", "for Inter-dimensional transmission", "0.004EU Loss per 100 Blocks", "needs Osmiridium block above for interDim"});
+        super(aID, aName, aNameRegional, aTier, 3, new String[]{
+                "Transmits Energy Wirelessly, toggle with redstone",
+                "Use 1L/sec Nitrogen Plasma for Inter-dimensional transmission",
+                "0.004EU Energy loss for every 100 Blocks",
+                "needs an Osmiridium block above for Inter-dimensional transmission"
+        });
     }
 
     public GT_MetaTileEntity_MicrowaveEnergyTransmitter(String aName, int aTier, String aDescription, ITexture[][][] aTextures) {
@@ -185,6 +190,7 @@ public class GT_MetaTileEntity_MicrowaveEnergyTransmitter extends GT_MetaTileEnt
         if (mFluid == null) {
             mFluid = Materials.Nitrogen.getPlasma(0);
         }
+
         super.onPostTick(aBaseMetaTileEntity, aTick);
         if (getBaseMetaTileEntity().isServerSide()) {
             if (getBaseMetaTileEntity().getTimer() % 100L == 50L) {
@@ -196,7 +202,9 @@ public class GT_MetaTileEntity_MicrowaveEnergyTransmitter extends GT_MetaTileEnt
                         getBaseMetaTileEntity().decreaseStoredEnergyUnits(2L<<(mTier-1), false);
                     }
                     if (hasDimensionalTeleportCapability() && this.mTargetD != getBaseMetaTileEntity().getWorld().provider.dimensionId && mFluid.isFluidEqual(Materials.Nitrogen.getPlasma(1))) {
+                        if (getBaseMetaTileEntity().getTimer() % 20L == 0){
                         mFluid.amount--;
+                        }
                         if (mFluid.amount < 1) {
                             mFluid = null;
                         }
