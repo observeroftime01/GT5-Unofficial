@@ -162,6 +162,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                         case 7:
                             aRecipe[i] = OrePrefixes.plate.get(Materials.HSSE);
                             break;
+                        case 13:
+                            aRecipe[i] = OrePrefixes.plate.get(Materials.Infinity);
+                            break;
                         default:
                             aRecipe[i] = OrePrefixes.plate.get(Materials.Neutronium);
                             break;
@@ -195,6 +198,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                             break;
                         case 8:
                             aRecipe[i] = OrePrefixes.pipeLarge.get(Materials.Ultimate);
+                            break;
+                        case 13:
+                            aRecipe[i] = OrePrefixes.pipeHuge.get(Materials.Infinity);
                             break;
                         default:
                             aRecipe[i] = OrePrefixes.pipeHuge.get(Materials.Ultimate);
@@ -357,6 +363,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                         case 7:
                             aRecipe[i] = OrePrefixes.wireGt08.get(Materials.Iridium);
                             break;
+                        case 13:
+                            aRecipe[i] = OrePrefixes.wireGt12.get(Materials.Infinity);
+                            break;
                         default:
                             aRecipe[i] = OrePrefixes.wireGt16.get(Materials.Osmium);
                             break;
@@ -431,6 +440,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                         case 9:
                             aRecipe[i] = ItemList.Electric_Pump_UHV;
                             break;
+                        case 13:
+                            aRecipe[i] = ItemList.Electric_Pump_UIV;
+                            break;
                         default:
                             aRecipe[i] = ItemList.Electric_Pump_UEV;
                             break;
@@ -461,6 +473,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                             break;
                         case 7:
                             aRecipe[i] = OrePrefixes.rotor.get(Materials.Iridium);
+                            break;
+                        case 13:
+                            aRecipe[i] = OrePrefixes.rotor.get(Materials.Infinity);
                             break;
                         default:
                             aRecipe[i] = OrePrefixes.rotor.get(Materials.Osmium);
@@ -498,6 +513,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                             break;
                         case 9:
                             aRecipe[i] = ItemList.Electric_Motor_UHV;
+                            break;
+                        case 13:
+                            aRecipe[i] = ItemList.Electric_Motor_UIV;
                             break;
                         default:
                             aRecipe[i] = ItemList.Electric_Motor_UEV;
@@ -572,6 +590,9 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
                             break;
                         case 9:
                             aRecipe[i] = ItemList.Conveyor_Module_UHV;
+                            break;
+                        case 13:
+                            aRecipe[i] = ItemList.Conveyor_Module_UIV;
                             break;
                         default:
                             aRecipe[i] = ItemList.Conveyor_Module_UEV;

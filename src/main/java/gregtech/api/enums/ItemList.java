@@ -1737,6 +1737,7 @@ public enum ItemList implements IItemContainer {
     Machine_LuV_CircuitAssembler,
     Machine_ZPM_CircuitAssembler,
     Machine_UV_CircuitAssembler,
+    Machine_UMV_Advanced_CircuitAssembler,
     Circuit_Integrated_Good,
     Machine_IV_LightningRod,
     Machine_HV_LightningRod,
