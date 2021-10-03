@@ -116,7 +116,8 @@ public class GT_MetaTileEntity_MicrowaveEnergyTransmitter extends GT_MetaTileEnt
 
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
-        if (mFluid != null) aNBT.setTag("mFluid", mFluid.writeToNBT(new NBTTagCompound()));
+        if (mFluid != null)
+        aNBT.setTag("mFluid", mFluid.writeToNBT(new NBTTagCompound()));
         aNBT.setInteger("mTargetX", this.mTargetX);
         aNBT.setInteger("mTargetY", this.mTargetY);
         aNBT.setInteger("mTargetZ", this.mTargetZ);
