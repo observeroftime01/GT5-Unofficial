@@ -422,7 +422,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addFluidExtractionRecipe(ItemList.Crop_Drop_MilkWart.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Milk, 1L), GT_ModHandler.getMilk(150L), 1000, 128, 4);
         GT_Values.RA.addFluidExtractionRecipe(ItemList.Crop_Drop_OilBerry.get(1L), GT_Values.NI, Materials.Oil.getFluid(100L), 10000, 128, 4);
         GT_Values.RA.addFluidExtractionRecipe(ItemList.Crop_Drop_UUMBerry.get(1L), GT_Values.NI, Materials.UUMatter.getFluid(4L), 10000, 128, 4);
-        GT_Values.RA.addFluidExtractionRecipe(ItemList.Crop_Drop_UUABerry.get(1L), GT_Values.NI, Materials.UUAmplifier.getFluid(4L), 10000, 128, 4);
+        GT_Values.RA.addFluidExtractionRecipe(ItemList.Crop_Drop_UUABerry.get(1L), GT_Values.NI, Materials.UUAmplifier.getFluid(16L), 10000, 128, 4);
         GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.fish, 1, 0), GT_Values.NI, Materials.FishOil.getFluid(40L), 10000, 16, 4);
         GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.fish, 1, 1), GT_Values.NI, Materials.FishOil.getFluid(60L), 10000, 16, 4);
         GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.fish, 1, 2), GT_Values.NI, Materials.FishOil.getFluid(70L), 10000, 16, 4);

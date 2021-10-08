@@ -116,8 +116,23 @@ public class GT_CustomRecipeLoader implements Runnable {
                         ItemList.OreDrill5.get(1),
                         18000, Voltage.UV.getVoltage());
 
+                //Reverse UUM Recipes
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Hydrogen.getGas(1000L), UUMatter.getFluid(1L), NI, 512, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Helium.getGas(1000L), UUMatter.getFluid(4L), NI, 2048, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Lithium.getDust(1), NF, UUMatter.getFluid(7L), NI, 3584, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Beryllium.getDust(1), NF, UUMatter.getFluid(9L), NI, 4608, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Boron.getDust(1), NF, UUMatter.getFluid(10L), NI, 5120, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Carbon.getDust(1), NF, UUMatter.getFluid(12L), NI, 6144, 30);
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Nitrogen.getGas(1000L), UUMatter.getFluid(14L), NI, 7168, 30);
+
+
+
+
+
 
         }
+
+
 
         public void addCircuitRecipes() {
 
