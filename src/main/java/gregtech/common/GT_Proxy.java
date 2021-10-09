@@ -182,6 +182,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
     public boolean mOnline = true;
     public boolean mIgnoreTcon = true;
     public boolean mDisableIC2Cables = false;
+    public boolean mReverseUUMrecipes = false;
     public boolean mAchievements = true;
     public boolean mAE2Integration = true;
     public boolean mArcSmeltIntoAnnealed = true;
