@@ -9,7 +9,6 @@ import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import sun.security.krb5.internal.crypto.Des;
 
 
 import static gregtech.api.enums.GTNH_ExtraMaterials.ExtremeTurbineSteel;
@@ -118,126 +117,78 @@ public class GT_CustomRecipeLoader implements Runnable {
                         ItemList.OreDrill5.get(1),
                         18000, Voltage.UV.getVoltage());
 
+
+                //Reverse UUM Recipes
                 if (GT_Mod.gregtechproxy.mReverseUUMrecipes) {
-                        //Reverse UUM Recipes
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Hydrogen.getGas(1000L), UUMatter.getFluid(1L), NI, 512, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Helium.getGas(1000L), UUMatter.getFluid(4L), NI, 2048, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Lithium.getDust(1), NF, UUMatter.getFluid(7L), NI, 3584, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Beryllium.getDust(1), NF, UUMatter.getFluid(9L), NI, 4608, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Boron.getDust(1), NF, UUMatter.getFluid(10L), NI, 5120, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Carbon.getDust(1), NF, UUMatter.getFluid(12L), NI, 6144, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Nitrogen.getGas(1000L), UUMatter.getFluid(14L), NI, 7168, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Oxygen.getGas(1000L), UUMatter.getFluid(16L), NI, 8192, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Fluorine.getFluid(1000L), UUMatter.getFluid(18L), NI, 9216, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Sodium.getDust(1), NF, UUMatter.getFluid(22L), NI, 11264, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Magnesium.getDust(1), NF, UUMatter.getFluid(24L), NI, 12288, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Aluminium.getDust(1), NF, UUMatter.getFluid(26L), NI, 13312, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Silicon.getDust(1), NF, UUMatter.getFluid(28L), NI, 14336, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Phosphorus.getDust(1), NF, UUMatter.getFluid(30L), NI, 15360, 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Sulfur.getDust(1), NF, UUMatter.getFluid(32L), NI, (int) (819.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Chlorine.getFluid(1000L), UUMatter.getFluid(35L), NI, (int) (896.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Potassium.getDust(1), NF, UUMatter.getFluid(39L), NI, (int) (998.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), NI, Argon.getGas(1000L), UUMatter.getFluid(40L), NI, (int) (1024.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Calcium.getDust(1), NF, UUMatter.getFluid(40L), NI, (int) (1024.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Scandium.getDust(1), NF, UUMatter.getFluid(45L), NI, (int) (1152.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Titanium.getDust(1), NF, UUMatter.getFluid(48L), NI, (int) (1228.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Desh.getDust(1), NF, UUMatter.getFluid(49L), NI, (int) (1254.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Vanadium.getDust(1), NF, UUMatter.getFluid(51L), NI, (int) (1305.60 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Chrome.getDust(1), NF, UUMatter.getFluid(52L), NI, (int) (1331.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Manganese.getDust(1), NF, UUMatter.getFluid(55L), NI, (int) (1408.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Iron.getDust(1), NF, UUMatter.getFluid(56L), NI, (int) (1433.60 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Nickel.getDust(1), NF, UUMatter.getFluid(58L), NI, (int) (1484.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Cobalt.getDust(1), NF, UUMatter.getFluid(59L), NI, (int) (1510.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Copper.getDust(1), NF, UUMatter.getFluid(63L), NI, (int) (1612.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Zinc.getDust(1), NF, UUMatter.getFluid(65L), NI, (int) (1664.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), MeteoricIron.getDust(1), NF, UUMatter.getFluid(68L), NI, (int) (1740.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Gallium.getDust(1), NF, UUMatter.getFluid(70L), NI, (int) (1792.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Arsenic.getDust(1), NF, UUMatter.getFluid(75L), NI, (int) (1920.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Rubidium.getDust(1), NF, UUMatter.getFluid(85L), NI, (int) (2176.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Strontium.getDust(1), NF, UUMatter.getFluid(87L), NI, (int) (2227.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Yttrium.getDust(1), NF, UUMatter.getFluid(89L), NI, (int) (2278.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Niobium.getDust(1), NF, UUMatter.getFluid(94L), NI, (int) (2406.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Molybdenum.getDust(1), NF, UUMatter.getFluid(95L), NI, (int) (2432.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Palladium.getDust(1), NF, UUMatter.getFluid(103L), NI, (int) (2636.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Silver.getDust(1), NF, UUMatter.getFluid(107L), NI, (int) (2739.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Cadmium.getDust(1), NF, UUMatter.getFluid(112L), NI, (int) (2867.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Indium.getDust(1), NF, UUMatter.getFluid(114L), NI, (int) (2918.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Tin.getDust(1), NF, UUMatter.getFluid(118L), NI, (int) (3020.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Antimony.getDust(1), NF, UUMatter.getFluid(121L), NI, (int) (3097.60 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Tellurium.getDust(1), NF, UUMatter.getFluid(127L), NI, (int) (3251.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Caesium.getDust(1), NF, UUMatter.getFluid(132L), NI, (int) (3379.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Barium.getDust(1), NF, UUMatter.getFluid(137L), NI, (int) (3507.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Lanthanum.getDust(1), NF, UUMatter.getFluid(138L), NI, (int) (3532.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Praseodymium.getDust(1), NF, UUMatter.getFluid(140L), NI, (int) (3584.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Cerium.getDust(1), NF, UUMatter.getFluid(140L), NI, (int) (3584.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Neodymium.getDust(1), NF, UUMatter.getFluid(144L), NI, (int) (3686.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Promethium.getDust(1), NF, UUMatter.getFluid(144L), NI, (int) (3686.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Samarium.getDust(1), NF, UUMatter.getFluid(150L), NI, (int) (3840.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Europium.getDust(1), NF, UUMatter.getFluid(151L), NI, (int) (3865.60 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Gadolinium.getDust(1), NF, UUMatter.getFluid(157L), NI, (int) (4019.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Terbium.getDust(1), NF, UUMatter.getFluid(158L), NI, (int) (4044.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Dysprosium.getDust(1), NF, UUMatter.getFluid(162L), NI, (int) (4147.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Holmium.getDust(1), NF, UUMatter.getFluid(164L), NI, (int) (4198.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Erbium.getDust(1), NF, UUMatter.getFluid(167L), NI, (int) (4275.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Thulium.getDust(1), NF, UUMatter.getFluid(168L), NI, (int) (4300.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Ytterbium.getDust(1), NF, UUMatter.getFluid(173L), NI, (int) (4428.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Lutetium.getDust(1), NF, UUMatter.getFluid(174L), NI, (int) (4454.40 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Tantalum.getDust(1), NF, UUMatter.getFluid(180L), NI, (int) (4608.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Tungsten.getDust(1), NF, UUMatter.getFluid(183L), NI, (int) (4684.80 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Osmium.getDust(1), NF, UUMatter.getFluid(190L), NI, (int) (4864.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Iridium.getDust(1), NF, UUMatter.getFluid(192L), NI, (int) (4915.20 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Platinum.getDust(1), NF, UUMatter.getFluid(195L), NI, (int) (4992.00 * 20), 30);
-                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23), Gold.getDust(1), NF, UUMatter.getFluid(196L), NI, (int) (5017.60 * 20), 30);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Hydrogen.getCells(1), null, UUMatter.getFluid(1L), ItemList.Cell_Empty.get(1L), 512, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Helium.getCells(1), null, UUMatter.getFluid(4L), ItemList.Cell_Empty.get(1L), 2048, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Lithium.getDust(1), null, UUMatter.getFluid(7L), null, 3584, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Beryllium.getDust(1), null, UUMatter.getFluid(9L), null, 4608, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Boron.getDust(1), null, UUMatter.getFluid(10L), null, 5120, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Carbon.getDust(1), null, UUMatter.getFluid(12L), null, 6144, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Nitrogen.getCells(1), null, UUMatter.getFluid(14L), ItemList.Cell_Empty.get(1L), 7168, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Oxygen.getCells(1), null, UUMatter.getFluid(16L), ItemList.Cell_Empty.get(1L), 8192, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Fluorine.getCells(1), null, UUMatter.getFluid(18L), ItemList.Cell_Empty.get(1L), 9216, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Sodium.getDust(1), null, UUMatter.getFluid(22L), null, 11264, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Magnesium.getDust(1), null, UUMatter.getFluid(24L), null, 12288, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Aluminium.getDust(1), null, UUMatter.getFluid(26L), null, 13312, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Silicon.getDust(1), null, UUMatter.getFluid(28L), null, 14336, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Phosphorus.getDust(1), null, UUMatter.getFluid(30L), null, 15360, 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Sulfur.getDust(1), null, UUMatter.getFluid(32L), null, (int) (819.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Chlorine.getCells(1), null, UUMatter.getFluid(35L), ItemList.Cell_Empty.get(1L), (int) (896.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Potassium.getDust(1), null, UUMatter.getFluid(39L), null, (int) (998.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Argon.getCells(1), null, UUMatter.getFluid(40L), ItemList.Cell_Empty.get(1L), (int) (1024.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Calcium.getDust(1), null, UUMatter.getFluid(40L), null, (int) (1024.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Scandium.getDust(1), null, UUMatter.getFluid(45L), null, (int) (1152.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Titanium.getDust(1), null, UUMatter.getFluid(48L), null, (int) (1228.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Desh.getDust(1), null, UUMatter.getFluid(49L), null, (int) (1254.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Vanadium.getDust(1), null, UUMatter.getFluid(51L), null, (int) (1305.60 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Chrome.getDust(1), null, UUMatter.getFluid(52L), null, (int) (1331.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Manganese.getDust(1), null, UUMatter.getFluid(55L), null, (int) (1408.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Iron.getDust(1), null, UUMatter.getFluid(56L), null, (int) (1433.60 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Nickel.getDust(1), null, UUMatter.getFluid(58L), null, (int) (1484.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Cobalt.getDust(1), null, UUMatter.getFluid(59L), null, (int) (1510.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Copper.getDust(1), null, UUMatter.getFluid(63L), null, (int) (1612.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Zinc.getDust(1), null, UUMatter.getFluid(65L), null, (int) (1664.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), MeteoricIron.getDust(1), null, UUMatter.getFluid(68L), null, (int) (1740.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Gallium.getDust(1), null, UUMatter.getFluid(70L), null, (int) (1792.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Arsenic.getDust(1), null, UUMatter.getFluid(75L), null, (int) (1920.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Rubidium.getDust(1), null, UUMatter.getFluid(85L), null, (int) (2176.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Strontium.getDust(1), null, UUMatter.getFluid(87L), null, (int) (2227.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Yttrium.getDust(1), null, UUMatter.getFluid(89L), null, (int) (2278.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Niobium.getDust(1), null, UUMatter.getFluid(94L), null, (int) (2406.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Molybdenum.getDust(1), null, UUMatter.getFluid(95L), null, (int) (2432.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Palladium.getDust(1), null, UUMatter.getFluid(103L), null, (int) (2636.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Silver.getDust(1), null, UUMatter.getFluid(107L), null, (int) (2739.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Cadmium.getDust(1), null, UUMatter.getFluid(112L), null, (int) (2867.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Indium.getDust(1), null, UUMatter.getFluid(114L), null, (int) (2918.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tin.getDust(1), null, UUMatter.getFluid(118L), null, (int) (3020.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Antimony.getDust(1), null, UUMatter.getFluid(121L), null, (int) (3097.60 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tellurium.getDust(1), null, UUMatter.getFluid(127L), null, (int) (3251.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Caesium.getDust(1), null, UUMatter.getFluid(132L), null, (int) (3379.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Barium.getDust(1), null, UUMatter.getFluid(137L), null, (int) (3507.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Lanthanum.getDust(1), null, UUMatter.getFluid(138L), null, (int) (3532.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Praseodymium.getDust(1), null, UUMatter.getFluid(140L), null, (int) (3584.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Cerium.getDust(1), null, UUMatter.getFluid(140L), null, (int) (3584.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Neodymium.getDust(1), null, UUMatter.getFluid(144L), null, (int) (3686.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Promethium.getDust(1), null, UUMatter.getFluid(144L), null, (int) (3686.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Samarium.getDust(1), null, UUMatter.getFluid(150L), null, (int) (3840.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Europium.getDust(1), null, UUMatter.getFluid(151L), null, (int) (3865.60 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Gold.getDust(1), null, UUMatter.getFluid(196L), null, (int) (5017.60 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Gadolinium.getDust(1), null, UUMatter.getFluid(157L), null, (int) (4019.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Terbium.getDust(1), null, UUMatter.getFluid(158L), null, (int) (4044.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Dysprosium.getDust(1), null, UUMatter.getFluid(162L), null, (int) (4147.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Holmium.getDust(1), null, UUMatter.getFluid(164L), null, (int) (4198.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Erbium.getDust(1), null, UUMatter.getFluid(167L), null, (int) (4275.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Thulium.getDust(1), null, UUMatter.getFluid(168L), null, (int) (4300.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Ytterbium.getDust(1), null, UUMatter.getFluid(173L), null, (int) (4428.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Lutetium.getDust(1), null, UUMatter.getFluid(174L), null, (int) (4454.40 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tantalum.getDust(1), null, UUMatter.getFluid(180L), null, (int) (4608.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tungsten.getDust(1), null, UUMatter.getFluid(183L), null, (int) (4684.80 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Osmium.getDust(1), null, UUMatter.getFluid(190L), null, (int) (4864.00 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Iridium.getDust(1), null, UUMatter.getFluid(192L), null, (int) (4915.20 * 20), 30);
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Platinum.getDust(1), null, UUMatter.getFluid(195L), null, (int) (4992.00 * 20), 30);
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }
