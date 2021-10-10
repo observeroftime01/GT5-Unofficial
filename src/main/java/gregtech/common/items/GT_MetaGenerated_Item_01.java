@@ -296,22 +296,22 @@ public class GT_MetaGenerated_Item_01 extends GT_MetaGenerated_Item_X32 {
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Titanium, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.RoseGold, 4L), ItemList.Large_Fluid_Cell_Titanium.get(1L), 200, 256);
 
         ItemList.Large_Fluid_Cell_Chrome.set(addItem(tLastID = 410, "Large Chrome Fluid Cell", "", new ItemData(Materials.Chrome, OrePrefixes.plateDouble.mMaterialAmount * 4L, new MaterialStack(Materials.Palladium, OrePrefixes.ring.mMaterialAmount * 4L)), new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 8L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 6L)));
-        setFluidContainerStats(32000 + tLastID, 2048000L, 8L);
+        setFluidContainerStats(32000 + tLastID, 2048000L, 64L);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Chrome, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Palladium, 4L), ItemList.Large_Fluid_Cell_Chrome.get(1L), 200, 1024);
 
         ItemList.Large_Fluid_Cell_Iridium.set(addItem(tLastID = 411, "Large Iridium Fluid Cell", "", new ItemData(Materials.Iridium, OrePrefixes.plateDouble.mMaterialAmount * 4L, new MaterialStack(Materials.Naquadah, OrePrefixes.ring.mMaterialAmount * 4L)), new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 10L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 8L)));
-        setFluidContainerStats(32000 + tLastID, 8192000L, 2L);
+        setFluidContainerStats(32000 + tLastID, 62500000L, 64L);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iridium, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Naquadah, 4L), ItemList.Large_Fluid_Cell_Iridium.get(1L), 200, 1920);
 
         ItemList.Large_Fluid_Cell_Osmium.set(addItem(tLastID = 412, "Large Osmium Fluid Cell", "", new ItemData(Materials.Osmium, OrePrefixes.plateDouble.mMaterialAmount * 4L, new MaterialStack(Materials.ElectrumFlux, OrePrefixes.ring.mMaterialAmount * 4L)), new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 11L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 9L)));
-        setFluidContainerStats(32000 + tLastID, 32768000L, 1L);
+        setFluidContainerStats(32000 + tLastID, 250000000L, 32L);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Osmium, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.ElectrumFlux, 4L), ItemList.Large_Fluid_Cell_Osmium.get(1L), 200, 4096);
 
         ItemList.Large_Fluid_Cell_Neutronium.set(addItem(tLastID = 413, "Large Neutronium Fluid Cell", "", new ItemData(Materials.Neutronium, OrePrefixes.plateDouble.mMaterialAmount * 4L, new MaterialStack(Materials.Draconium, OrePrefixes.ring.mMaterialAmount * 4L)), new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 12L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 10L)));
-        setFluidContainerStats(32000 + tLastID, (1000000000L), 1L);
+        setFluidContainerStats(32000 + tLastID, (1000000000L), 16L);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Draconium, 4L), ItemList.Large_Fluid_Cell_Neutronium.get(1L), 200, 7680);
 
