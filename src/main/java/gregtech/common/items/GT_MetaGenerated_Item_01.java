@@ -316,7 +316,7 @@ public class GT_MetaGenerated_Item_01 extends GT_MetaGenerated_Item_X32 {
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Draconium, 4L), ItemList.Large_Fluid_Cell_Neutronium.get(1L), 200, 7680);
 
         ItemList.Large_Fluid_Cell_Infinity.set(addItem(tLastID = 414, "Large Infinity Fluid Cell", "", new ItemData(Materials.Infinity, OrePrefixes.plateDouble.mMaterialAmount * 4L, new MaterialStack(Materials.DraconiumAwakened, OrePrefixes.ring.mMaterialAmount * 4L)), new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 12L), new TC_Aspects.TC_AspectStack(TC_Aspects.AQUA, 10L)));
-        setFluidContainerStats(32000 + tLastID, (GT_Utility.safeInt(Integer.MAX_VALUE-256)), 1L);
+        setFluidContainerStats(32000 + tLastID, (GT_Utility.safeInt(Integer.MAX_VALUE-256)), 16L);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Infinity, 4L), GT_OreDictUnificator.get(OrePrefixes.ring, Materials.DraconiumAwakened, 4L), ItemList.Large_Fluid_Cell_Infinity.get(1L), 200, 131000);
 
