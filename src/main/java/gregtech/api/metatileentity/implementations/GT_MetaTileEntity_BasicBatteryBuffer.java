@@ -245,18 +245,7 @@ public class GT_MetaTileEntity_BasicBatteryBuffer extends GT_MetaTileEntity_Tier
 
     @Override
     public boolean allowPullStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
-        if (GT_ModHandler.isElectricItem(aStack) && aStack.getUnlocalizedName().startsWith("gt.metaitem.01.")) {
-            String name = aStack.getUnlocalizedName();
-            if (name.equals("gt.metaitem.01.32510") ||
-                    name.equals("gt.metaitem.01.32511") ||
-                    name.equals("gt.metaitem.01.32520") ||
-                    name.equals("gt.metaitem.01.32521") ||
-                    name.equals("gt.metaitem.01.32530") ||
-                    name.equals("gt.metaitem.01.32531")) {
-            	if(ic2.api.item.ElectricItem.manager.getCharge(aStack)==0){
-                return true;}
-            }
-        }
+        if (GT_ModHandler.isElectricItem(aStack) && aStack.getUnlocalizedName().startsWith("gt.metaitem.01.")) { return true; }
         return false;
     }
 
