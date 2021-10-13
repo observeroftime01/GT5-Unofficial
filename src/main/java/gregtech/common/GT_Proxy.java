@@ -183,6 +183,8 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
     public boolean mIgnoreTcon = true;
     public boolean mDisableIC2Cables = false;
     public boolean mReverseUUMrecipes = false;
+    public int mReverseUUMRecipeCostMultiplier = 512;
+    public int mReverseUUMRecipeEUCost = 30;
     public boolean mAchievements = true;
     public boolean mAE2Integration = true;
     public boolean mArcSmeltIntoAnnealed = true;

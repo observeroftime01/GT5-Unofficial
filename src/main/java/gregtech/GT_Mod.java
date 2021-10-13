@@ -332,6 +332,10 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mRenderGlowTextures = GregTech_API.sClientDataFile.get("render", "GlowTextures", true);
         gregtechproxy.mRenderFlippedMachinesFlipped = GregTech_API.sClientDataFile.get("render", "RenderFlippedMachinesFlipped", true);
         gregtechproxy.mReverseUUMrecipes = tMainConfig.get(aTextGeneral, "enableReverseUUMRecipes", false).getBoolean(false);
+        gregtechproxy.mReverseUUMRecipeCostMultiplier = tMainConfig.get(aTextGeneral, "reverseUUMRecipeCostMultiplier", 512).getInt(512);
+        gregtechproxy.mReverseUUMRecipeEUCost = tMainConfig.get(aTextGeneral, "reverseUUMRecipeEUCost", 30).getInt(30);
+
+
 
         gregtechproxy.mMaxEqualEntitiesAtOneSpot = tMainConfig.get(aTextGeneral, "MaxEqualEntitiesAtOneSpot", 3).getInt(3);
         gregtechproxy.mSkeletonsShootGTArrows = tMainConfig.get(aTextGeneral, "SkeletonsShootGTArrows", 16).getInt(16);
