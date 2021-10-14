@@ -1753,6 +1753,7 @@ public enum ItemList implements IItemContainer {
     ZPM_Coil,
     UV_Coil,
     UHV_Coil,
+    UEV_Coil,
 
     Depleted_MNq_1,
     Depleted_MNq_2,
