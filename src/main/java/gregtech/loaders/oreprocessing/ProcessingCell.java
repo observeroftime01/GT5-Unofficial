@@ -1,5 +1,6 @@
 package gregtech.loaders.oreprocessing;
 
+import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -13,6 +14,9 @@ import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import static gregtech.api.enums.Materials.UUAmplifier;
+import static gregtech.api.enums.Materials.UUMatter;
 
 public class ProcessingCell implements IOreRecipeRegistrator {
     public ProcessingCell() {
@@ -33,6 +37,16 @@ public class ProcessingCell implements IOreRecipeRegistrator {
                     if (aMaterial.mFuelPower > 0) {
                         GT_Values.RA.addFuel(GT_Utility.copyAmount(1L, aStack), GT_Utility.getFluidForFilledItem(aStack, true) == null ? GT_Utility.getContainerItem(aStack, true) : null, aMaterial.mFuelPower, aMaterial.mFuelType);
                     }
+
+                    // Reverse UUM Recipes
+                    Materials tOutputFluid;
+                    if (GT_Mod.gregtechproxy.mReverseUUMrecipes) { tOutputFluid = UUMatter; } else { tOutputFluid = UUAmplifier; }
+                    int tMult = GT_Mod.gregtechproxy.mReverseUUMRecipeCostMultiplier;
+                    int tEUt = GT_Mod.gregtechproxy.mReverseUUMRecipeEUCost;
+                    if (aMaterial.mElement != null) {
+                        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23),  GT_Utility.copyAmount(1L, aStack), null, tOutputFluid.getFluid(aMaterial.getMass()), GT_Utility.getFluidForFilledItem(aStack, true) == null ? GT_Utility.getContainerItem(aStack, true) : null, (int) aMaterial.getMass() * tMult, tEUt);
+                    }
+
                     if ((aMaterial.mMaterialList.size() > 0) && ((aMaterial.mExtraData & 0x3) != 0)) {
                         int tAllAmount = 0;
                         MaterialStack tMat2;

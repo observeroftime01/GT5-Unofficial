@@ -9,6 +9,9 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
 
+import static gregtech.api.enums.Materials.UUAmplifier;
+import static gregtech.api.enums.Materials.UUMatter;
+
 public class ProcessingDust implements gregtech.api.interfaces.IOreRecipeRegistrator {
     public ProcessingDust() {
         OrePrefixes.dust.add(this);
@@ -32,6 +35,14 @@ public class ProcessingDust implements gregtech.api.interfaces.IOreRecipeRegistr
                     if (aMaterial.mSmeltInto.mArcSmeltInto != aMaterial) {
                         GT_RecipeRegistrator.registerReverseArcSmelting(GT_Utility.copyAmount(1L, aStack), aMaterial, aPrefix.mMaterialAmount, null, null, null);
                     }
+                }
+                // Reverse UUM Recipes
+                Materials tOutputFluid;
+                if (GT_Mod.gregtechproxy.mReverseUUMrecipes) { tOutputFluid = UUMatter; } else { tOutputFluid = UUAmplifier; }
+                int tMult = GT_Mod.gregtechproxy.mReverseUUMRecipeCostMultiplier;
+                int tEUt = GT_Mod.gregtechproxy.mReverseUUMRecipeEUCost;
+                if (aMaterial.mElement != null) {
+                    GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23),  aMaterial.getDust(1), null, tOutputFluid.getFluid(aMaterial.getMass()), null, (int) aMaterial.getMass() * tMult, tEUt);
                 }
 
                 ItemStack tDustStack;
