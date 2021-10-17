@@ -1951,7 +1951,6 @@ public class GT_MachineRecipeLoader implements Runnable {
     public void observeroftimerecipes(){
         new GT_CustomRecipeLoader().run();
         new GT_CustomRecipeLoader().addCircuitRecipes();
-        new GT_CustomRecipeLoader().addReverseUUMRecipes();
     }
 
     public void addProcess(ItemStack tCrop, Materials aMaterial, int chance, boolean aMainOutput) {
