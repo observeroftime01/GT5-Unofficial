@@ -255,8 +255,8 @@ public abstract class GT_MetaTileEntity_FusionComputer extends GT_MetaTileEntity
             return mStartEnergy < 160000000 ? 2 : 1;
         }
         if (this.tierOverclock() == 4) {
-            return (mStartEnergy < 160000000 ? 4 : (mStartEnergy < 320000000 ? 2 : 1));
-        }
+			return (mStartEnergy < 160000000 ? 4 : (mStartEnergy < 320000000 ? 2 : 1));
+		}
         return (mStartEnergy < 160000000) ? 8 : ((mStartEnergy < 320000000) ? 4 : (mStartEnergy < 640000000) ? 2 : 1);
     }
 
@@ -464,7 +464,7 @@ public abstract class GT_MetaTileEntity_FusionComputer extends GT_MetaTileEntity
                         EnumChatFormatting.GREEN + GT_Utility.formatNumbers(mEUStore) + EnumChatFormatting.RESET + " EU / " +
                         EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(maxEUStore()) + EnumChatFormatting.RESET + " EU",
                 StatCollector.translateToLocal("GT5U.fusion.plasma") + ": " +
-                        EnumChatFormatting.YELLOW + GT_Utility.formatNumbers((long)plasmaOut) + EnumChatFormatting.RESET + "L/t"};
+                        EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(plasmaOut) + EnumChatFormatting.RESET + "L/t"};
     }
 
     @Override

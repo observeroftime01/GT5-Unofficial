@@ -1,30 +1,31 @@
 package gregtech.api.metatileentity.implementations;
 
-import gregtech.api.gui.GT_Container_1by1;
-import gregtech.api.gui.GT_Container_2by2;
-import gregtech.api.gui.GT_Container_3by3;
-import gregtech.api.gui.GT_Container_4by4;
-import gregtech.api.gui.GT_GUIContainer_1by1;
-import gregtech.api.gui.GT_GUIContainer_2by2;
-import gregtech.api.gui.GT_GUIContainer_3by3;
-import gregtech.api.gui.GT_GUIContainer_4by4;
+import gregtech.GT_Mod;
+import gregtech.api.gui.*;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GT_Utility;
+import gregtech.api.util.extensions.ArrayExt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 
+import static gregtech.api.enums.Textures.BlockIcons.ITEM_OUT_SIGN;
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_PIPE_OUT;
 import static gregtech.api.util.GT_Utility.moveMultipleItemStacks;
 
 public class GT_MetaTileEntity_Hatch_OutputBus extends GT_MetaTileEntity_Hatch {
     public GT_MetaTileEntity_Hatch_OutputBus(int aID, String aName, String aNameRegional, int aTier) {
-        super(aID, aName, aNameRegional, aTier, getSlots(aTier), new String[]{"Item Output for Multiblocks",
-        		"Capacity: " + getSlots(aTier) + " stack" + (getSlots(aTier) >= 2 ? "s" : "")});
+        this(aID, aName, aNameRegional, aTier, getSlots(aTier));
+    }
+
+    public GT_MetaTileEntity_Hatch_OutputBus(int id, String name, String nameRegional, int tier, int slots) {
+        super(id, name, nameRegional, tier, slots, ArrayExt.of(
+                "Item Output for Multiblocks",
+                "Capacity: " + getSlots(tier) + " stack" + (getSlots(tier) >= 2 ? "s" : "")));
     }
 
     public GT_MetaTileEntity_Hatch_OutputBus(int aID, String aName, String aNameRegional, int aTier, String[] aDescription) {
@@ -35,26 +36,32 @@ public class GT_MetaTileEntity_Hatch_OutputBus extends GT_MetaTileEntity_Hatch {
         super(aID, aName, aNameRegional, aTier, inventorySize, aDescription);
     }
 
+    @Deprecated
+    // having too many constructors is bad, don't be so lazy, use GT_MetaTileEntity_Hatch_OutputBus(String, int, String[], ITexture[][][])
     public GT_MetaTileEntity_Hatch_OutputBus(String aName, int aTier, String aDescription, ITexture[][][] aTextures) {
-        super(aName, aTier, aTier < 1 ? 1 : aTier == 1 ? 4 : aTier == 2 ? 9 : 16, aDescription, aTextures);
+        this(aName, aTier, getSlots(aTier), ArrayExt.of(aDescription), aTextures);
     }
 
     public GT_MetaTileEntity_Hatch_OutputBus(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
-        super(aName, aTier, aTier < 1 ? 1 : aTier == 1 ? 4 : aTier == 2 ? 9 : 16, aDescription, aTextures);
+        super(aName, aTier, getSlots(aTier), aDescription, aTextures);
     }
 
-    public GT_MetaTileEntity_Hatch_OutputBus(String aName, int aTier, String[] aDescription, int inventorySize, ITexture[][][] aTextures) {
-        super(aName, aTier, inventorySize, aDescription, aTextures);
+    public GT_MetaTileEntity_Hatch_OutputBus(String name, int tier, int slots, String[] description, ITexture[][][] textures) {
+        super(name, tier, slots, description, textures);
     }
 
     @Override
     public ITexture[] getTexturesActive(ITexture aBaseTexture) {
-        return new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT)};
+        return GT_Mod.gregtechproxy.mRenderIndicatorsOnHatch ?
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT), TextureFactory.of(ITEM_OUT_SIGN)} :
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT)};
     }
 
     @Override
     public ITexture[] getTexturesInactive(ITexture aBaseTexture) {
-        return new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT)};
+        return GT_Mod.gregtechproxy.mRenderIndicatorsOnHatch ?
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT), TextureFactory.of(ITEM_OUT_SIGN)} :
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_OUT)};
     }
 
     @Override

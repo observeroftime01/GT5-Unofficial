@@ -28,7 +28,9 @@ import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import gregtech.common.items.behaviors.Behaviour_DataOrb;
 import gregtech.common.misc.GT_Command;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
+import gregtech.common.tileentities.machines.multi.GT_MetaTileEntity_Cleanroom;
 import gregtech.common.tileentities.storage.GT_MetaTileEntity_DigitalChestBase;
+import gregtech.loaders.ExtraIcons;
 import gregtech.loaders.load.GT_CoverBehaviorLoader;
 import gregtech.loaders.load.GT_FuelLoader;
 import gregtech.loaders.load.GT_ItemIterator;
@@ -53,6 +55,7 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -178,6 +181,10 @@ public class GT_Mod implements IGT_Mod {
             }
         }
 
+        if (FMLCommonHandler.instance().getSide() == Side.CLIENT) {
+            MinecraftForge.EVENT_BUS.register(new ExtraIcons());
+        }
+
         File tFile = new File(new File(aEvent.getModConfigurationDirectory(), "GregTech"), "GregTech.cfg");
         Configuration tMainConfig = new Configuration(tFile);
         tMainConfig.load();
@@ -290,7 +297,7 @@ public class GT_Mod implements IGT_Mod {
         GT_Values.enableChunkloaders = tMainConfig.get("machines", "enableChunkloaders", true).getBoolean(true);
         GT_Values.alwaysReloadChunkloaders = tMainConfig.get("machines", "alwaysReloadChunkloaders", false).getBoolean(false);
         GT_Values.debugChunkloaders = tMainConfig.get("machines", "debugChunkloaders", false).getBoolean(false);
-
+        GT_Values.disableDigitalChestsExternalAccess = tMainConfig.get("machines", "disableDigitalChestsExternalAccess", false).getBoolean(false);
         GregTech_API.TICKS_FOR_LAG_AVERAGING = tMainConfig.get(aTextGeneral, "TicksForLagAveragingWithScanner", 25).getInt(25);
         GregTech_API.MILLISECOND_THRESHOLD_UNTIL_LAG_WARNING = tMainConfig.get(aTextGeneral, "MillisecondsPassedInGTTileEntityUntilLagWarning", 100).getInt(100);
         if (tMainConfig.get(aTextGeneral, "disable_STDOUT", false).getBoolean(false)) {
@@ -334,8 +341,7 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mReverseUUMrecipes = tMainConfig.get(aTextGeneral, "enableReverseUUMRecipes", false).getBoolean(false);
         gregtechproxy.mReverseUUMRecipeCostMultiplier = tMainConfig.get(aTextGeneral, "reverseUUMRecipeCostMultiplier", 512).getInt(512);
         gregtechproxy.mReverseUUMRecipeEUCost = tMainConfig.get(aTextGeneral, "reverseUUMRecipeEUCost", 30).getInt(30);
-
-
+        gregtechproxy.mRenderIndicatorsOnHatch = GregTech_API.sClientDataFile.get("render", "RenderIndicatorsOnHatch", true);
 
         gregtechproxy.mMaxEqualEntitiesAtOneSpot = tMainConfig.get(aTextGeneral, "MaxEqualEntitiesAtOneSpot", 3).getInt(3);
         gregtechproxy.mSkeletonsShootGTArrows = tMainConfig.get(aTextGeneral, "SkeletonsShootGTArrows", 16).getInt(16);

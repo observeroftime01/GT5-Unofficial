@@ -29,7 +29,6 @@ public interface IGT_RecipeAdder {
      * Adds a Centrifuge Recipe
      *
      * @param aInput1    must be != null
-     * @param aCellInput this is for the needed Cells, > 0 for Tincellcount, < 0 for negative Fuelcancount, == 0 for nothing
      * @param aOutput1   must be != null
      * @param aOutput2   can be null
      * @param aOutput3   can be null
@@ -66,7 +65,6 @@ public interface IGT_RecipeAdder {
      * Adds a Electrolyzer Recipe
      *
      * @param aInput1    must be != null
-     * @param aCellInput this is for the needed Cells, > 0 for Tincellcount, < 0 for negative Fuelcancount, == 0 for nothing
      * @param aOutput1   must be != null
      * @param aOutput2   can be null
      * @param aOutput3   can be null
@@ -80,7 +78,6 @@ public interface IGT_RecipeAdder {
      * Adds a Electrolyzer Recipe
      *
      * @param aInput1    must be != null
-     * @param aCellInput this is for the needed Cells, > 0 for Tincellcount, < 0 for negative Fuelcancount, == 0 for nothing
      * @param aOutput1   must be != null
      * @param aOutput2   can be null
      * @param aOutput3   can be null
@@ -118,7 +115,7 @@ public interface IGT_RecipeAdder {
      *
      * @param aInput1   must be != null
      * @param aInput2   must be != null
-     * @param aOutput1  must be != null
+     * @param aOutput  must be != null
      * @param aOutput2  must be != null
      * @param aDuration must be > 0
      */
@@ -130,7 +127,7 @@ public interface IGT_RecipeAdder {
      *
      * @param aInput1   must be != null
      * @param aInput2   must be != null
-     * @param aOutput1  must be != null
+     * @param aOutput  must be != null
      * @param aOutput2  must be != null
      * @param aDuration must be > 0
      */
@@ -150,7 +147,7 @@ public interface IGT_RecipeAdder {
      *
      * @param aInput1   must be != null
      * @param aInput2   must be != null
-     * @param aOutput1  must be != null
+     * @param aOutput  must be != null
      * @param aDuration must be > 0
      * @param aEUtick   must be > 0
      */
@@ -163,7 +160,7 @@ public interface IGT_RecipeAdder {
      *
      * @param aInput1   must be != null
      * @param aInput2   must be != null
-     * @param aOutput1  must be != null
+     * @param aOutput  must be != null
      * @param aOutput2  must be != null
      * @param aDuration must be > 0
      * @param aEUtick   must be > 0
@@ -244,7 +241,6 @@ public interface IGT_RecipeAdder {
      * @param aInput1   must be != null
      * @param aInput2   can be null
      * @param aOutput1  must be != null
-     * @param aOutput2  can be null
      * @param aDuration must be > 0
      * @param aEUt      should be > 0
      */
@@ -377,6 +373,8 @@ public interface IGT_RecipeAdder {
      */
     boolean addBenderRecipe(ItemStack aInput, ItemStack aOutput, int aDuration, int aEUt);
 
+    boolean addBenderRecipe(ItemStack aInput, ItemStack aCircuit, ItemStack aOutput, int aDuration, int aEUt);
+
     /**
      * Adds a Extruder Machine Recipe
      *
@@ -506,6 +504,8 @@ public interface IGT_RecipeAdder {
 
     boolean addVacuumFreezerRecipe(ItemStack aInput1, ItemStack aOutput1, int aDuration, int aEUt);
 
+    boolean addVacuumFreezerRecipe(FluidStack aInput1, FluidStack aOutput1, int aDuration, int aEUt);
+
     /**
      * Adds a Fuel for My Generators
      *
@@ -586,6 +586,8 @@ public interface IGT_RecipeAdder {
      */
     boolean addChemicalBathRecipe(ItemStack aInput, FluidStack aBathingFluid, ItemStack aOutput1, ItemStack aOutput2, ItemStack aOutput3, int[] aChances, int aDuration, int aEUt);
 
+    boolean addChemicalBathRecipe(ItemStack aInput, FluidStack aBathingFluid, FluidStack aFluidOutput, ItemStack aOutput1, ItemStack aOutput2, ItemStack aOutput3, int[] aChances, int aDuration, int aEUt);
+
     /**
      * Adds a Recipe for the Electromagnetic Separator
      */
@@ -616,6 +618,8 @@ public interface IGT_RecipeAdder {
 
     boolean addAutoclaveSpaceRecipe(ItemStack aInput, ItemStack aCircuit, FluidStack aFluid, ItemStack aOutput, int aChance, int aDuration, int aEUt, boolean aCleanroom);
 
+
+    boolean addAutoclave4Recipe(ItemStack aInput, ItemStack aCircuit, FluidStack aFluidIn, FluidStack aFluidOut, ItemStack[] aOutputs, int[] aChances, int aDuration, int aEUt, boolean aCleanroom);
 
     /**
      * Adds a Recipe for the Mixer
@@ -723,4 +727,6 @@ public interface IGT_RecipeAdder {
      * @return true if the Sound got added, otherwise false.
      */
     boolean addSonictronSound(ItemStack aItemStack, String aSoundName);
+
+    boolean addChemicalBathRecipe(ItemStack aInput, FluidStack aBathingFluid, ItemStack aOutput1, ItemStack aOutput2, ItemStack aOutput3, FluidStack aFluidOutput, int[] aChances, int aDuration, int aEUt);
 }
