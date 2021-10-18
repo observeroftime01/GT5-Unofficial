@@ -75,7 +75,7 @@ public class GT_MetaTileEntity_DieselEngine extends GT_MetaTileEntity_EnhancedMu
                 .addInfo("Supply Diesel Fuels and 1000L of Lubricant per hour to run")
                 .addInfo("Supply 40L/s of Oxygen to boost output (optional)")
                 .addInfo("Default: Produces 2048EU/t at 100% fuel efficiency")
-                .addInfo("Boosted: Produces 6144EU/t at 150% fuel efficiency")
+                .addInfo("Boosted: Produces 16384EU/t at 150% fuel efficiency")
                 .addInfo("You need to wait for it to reach 300% to output full power")
                 .addPollutionAmount(20 * getPollutionPerTick(null))
                 .addSeparator()
@@ -174,8 +174,10 @@ public class GT_MetaTileEntity_DieselEngine extends GT_MetaTileEntity_EnhancedMu
                 fuelConsumption = tLiquid.amount = boostEu ? (getBoostFactor() * getNominalOutput() / tRecipe.mSpecialValue) : (getNominalOutput() / tRecipe.mSpecialValue); //Calc fuel consumption
                 //Deplete that amount
                 if (!depleteInput(tLiquid)) return false;
-                boostEu = depleteInput(getBooster().getGas(2L * getAdditiveFactor()));
-
+                // Use 2L of oxygen per second
+                if ((mRuntime % 20 == 0 || mRuntime == 0)) {
+                    boostEu = depleteInput(getBooster().getGas(2L * getAdditiveFactor()));
+                }
                 //Deplete Lubricant. 1000L should = 1 hour of runtime (if baseEU = 2048)
                 if ((mRuntime % 72 == 0 || mRuntime == 0) && !depleteInput(Materials.Lubricant.getFluid((boostEu ? 2L : 1L) * getAdditiveFactor())))
                     return false;
@@ -259,7 +261,7 @@ public class GT_MetaTileEntity_DieselEngine extends GT_MetaTileEntity_EnhancedMu
 
     @Override
     public int getMaxEfficiency(ItemStack aStack) {
-        return boostEu ? 30000 : 10000;
+        return boostEu ? 80000 : 10000;
     }
 
     @Override
