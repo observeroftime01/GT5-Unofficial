@@ -26,11 +26,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import org.lwjgl.input.Keyboard;
 
 import static gregtech.api.enums.GT_Values.debugCleanroom;
-import static gregtech.api.enums.Textures.BlockIcons.BLOCK_PLASCRETE;
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_TOP_CLEANROOM;
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_TOP_CLEANROOM_ACTIVE;
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_TOP_CLEANROOM_ACTIVE_GLOW;
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_TOP_CLEANROOM_GLOW;
+import static gregtech.api.enums.Textures.BlockIcons.*;
 
 public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBase {
     private int mHeight = -1;
@@ -53,18 +49,21 @@ public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBas
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
         tt.addMachineType("Cleanroom")
                 .addInfo("Controller block for the Cleanroom")
-                .addInfo("Consumes 40 EU/t when first turned on and 4 EU/t once at 100% efficiency when not overclocked")//?
+                .addInfo("Consumes 40 EU/t when first turned on")
+                .addInfo("and 4 EU/t once at 100% efficiency when not overclocked")//?
                 .addInfo("An energy hatch accepts up to 2A, so you can use 2A LV or 1A MV")
                 .addInfo("2 LV batteries + 1 LV generator or 1 MV generator")//?
-                .addInfo("Time required to reach full efficiency is propotional to the height of empty space within")
+                .addInfo("Time required to reach full efficiency is proportional to")
+                .addInfo("the height of empty space within")
                 .addInfo("Make sure your Energy Hatch matches! ?")
                 .addSeparator()
                 .beginVariableStructureBlock(3, 15, 4, 15, 3, 15, true)
                 .addController("Top center")
                 .addCasingInfo("Plascrete", 20)
                 .addStructureInfo(GT_Values.cleanroomGlass + "% of the Plascrete can be replaced with Reinforced Glass")//check
+                .addStructureInfo("Other material can be used in place of Plascrete. See config for detail")//check
                 .addOtherStructurePart("Filter Machine Casing", "Top besides controller and edges")
-                .addEnergyHatch("LV or MV, any casing")//check
+                .addEnergyHatch("Any casing. Exactly one.")//check
                 .addMaintenanceHatch("Any casing")
                 .addStructureInfo("1x Reinforced Door (keep closed or efficiency will reduce)")
                 .addStructureInfo("Up to 10 Machine Hulls for Item & Energy transfer through walls")
@@ -210,7 +209,7 @@ public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBas
                                         if (aMetaTileEntity == null) {
                                             if (debugCleanroom) {
                                                 GT_Log.out.println(
-                                                        "Cleanroom: Missing block? Not a aMetaTileEntity"
+                                                    "Cleanroom: Missing block? Not a aMetaTileEntity"
                                                 );
                                             }
                                             return false;
@@ -221,18 +220,27 @@ public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBas
                                         else {
                                             if (debugCleanroom) {
                                                 GT_Log.out.println(
-                                                        "Cleanroom: Incorrect GT block? " + tBlock.getUnlocalizedName()
+                                                    "Cleanroom: Incorrect GT block? " + tBlock.getUnlocalizedName()
                                                 );
                                             }
                                             return false;
                                         }
-                                    } else {
-                                        if (config.containsKey(tBlock.getUnlocalizedName()))
-                                            otherBlocks.compute(tBlock.getUnlocalizedName(), (k,v) -> v == null ? 1 : v + 1 );
+                                    }
+                                    else {
+                                        String key = tBlock.getUnlocalizedName() + ":"+ tMeta;
+                                        if (config.containsKey(key)) { // check with meta first
+                                            otherBlocks.compute(key, (k, v) -> v == null ? 1 : v + 1);
+                                        }
                                         else {
-                                            if (debugCleanroom)
-                                                GT_Log.out.println("Cleanroom: not allowed block " + tBlock.getUnlocalizedName());
-                                            return false;
+                                            key = tBlock.getUnlocalizedName();
+                                            if (config.containsKey(key)) {
+                                                otherBlocks.compute(key, (k, v) -> v == null ? 1 : v + 1);
+                                            }
+                                            else {
+                                                if (debugCleanroom)
+                                                    GT_Log.out.println("Cleanroom: not allowed block " + tBlock.getUnlocalizedName());
+                                                return false;
+                                            }
                                         }
                                     }
                                 }
@@ -361,34 +369,51 @@ public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBas
     private static class ConfigEntry {
         int percentage;
         int allowedCount;
-        ConfigEntry(int percentage, int count) {
+        int meta;
+        ConfigEntry(int percentage, int count, int meta) {
             this.percentage = percentage;
             this.allowedCount = count;
+            this.meta = meta;
         }
     }
     private final static HashMap<String, ConfigEntry> config = new HashMap<>();
 
     private static final String category = "cleanroom_allowed_blocks";
+    private static final int wildcard_meta = Short.MAX_VALUE;
 
     private static void setDefaultConfigValues(Configuration cfg) {
         cfg.get("cleanroom_allowed_blocks.reinforced_glass", "Name","blockAlloyGlass");
         cfg.get("cleanroom_allowed_blocks.reinforced_glass", "Percentage",5);
+        cfg.get("cleanroom_allowed_blocks.bw_reinforced_glass_0", "Name","BW_GlasBlocks");
+        cfg.get("cleanroom_allowed_blocks.bw_reinforced_glass_0", "Percentage",50);
+        cfg.get("cleanroom_allowed_blocks.bw_reinforced_glass_0", "Meta",0);
         cfg.get("cleanroom_allowed_blocks.bw_reinforced_glass", "Name","BW_GlasBlocks");
         cfg.get("cleanroom_allowed_blocks.bw_reinforced_glass", "Percentage",100);
         cfg.get("cleanroom_allowed_blocks.elevator", "Name","tile.openblocks.elevator");
         cfg.get("cleanroom_allowed_blocks.elevator", "Count",1);
         cfg.get("cleanroom_allowed_blocks.travel_anchor", "Name","tile.blockTravelAnchor");
         cfg.get("cleanroom_allowed_blocks.travel_anchor", "Count",1);
+        cfg.get("cleanroom_allowed_blocks.warded_glass", "Name","tile.blockCosmeticOpaque");
+        cfg.get("cleanroom_allowed_blocks.warded_glass", "Meta",2);
+        cfg.get("cleanroom_allowed_blocks.warded_glass", "Percentage",50);
     }
     public static void loadConfig(Configuration cfg) {
         if (!cfg.hasCategory(category))
             setDefaultConfigValues(cfg);
         for (ConfigCategory cc : cfg.getCategory(category).getChildren()) {
             String name = cc.get("Name").getString();
-            if (cc.containsKey("Count"))
-                config.put(name, new ConfigEntry(0, cc.get("Count").getInt()));
-            else if (cc.containsKey("Percentage"))
-                config.put(name, new ConfigEntry(cc.get("Percentage").getInt(), 0));
+            if (cc.containsKey("Count")) {
+                if (cc.containsKey("Meta"))
+                    config.put(name+":"+cc.get("Meta").getInt(), new ConfigEntry(0, cc.get("Count").getInt(), cc.get("Meta").getInt()));
+                else
+                    config.put(name, new ConfigEntry(0, cc.get("Count").getInt(), wildcard_meta));
+            }
+            else if (cc.containsKey("Percentage")) {
+                if (cc.containsKey("Meta"))
+                    config.put(name+":"+cc.get("Meta").getInt(), new ConfigEntry(cc.get("Percentage").getInt(), 0, cc.get("Meta").getInt()));
+                else
+                    config.put(name, new ConfigEntry(cc.get("Percentage").getInt(), 0, wildcard_meta));
+            }
         }
     }
 }

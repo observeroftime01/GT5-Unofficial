@@ -5,7 +5,6 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Buffer;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GT_Utility;
 import gregtech.common.gui.GT_Container_ChestBuffer;
 import gregtech.common.gui.GT_GUIContainer_ChestBuffer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -70,7 +69,7 @@ public class GT_MetaTileEntity_ChestBuffer extends GT_MetaTileEntity_Buffer {
     protected void moveItems(IGregTechTileEntity aBaseMetaTileEntity, long aTimer) {
         if (aTimer % tickRate[mTier] > 0) return;
 
-        if(aBaseMetaTileEntity.hasInventoryBeenModified()) {
+        if(this.bSortStacks && aBaseMetaTileEntity.hasInventoryBeenModified()) {
             fillStacksIntoFirstSlots();
         }
         // mSuccess will be negative if the call is caused by the %200 aTimer, always try to push. Otherwise it will be positive.
@@ -124,22 +123,7 @@ public class GT_MetaTileEntity_ChestBuffer extends GT_MetaTileEntity_Buffer {
     @Override
     protected void fillStacksIntoFirstSlots() {
         sortStacks();
-        // Merge small stacks together
-        // The last slot of mInventory is invalid, so we need to avoid iterating over it.
-        // Thus all max indices are reduced by 1 here.
-        for (int i = 0; i < this.mInventory.length - 2;) {
-            //GT_FML_LOGGER.info( (this.mInventory[i] == null) ? "Slot empty " + i : "Slot " + i + " holds " + this.mInventory[i].getDisplayName());
-            for (int j = i + 1; j < this.mInventory.length - 1; j++) {
-                if ((this.mInventory[j] != null) && ((GT_Utility.areStacksEqual(this.mInventory[i], this.mInventory[j])))) {
-                    GT_Utility.moveStackFromSlotAToSlotB(getBaseMetaTileEntity(), getBaseMetaTileEntity(), j, i, (byte) 64, (byte) 1, (byte) 64, (byte) 1);
-                    //GT_FML_LOGGER.info( "Moving slot " + j + " into slot " +  i );
-                }
-                else {
-                    i=j;
-                    break; // No more matching items for this i, do next i
-                }
-            }
-        }
+        super.fillStacksIntoFirstSlots();
     }
 
     @Override

@@ -355,6 +355,7 @@ public enum ItemList implements IItemContainer {
     Schematic_2by2,
     Schematic_3by3,
     Schematic_Dust,
+
     Circuit_Integrated,
     Circuit_Board_Basic,
     Circuit_Board_Advanced,
@@ -375,14 +376,12 @@ public enum ItemList implements IItemContainer {
     Circuit_Ultimate,
     Circuit_Biowarecomputer,
     Circuit_Biowaresupercomputer,
-    Rotor_LV,
+
+    Rotor_LV,//these aren't actually used
     Rotor_MV,
     Rotor_HV,
     Rotor_EV,
     Rotor_IV,
-    Rotor_LuV,
-    Rotor_ZPM,
-    Rotor_UV,
 
     Electric_Motor_LV,
     Electric_Motor_MV,
@@ -395,6 +394,10 @@ public enum ItemList implements IItemContainer {
     Electric_Motor_UHV,
     Electric_Motor_UEV,
     Electric_Motor_UIV,
+    Electric_Motor_UMV,
+    Electric_Motor_UXV,
+    Electric_Motor_OpV,
+    Electric_Motor_MAX,
 
     Electric_Pump_LV,
     Electric_Pump_MV,
@@ -407,12 +410,25 @@ public enum ItemList implements IItemContainer {
     Electric_Pump_UHV,
     Electric_Pump_UEV,
     Electric_Pump_UIV,
+    Electric_Pump_UMV,
+    Electric_Pump_UXV,
+    Electric_Pump_OpV,
+    Electric_Pump_MAX,
 
     Steam_Valve_LV,
     Steam_Valve_MV,
     Steam_Valve_HV,
     Steam_Valve_EV,
     Steam_Valve_IV,
+
+    FluidRegulator_LV,
+    FluidRegulator_MV,
+    FluidRegulator_HV,
+    FluidRegulator_EV,
+    FluidRegulator_IV,
+    FluidRegulator_LuV,
+    FluidRegulator_ZPM,
+    FluidRegulator_UV,
 
     Conveyor_Module_LV,
     Conveyor_Module_MV,
@@ -425,7 +441,10 @@ public enum ItemList implements IItemContainer {
     Conveyor_Module_UHV,
     Conveyor_Module_UEV,
     Conveyor_Module_UIV,
-
+    Conveyor_Module_UMV,
+    Conveyor_Module_UXV,
+    Conveyor_Module_OpV,
+    Conveyor_Module_MAX,
 
     Electric_Piston_LV,
     Electric_Piston_MV,
@@ -437,17 +456,11 @@ public enum ItemList implements IItemContainer {
     Electric_Piston_UV,
     Electric_Piston_UHV,
     Electric_Piston_UEV,
-
-    Field_Generator_LV,
-    Field_Generator_MV,
-    Field_Generator_HV,
-    Field_Generator_EV,
-    Field_Generator_IV,
-    Field_Generator_LuV,
-    Field_Generator_ZPM,
-    Field_Generator_UV,
-    Field_Generator_UHV,
-    Field_Generator_UEV,
+    Electric_Piston_UIV,
+    Electric_Piston_UMV,
+    Electric_Piston_UXV,
+    Electric_Piston_OpV,
+    Electric_Piston_MAX,
 
     Robot_Arm_LV,
     Robot_Arm_MV,
@@ -459,6 +472,11 @@ public enum ItemList implements IItemContainer {
     Robot_Arm_UV,
     Robot_Arm_UHV,
     Robot_Arm_UEV,
+    Robot_Arm_UIV,
+    Robot_Arm_UMV,
+    Robot_Arm_UXV,
+    Robot_Arm_OpV,
+    Robot_Arm_MAX,
 
     Emitter_LV,
     Emitter_MV,
@@ -470,6 +488,11 @@ public enum ItemList implements IItemContainer {
     Emitter_UV,
     Emitter_UHV,
     Emitter_UEV,
+    Emitter_UIV,
+    Emitter_UMV,
+    Emitter_UXV,
+    Emitter_OpV,
+    Emitter_MAX,
 
     Sensor_LV,
     Sensor_MV,
@@ -481,6 +504,27 @@ public enum ItemList implements IItemContainer {
     Sensor_UV,
     Sensor_UHV,
     Sensor_UEV,
+    Sensor_UIV,
+    Sensor_UMV,
+    Sensor_UXV,
+    Sensor_OpV,
+    Sensor_MAX,
+
+    Field_Generator_LV,
+    Field_Generator_MV,
+    Field_Generator_HV,
+    Field_Generator_EV,
+    Field_Generator_IV,
+    Field_Generator_LuV,
+    Field_Generator_ZPM,
+    Field_Generator_UV,
+    Field_Generator_UHV,
+    Field_Generator_UEV,
+    Field_Generator_UIV,
+    Field_Generator_UMV,
+    Field_Generator_UXV,
+    Field_Generator_OpV,
+    Field_Generator_MAX,
 
     Battery_Hull_LV,
     Battery_Hull_MV,
@@ -788,6 +832,7 @@ public enum ItemList implements IItemContainer {
     Casing_Grate,
     Casing_Vent,
     Casing_RadiationProof,
+    Casing_AdvancedRadiationProof,
     Casing_Firebox_Bronze,
     Casing_Firebox_Steel,
     Casing_Firebox_TungstenSteel,
@@ -800,6 +845,8 @@ public enum ItemList implements IItemContainer {
     Casing_Firebox_Titanium,
     Casing_MiningNeutronium,
     Casing_MiningBlackPlutonium,
+    Casing_Advanced_Rhodium_Palladium,
+    Casing_Advanced_Iridium,
 
     Hull_ULV,
     Hull_LV,
@@ -1577,14 +1624,6 @@ public enum ItemList implements IItemContainer {
     Block_Powderbarrel,
     GelledToluene,
 
-    FluidRegulator_LV,
-    FluidRegulator_MV,
-    FluidRegulator_HV,
-    FluidRegulator_EV,
-    FluidRegulator_IV,
-    FluidRegulator_LuV,
-    FluidRegulator_ZPM,
-    FluidRegulator_UV,
     FluidFilter,
     ItemFilter_Export,
     ItemFilter_Import,
@@ -1599,15 +1638,24 @@ public enum ItemList implements IItemContainer {
     Block_MSSFUEL,
     SFMixture,
     MSFMixture,
+
     Depleted_Naquadah_1,
     Depleted_Naquadah_2,
     Depleted_Naquadah_4,
     NaquadahCell_1,
     NaquadahCell_2,
     NaquadahCell_4,
+    Depleted_MNq_1,
+    Depleted_MNq_2,
+    Depleted_MNq_4,
+    MNqCell_1,
+    MNqCell_2,
+    MNqCell_4,
+
     Hatch_AutoMaintenance,
 
     Machine_Multi_Cleanroom,
+
     Circuit_Board_Coated,
     Circuit_Board_Coated_Basic,
     Circuit_Board_Phenolic,
@@ -1755,13 +1803,7 @@ public enum ItemList implements IItemContainer {
     UHV_Coil,
     UEV_Coil,
 
-    Depleted_MNq_1,
-    Depleted_MNq_2,
-    Depleted_MNq_4,
 
-    MNqCell_1,
-    MNqCell_2,
-    MNqCell_4,
 
     Depleted_IFCell_1,
     Depleted_IFCell_2,
@@ -2077,11 +2119,11 @@ public enum ItemList implements IItemContainer {
         }
         if (tCamelCasedDisplayNameBuilder.length() == 0) {
             // CamelCased DisplayName is empty, so use hash of aDisplayName
-            tCamelCasedDisplayNameBuilder.append(((Long) (long)aDisplayName.hashCode()).toString());
+            tCamelCasedDisplayNameBuilder.append(((Long) (long) aDisplayName.hashCode()));
         }
 
         // Construct a translation key from UnlocalizedName and CamelCased DisplayName
-        final String tKey = rStack.getUnlocalizedName() + ".with." + tCamelCasedDisplayNameBuilder.toString() + ".name";
+        final String tKey = rStack.getUnlocalizedName() + ".with." + tCamelCasedDisplayNameBuilder + ".name";
 
         rStack.setStackDisplayName(GT_LanguageManager.addStringLocalization(tKey, aDisplayName));
         return GT_Utility.copyAmount(aAmount, rStack);
@@ -2121,5 +2163,14 @@ public enum ItemList implements IItemContainer {
         for (Object tOreName : aOreNames)
             GT_OreDictUnificator.registerOre(tOreName, getWildcard(1));
         return this;
+    }
+
+    /**
+     * Returns the internal stack.
+     * This method is unsafe. It's here only for quick operations.
+     * DON'T CHANGE THE RETURNED VALUE!
+     */
+    public ItemStack getInternalStack_unsafe() {
+        return mStack;
     }
 }

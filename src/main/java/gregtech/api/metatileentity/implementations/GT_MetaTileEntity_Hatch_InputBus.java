@@ -1,58 +1,68 @@
 package gregtech.api.metatileentity.implementations;
 
 import gregtech.GT_Mod;
-import gregtech.api.gui.GT_Container_1by1;
-import gregtech.api.gui.GT_Container_2by2;
-import gregtech.api.gui.GT_Container_3by3;
-import gregtech.api.gui.GT_Container_4by4;
-import gregtech.api.gui.GT_GUIContainer_1by1;
-import gregtech.api.gui.GT_GUIContainer_2by2;
-import gregtech.api.gui.GT_GUIContainer_3by3;
-import gregtech.api.gui.GT_GUIContainer_4by4;
+import gregtech.api.gui.*;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GT_ClientPreference;
 import gregtech.api.util.GT_LanguageManager;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe.GT_Recipe_Map;
 import gregtech.api.util.GT_Utility;
+import gregtech.api.util.extensions.ArrayExt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_PIPE_IN;
+import static gregtech.api.enums.Textures.BlockIcons.*;
 
 public class GT_MetaTileEntity_Hatch_InputBus extends GT_MetaTileEntity_Hatch {
     public GT_Recipe_Map mRecipeMap = null;
     public boolean disableSort;
     public boolean disableFilter = false;
+    public boolean disableLimited = true;
 
-    public GT_MetaTileEntity_Hatch_InputBus(int aID, String aName, String aNameRegional, int aTier) {
-        super(aID, aName, aNameRegional, aTier, getSlots(aTier), new String[]{
-                "Item Input for Multiblocks",
-                "Shift + right click with screwdriver to turn Sort mode on/off",
-                "Capacity: " + getSlots(aTier) + " stack" + (getSlots(aTier) >= 2 ? "s" : "")});
+    public GT_MetaTileEntity_Hatch_InputBus(int id, String name, String nameRegional, int tier) {
+        this(id, name, nameRegional, tier, getSlots(tier));
     }
 
+    public GT_MetaTileEntity_Hatch_InputBus(int id, String name, String nameRegional, int tier, int slots) {
+        super(id, name, nameRegional, tier, slots, ArrayExt.of(
+                "Item Input for Multiblocks",
+                "Shift + right click with screwdriver to turn Sort mode on/off",
+                "Capacity: " + slots + " stack" + (slots >= 2 ? "s" : "")));
+    }
+
+    @Deprecated
+    // having too many constructors is bad, don't be so lazy, use GT_MetaTileEntity_Hatch_InputBus(String, int, String[], ITexture[][][])
     public GT_MetaTileEntity_Hatch_InputBus(String aName, int aTier, String aDescription, ITexture[][][] aTextures) {
-        super(aName, aTier, aTier < 1 ? 1 : aTier == 1 ? 4 : aTier == 2 ? 9 : 16, aDescription, aTextures);
+        this(aName, aTier, ArrayExt.of(aDescription), aTextures);
     }
 
     public GT_MetaTileEntity_Hatch_InputBus(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
-        super(aName, aTier, aTier < 1 ? 1 : aTier == 1 ? 4 : aTier == 2 ? 9 : 16, aDescription, aTextures);
+        this(aName, aTier, getSlots(aTier), aDescription, aTextures);
+    }
+
+    public GT_MetaTileEntity_Hatch_InputBus(String aName, int aTier, int aSlots, String[] aDescription, ITexture[][][] aTextures) {
+        super(aName, aTier, aSlots, aDescription, aTextures);
     }
 
     @Override
     public ITexture[] getTexturesActive(ITexture aBaseTexture) {
-        return new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN)};
+        return GT_Mod.gregtechproxy.mRenderIndicatorsOnHatch ?
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN), TextureFactory.of(ITEM_IN_SIGN)} :
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN)};
     }
 
     @Override
     public ITexture[] getTexturesInactive(ITexture aBaseTexture) {
-        return new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN)};
+        return GT_Mod.gregtechproxy.mRenderIndicatorsOnHatch ?
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN), TextureFactory.of(ITEM_IN_SIGN)} :
+                new ITexture[]{aBaseTexture, TextureFactory.of(OVERLAY_PIPE_IN)};
     }
 
     @Override
@@ -158,6 +168,7 @@ public class GT_MetaTileEntity_Hatch_InputBus extends GT_MetaTileEntity_Hatch {
         super.saveNBTData(aNBT);
         aNBT.setBoolean("disableSort", disableSort);
         aNBT.setBoolean("disableFilter", disableFilter);
+        aNBT.setBoolean("disableLimited", disableLimited);
     }
 
     @Override
@@ -165,6 +176,8 @@ public class GT_MetaTileEntity_Hatch_InputBus extends GT_MetaTileEntity_Hatch {
         super.loadNBTData(aNBT);
         disableSort = aNBT.getBoolean("disableSort");
         disableFilter = aNBT.getBoolean("disableFilter");
+        if(aNBT.hasKey("disableLimited"))
+            disableLimited = aNBT.getBoolean("disableLimited");
     }
 
     @Override
@@ -172,11 +185,21 @@ public class GT_MetaTileEntity_Hatch_InputBus extends GT_MetaTileEntity_Hatch {
         if (!getBaseMetaTileEntity().getCoverBehaviorAtSide(aSide).isGUIClickable(aSide, getBaseMetaTileEntity().getCoverIDAtSide(aSide), getBaseMetaTileEntity().getCoverDataAtSide(aSide), getBaseMetaTileEntity()))
             return;
         if (aPlayer.isSneaking()) {
-            disableSort = !disableSort;
-            GT_Utility.sendChatToPlayer(aPlayer, trans("200", "Sort mode: " + (disableSort ? "Disabled" : "Enabled")));
+            if(disableSort) {
+                disableSort = false;
+            } else {
+                if(disableLimited) {
+                    disableLimited = false;
+                } else {
+                    disableSort = true;
+                    disableLimited = true;
+                }
+            }
+            GT_Utility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("GT5U.hatch.disableSort." + disableSort) + "   " +
+                    StatCollector.translateToLocal("GT5U.hatch.disableLimited." + disableLimited));
         } else {
             disableFilter = !disableFilter;
-            GT_Utility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("GT5U.hatch.disableFilter."+disableFilter));
+            GT_Utility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("GT5U.hatch.disableFilter." + disableFilter));
         }
     }
 
@@ -192,6 +215,15 @@ public class GT_MetaTileEntity_Hatch_InputBus extends GT_MetaTileEntity_Hatch {
 
     @Override
     public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
-        return aSide == getBaseMetaTileEntity().getFrontFacing() && (mRecipeMap == null || disableFilter || mRecipeMap.containsInput(aStack));
+        return aSide == getBaseMetaTileEntity().getFrontFacing()
+                && (mRecipeMap == null || disableFilter || mRecipeMap.containsInput(aStack))
+                && (disableLimited || limitedAllowPutStack(aIndex, aStack));
+    }
+
+    protected boolean limitedAllowPutStack(int aIndex, ItemStack aStack) {
+        for (int i = 0; i < getSizeInventory(); i++)
+            if (GT_Utility.areStacksEqual(GT_OreDictUnificator.get_nocopy(aStack), mInventory[i]))
+                return i == aIndex;
+        return mInventory[aIndex] == null;
     }
 }

@@ -9,6 +9,7 @@ import com.mojang.authlib.GameProfile;
 import cpw.mods.fml.common.FMLCommonHandler;
 import gregtech.api.GregTech_API;
 import gregtech.api.damagesources.GT_DamageSources;
+import gregtech.api.damagesources.GT_DamageSources.DamageSourceHotItem;
 import gregtech.api.enchants.Enchantment_Radioactivity;
 import gregtech.api.enums.*;
 import gregtech.api.events.BlockScanningEvent;
@@ -21,9 +22,11 @@ import gregtech.api.items.GT_EnergyArmor_Item;
 import gregtech.api.items.GT_Generic_Item;
 import gregtech.api.items.GT_MetaGenerated_Tool;
 import gregtech.api.net.GT_Packet_Sound;
+import gregtech.api.objects.CollectorUtils;
 import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.objects.ItemData;
 import gregtech.api.threads.GT_Runnable_Sound;
+import gregtech.api.util.extensions.ArrayExt;
 import gregtech.common.GT_Proxy;
 import ic2.api.recipe.IRecipeInput;
 import ic2.api.recipe.RecipeInputItemStack;
@@ -54,10 +57,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.DimensionManager;
@@ -78,9 +78,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.function.IntFunction;
 
 import static gregtech.GT_Mod.GT_FML_LOGGER;
 import static gregtech.api.enums.GT_Values.*;
@@ -93,12 +93,16 @@ import static gregtech.common.GT_UndergroundOil.undergroundOilReadInformation;
  * Just a few Utility Functions I use.
  */
 public class GT_Utility {
+    /** Formats a number with group separator and at most 2 fraction digits. */
+    private static final DecimalFormat decimalFormat = new DecimalFormat();
+
     /**
      * Forge screwed the Fluid Registry up again, so I make my own, which is also much more efficient than the stupid Stuff over there.
      */
     private static final List<FluidContainerData> sFluidContainerList = new ArrayList<>();
     private static final Map<GT_ItemStack, FluidContainerData> sFilledContainerToData = new /*Concurrent*/HashMap<>();
     private static final Map<GT_ItemStack, Map<Fluid, FluidContainerData>> sEmptyContainerToFluidToData = new /*Concurrent*/HashMap<>();
+    private static final Map<Fluid, List<ItemStack>> sFluidToContainers = new HashMap<>();
     public static volatile int VERSION = 509;
     public static boolean TE_CHECK = false, BC_CHECK = false, CHECK_ALL = true, RF_CHECK = false;
     public static Map<GT_PlayedSound, Integer> sPlayedSoundMap = new /*Concurrent*/HashMap<>();
@@ -106,6 +110,11 @@ public class GT_Utility {
     public static UUID defaultUuid = null; // maybe default non-null? UUID.fromString("00000000-0000-0000-0000-000000000000");
 
     static {
+        DecimalFormatSymbols symbols = decimalFormat.getDecimalFormatSymbols();
+        symbols.setGroupingSeparator(' ');
+        decimalFormat.setDecimalFormatSymbols(symbols);
+        decimalFormat.setMaximumFractionDigits(2);
+
         GregTech_API.sItemStackMappings.add(sFilledContainerToData);
         GregTech_API.sItemStackMappings.add(sEmptyContainerToFluidToData);
     }
@@ -891,7 +900,7 @@ public class GT_Utility {
     }
 
     public static boolean areUnificationsEqual(ItemStack aStack1, ItemStack aStack2, boolean aIgnoreNBT) {
-        return areStacksEqual(GT_OreDictUnificator.get(aStack1), GT_OreDictUnificator.get(aStack2), aIgnoreNBT);
+        return areStacksEqual(GT_OreDictUnificator.get_nocopy(aStack1), GT_OreDictUnificator.get_nocopy(aStack2), aIgnoreNBT);
     }
 
     public static String getFluidName(Fluid aFluid, boolean aLocalized) {
@@ -910,14 +919,22 @@ public class GT_Utility {
     public static void reInit() {
         sFilledContainerToData.clear();
         sEmptyContainerToFluidToData.clear();
+        sFluidToContainers.clear();
         for (FluidContainerData tData : sFluidContainerList) {
             sFilledContainerToData.put(new GT_ItemStack(tData.filledContainer), tData);
             Map<Fluid, FluidContainerData> tFluidToContainer = sEmptyContainerToFluidToData.get(new GT_ItemStack(tData.emptyContainer));
+            List<ItemStack> tContainers = sFluidToContainers.get(tData.fluid.getFluid());
             if (tFluidToContainer == null) {
                 sEmptyContainerToFluidToData.put(new GT_ItemStack(tData.emptyContainer), tFluidToContainer = new /*Concurrent*/HashMap<>());
                 GregTech_API.sFluidMappings.add(tFluidToContainer);
             }
             tFluidToContainer.put(tData.fluid.getFluid(), tData);
+            if (tContainers == null) {
+                tContainers = new ArrayList<>();
+                tContainers.add(tData.filledContainer);
+                sFluidToContainers.put(tData.fluid.getFluid(), tContainers);
+            }
+            else tContainers.add(tData.filledContainer);
         }
     }
 
@@ -925,11 +942,27 @@ public class GT_Utility {
         sFluidContainerList.add(aData);
         sFilledContainerToData.put(new GT_ItemStack(aData.filledContainer), aData);
         Map<Fluid, FluidContainerData> tFluidToContainer = sEmptyContainerToFluidToData.get(new GT_ItemStack(aData.emptyContainer));
+        List<ItemStack> tContainers = sFluidToContainers.get(aData.fluid.getFluid());
         if (tFluidToContainer == null) {
             sEmptyContainerToFluidToData.put(new GT_ItemStack(aData.emptyContainer), tFluidToContainer = new /*Concurrent*/HashMap<>());
             GregTech_API.sFluidMappings.add(tFluidToContainer);
         }
         tFluidToContainer.put(aData.fluid.getFluid(), aData);
+        if (tContainers == null) {
+            tContainers = new ArrayList<>();
+            tContainers.add(aData.filledContainer);
+            sFluidToContainers.put(aData.fluid.getFluid(), tContainers);
+        }
+        else tContainers.add(aData.filledContainer);
+    }
+
+    public static List<ItemStack> getContainersFromFluid(FluidStack tFluidStack) {
+        if (tFluidStack != null) {
+            List<ItemStack> tContainers = sFluidToContainers.get(tFluidStack.getFluid());
+            if (tContainers == null) return new ArrayList<>();
+            return tContainers;
+        }
+        return new ArrayList<>();
     }
 
     public static ItemStack fillFluidContainer(FluidStack aFluid, ItemStack aStack, boolean aRemoveFluidDirectly, boolean aCheckIFluidContainerItems) {
@@ -1236,6 +1269,9 @@ public class GT_Utility {
         return false;
     }
 
+    /**
+     * Note: use {@link ArrayExt#withoutNulls(Object[], IntFunction)} if you want an array as a result.
+     */
     public static <T> ArrayList<T> getArrayListWithoutNulls(T... aArray) {
         if (aArray == null) return new ArrayList<>();
         ArrayList<T> rList = new ArrayList<>(Arrays.asList(aArray));
@@ -1243,6 +1279,9 @@ public class GT_Utility {
         return rList;
     }
 
+    /**
+     * Note: use {@link ArrayExt#withoutTrailingNulls(Object[], IntFunction)} if you want an array as a result.
+     */
     public static <T> ArrayList<T> getArrayListWithoutTrailingNulls(T... aArray) {
         if (aArray == null) return new ArrayList<>();
         ArrayList<T> rList = new ArrayList<>(Arrays.asList(aArray));
@@ -1556,9 +1595,17 @@ public class GT_Utility {
         return isWearingFullGasHazmat(aEntity);
     }
 
-    public static boolean applyHeatDamage(EntityLivingBase aEntity, float aDamage) {
+    public static boolean applyHeatDamage(EntityLivingBase entity, float damage) {
+        return applyHeatDamage(entity, damage, GT_DamageSources.getHeatDamage());
+    }
+
+    public static boolean applyHeatDamageFromItem(EntityLivingBase entity, float damage, ItemStack item) {
+        return applyHeatDamage(entity, damage, new DamageSourceHotItem(item));
+    }
+
+    private static boolean applyHeatDamage(EntityLivingBase aEntity, float aDamage, DamageSource source) {
         if (aDamage > 0 && aEntity != null && aEntity.getActivePotionEffect(Potion.fireResistance) == null && !isWearingFullHeatHazmat(aEntity)) {
-            aEntity.attackEntityFrom(GT_DamageSources.getHeatDamage(), aDamage);
+            aEntity.attackEntityFrom(source, aDamage);
             return true;
         }
         return false;
@@ -1731,15 +1778,8 @@ public class GT_Utility {
         return aMap;
     }
 
-    /**
-     * Why the fuck do neither Java nor Guava have a Function to do this?
-     */
-    public static <X, Y extends Comparable> LinkedHashMap<X, Y> sortMapByValuesAcending(Map<X, Y> aMap) {
-        List<Map.Entry<X, Y>> tEntrySet = new LinkedList<>(aMap.entrySet());
-        tEntrySet.sort(Entry.comparingByValue());
-        LinkedHashMap<X, Y> rMap = new LinkedHashMap<>();
-        for (Map.Entry<X, Y> tEntry : tEntrySet) rMap.put(tEntry.getKey(), tEntry.getValue());
-        return rMap;
+    public static <X, Y extends Comparable<Y>> LinkedHashMap<X, Y> sortMapByValuesAcending(Map<X, Y> map) {
+        return map.entrySet().stream().sorted(Entry.comparingByValue()).collect(CollectorUtils.entriesToMap(LinkedHashMap::new));
     }
 
     /**
@@ -1897,15 +1937,25 @@ public class GT_Utility {
 
         Block tBlock = aWorld.getBlock(aX, aY, aZ);
 
-        tList.add("----- X: " +EnumChatFormatting.AQUA+ aX +EnumChatFormatting.RESET+ " Y: " +EnumChatFormatting.AQUA+ aY +EnumChatFormatting.RESET+ " Z: " +EnumChatFormatting.AQUA+ aZ +EnumChatFormatting.RESET+ " D: " +EnumChatFormatting.AQUA+ aWorld.provider.dimensionId +EnumChatFormatting.RESET+ " -----");
+        tList.add(
+                "----- X: " + EnumChatFormatting.AQUA + formatNumbers(aX) + EnumChatFormatting.RESET +
+                        " Y: " + EnumChatFormatting.AQUA + formatNumbers(aY) + EnumChatFormatting.RESET +
+                        " Z: " + EnumChatFormatting.AQUA + formatNumbers(aZ) + EnumChatFormatting.RESET +
+                        " D: " + EnumChatFormatting.AQUA + aWorld.provider.dimensionId + EnumChatFormatting.RESET + " -----");
         try {
             if (tTileEntity instanceof IInventory)
-                tList.add(trans("162","Name: ") +EnumChatFormatting.BLUE+ ((IInventory) tTileEntity).getInventoryName() +EnumChatFormatting.RESET+ trans("163"," MetaData: ") +EnumChatFormatting.AQUA+ aWorld.getBlockMetadata(aX, aY, aZ) +EnumChatFormatting.RESET);
+                tList.add(
+                        trans("162","Name: ") + EnumChatFormatting.BLUE + ((IInventory) tTileEntity).getInventoryName() + EnumChatFormatting.RESET +
+                                trans("163"," MetaData: ") + EnumChatFormatting.AQUA + aWorld.getBlockMetadata(aX, aY, aZ) + EnumChatFormatting.RESET);
             else
-                tList.add(trans("162","Name: ") +EnumChatFormatting.BLUE+ tBlock.getUnlocalizedName() +EnumChatFormatting.RESET+ trans("163"," MetaData: ") +EnumChatFormatting.AQUA+ aWorld.getBlockMetadata(aX, aY, aZ) +EnumChatFormatting.RESET);
+                tList.add(
+                        trans("162","Name: ") + EnumChatFormatting.BLUE + tBlock.getUnlocalizedName() + EnumChatFormatting.RESET +
+                                trans("163"," MetaData: ") + EnumChatFormatting.AQUA + aWorld.getBlockMetadata(aX, aY, aZ) + EnumChatFormatting.RESET);
 
-            tList.add(trans("164","Hardness: ") +EnumChatFormatting.YELLOW+ tBlock.getBlockHardness(aWorld, aX, aY, aZ) +EnumChatFormatting.RESET+ trans("165"," Blast Resistance: ") +EnumChatFormatting.YELLOW+ tBlock.getExplosionResistance(aPlayer, aWorld, aX, aY, aZ, aPlayer.posX, aPlayer.posY, aPlayer.posZ) +EnumChatFormatting.RESET);
-            if (tBlock.isBeaconBase(aWorld, aX, aY, aZ, aX, aY + 1, aZ)) tList.add(EnumChatFormatting.GOLD+ trans("166","Is valid Beacon Pyramid Material") +EnumChatFormatting.RESET);
+            tList.add(
+                    trans("164","Hardness: ") + EnumChatFormatting.YELLOW + tBlock.getBlockHardness(aWorld, aX, aY, aZ) + EnumChatFormatting.RESET +
+                            trans("165"," Blast Resistance: ") + EnumChatFormatting.YELLOW + tBlock.getExplosionResistance(aPlayer, aWorld, aX, aY, aZ, aPlayer.posX, aPlayer.posY, aPlayer.posZ) + EnumChatFormatting.RESET);
+            if (tBlock.isBeaconBase(aWorld, aX, aY, aZ, aX, aY + 1, aZ)) tList.add(EnumChatFormatting.GOLD + trans("166","Is valid Beacon Pyramid Material") + EnumChatFormatting.RESET);
         } catch (Throwable e) {
             if (D1) e.printStackTrace(GT_Log.err);
         }
@@ -1915,7 +1965,10 @@ public class GT_Utility {
                     rEUAmount += 500;
                     FluidTankInfo[] tTanks = ((IFluidHandler) tTileEntity).getTankInfo(ForgeDirection.getOrientation(aSide));
                     if (tTanks != null) for (byte i = 0; i < tTanks.length; i++) {
-                    tList.add(trans("167","Tank ") + i + ": " +EnumChatFormatting.GREEN+ formatNumbers((tTanks[i].fluid == null ? 0 : tTanks[i].fluid.amount)) +EnumChatFormatting.RESET+ " L / " +EnumChatFormatting.YELLOW+ formatNumbers(tTanks[i].capacity) +EnumChatFormatting.RESET+ " L " +EnumChatFormatting.GOLD+ getFluidName(tTanks[i].fluid, true)+EnumChatFormatting.RESET);
+                    tList.add(
+                            trans("167","Tank ") + i + ": " +
+                                    EnumChatFormatting.GREEN + formatNumbers((tTanks[i].fluid == null ? 0 : tTanks[i].fluid.amount)) + EnumChatFormatting.RESET + " L / " +
+                                    EnumChatFormatting.YELLOW + formatNumbers(tTanks[i].capacity) + EnumChatFormatting.RESET + " L " + EnumChatFormatting.GOLD + getFluidName(tTanks[i].fluid, true) + EnumChatFormatting.RESET);
                     }
                 }
             } catch (Throwable e) {
@@ -1932,8 +1985,12 @@ public class GT_Utility {
             try {
                 if (tTileEntity instanceof ic2.api.reactor.IReactor) {
                     rEUAmount += 500;
-                    tList.add(trans("168","Heat: ") +EnumChatFormatting.GREEN+ ((ic2.api.reactor.IReactor) tTileEntity).getHeat() +EnumChatFormatting.RESET+ " / " +EnumChatFormatting.YELLOW+ ((ic2.api.reactor.IReactor) tTileEntity).getMaxHeat()+EnumChatFormatting.RESET);
-                    tList.add(trans("169","HEM: ") +EnumChatFormatting.YELLOW+((ic2.api.reactor.IReactor) tTileEntity).getHeatEffectModifier() +EnumChatFormatting.RESET/*+ trans("170"," Base EU Output: ")/* + ((ic2.api.reactor.IReactor)tTileEntity).getOutput()*/);
+                    tList.add(
+                            trans("168","Heat: ") + EnumChatFormatting.GREEN + formatNumbers(((ic2.api.reactor.IReactor) tTileEntity).getHeat()) + EnumChatFormatting.RESET + " / " +
+                                    EnumChatFormatting.YELLOW + formatNumbers(((ic2.api.reactor.IReactor) tTileEntity).getMaxHeat()) + EnumChatFormatting.RESET);
+                    tList.add(
+                            trans("169","HEM: ") + EnumChatFormatting.YELLOW + ((ic2.api.reactor.IReactor) tTileEntity).getHeatEffectModifier() + EnumChatFormatting.RESET
+                                    /* + trans("170"," Base EU Output: ")/* + ((ic2.api.reactor.IReactor)tTileEntity).getOutput()*/);
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
@@ -1987,7 +2044,7 @@ public class GT_Utility {
             try {
                 if (tTileEntity instanceof ic2.api.energy.tile.IEnergyConductor) {
                     rEUAmount += 200;
-                    tList.add(trans("175","Conduction Loss: ") +EnumChatFormatting.YELLOW+ ((ic2.api.energy.tile.IEnergyConductor) tTileEntity).getConductionLoss()+EnumChatFormatting.RESET);
+                    tList.add(trans("175","Conduction Loss: ") + EnumChatFormatting.YELLOW + ((ic2.api.energy.tile.IEnergyConductor) tTileEntity).getConductionLoss() + EnumChatFormatting.RESET);
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
@@ -1995,7 +2052,9 @@ public class GT_Utility {
             try {
                 if (tTileEntity instanceof ic2.api.tile.IEnergyStorage) {
                     rEUAmount += 200;
-                    tList.add(trans("176","Contained Energy: ") +EnumChatFormatting.YELLOW+ ((ic2.api.tile.IEnergyStorage) tTileEntity).getStored() +EnumChatFormatting.RESET+ " EU / " +EnumChatFormatting.YELLOW+ ((ic2.api.tile.IEnergyStorage) tTileEntity).getCapacity()+EnumChatFormatting.RESET+" EU");
+                    tList.add(
+                            trans("176","Contained Energy: ") + EnumChatFormatting.YELLOW + formatNumbers(((ic2.api.tile.IEnergyStorage) tTileEntity).getStored()) + EnumChatFormatting.RESET + " EU / " +
+                                    EnumChatFormatting.YELLOW + formatNumbers(((ic2.api.tile.IEnergyStorage) tTileEntity).getCapacity()) + EnumChatFormatting.RESET + " EU");
                     //aList.add(((ic2.api.tile.IEnergyStorage)tTileEntity).isTeleporterCompatible(ic2.api.Direction.YP)?"Teleporter Compatible":"Not Teleporter Compatible");
                 }
             } catch (Throwable e) {
@@ -2004,7 +2063,7 @@ public class GT_Utility {
             try {
                 if (tTileEntity instanceof IUpgradableMachine) {
                     rEUAmount += 500;
-                    if (((IUpgradableMachine) tTileEntity).hasMufflerUpgrade()) tList.add(EnumChatFormatting.GREEN+ trans("177","Has Muffler Upgrade") +EnumChatFormatting.RESET);
+                    if (((IUpgradableMachine) tTileEntity).hasMufflerUpgrade()) tList.add(EnumChatFormatting.GREEN + trans("177","Has Muffler Upgrade") + EnumChatFormatting.RESET);
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
@@ -2012,7 +2071,7 @@ public class GT_Utility {
             try {
                 if (tTileEntity instanceof IMachineProgress) {
                     if (((IMachineProgress) tTileEntity).isAllowedToWork()) {
-                        tList.add("Disabled."  + EnumChatFormatting.RED + EnumChatFormatting.RESET);
+                        tList.add("Disabled." + EnumChatFormatting.RED + EnumChatFormatting.RESET);
                     }
                     if (((IMachineProgress) tTileEntity).wasShutdown()) {
                         tList.add("Shut down due to power loss." + EnumChatFormatting.RED + EnumChatFormatting.RESET);
@@ -2020,7 +2079,8 @@ public class GT_Utility {
                     rEUAmount += 400;
                     int tValue = 0;
                     if (0 < (tValue = ((IMachineProgress) tTileEntity).getMaxProgress()))
-                        tList.add(trans("178","Progress/Load: ") +EnumChatFormatting.GREEN+ formatNumbers(((IMachineProgress) tTileEntity).getProgress())  +EnumChatFormatting.RESET+ " / " +EnumChatFormatting.YELLOW+ formatNumbers(tValue) +EnumChatFormatting.RESET);
+                        tList.add(trans("178","Progress/Load: ") + EnumChatFormatting.GREEN + formatNumbers(((IMachineProgress) tTileEntity).getProgress())  + EnumChatFormatting.RESET + " / " +
+                                EnumChatFormatting.YELLOW + formatNumbers(tValue) + EnumChatFormatting.RESET);
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
@@ -2036,16 +2096,22 @@ public class GT_Utility {
             }
             try {
                 if (tTileEntity instanceof IBasicEnergyContainer && ((IBasicEnergyContainer) tTileEntity).getEUCapacity() > 0) {
-                    tList.add(trans("179","Max IN: ")  +EnumChatFormatting.RED+ ((IBasicEnergyContainer) tTileEntity).getInputVoltage()  + " (" + GT_Values.VN[getTier(((IBasicEnergyContainer) tTileEntity).getInputVoltage())] + ") " +EnumChatFormatting.RESET+ trans("182"," EU at ") +EnumChatFormatting.RED+((IBasicEnergyContainer)tTileEntity).getInputAmperage()+EnumChatFormatting.RESET+trans("183"," A"));
-                    tList.add(trans("181","Max OUT: ") +EnumChatFormatting.RED+ ((IBasicEnergyContainer) tTileEntity).getOutputVoltage() + " (" + GT_Values.VN[getTier(((IBasicEnergyContainer) tTileEntity).getOutputVoltage())] + ") " +EnumChatFormatting.RESET+ trans("182"," EU at ") +EnumChatFormatting.RED+ ((IBasicEnergyContainer) tTileEntity).getOutputAmperage() +EnumChatFormatting.RESET+ trans("183"," A"));
-                    tList.add(trans("184","Energy: ")  +EnumChatFormatting.GREEN+ formatNumbers(((IBasicEnergyContainer) tTileEntity).getStoredEU()) +EnumChatFormatting.RESET+ " EU / " +EnumChatFormatting.YELLOW+ formatNumbers(((IBasicEnergyContainer) tTileEntity).getEUCapacity()) +EnumChatFormatting.RESET+ " EU");
+                    tList.add(
+                            trans("179","Max IN: ") + EnumChatFormatting.RED + formatNumbers(((IBasicEnergyContainer) tTileEntity).getInputVoltage()) + " (" + GT_Values.VN[getTier(((IBasicEnergyContainer) tTileEntity).getInputVoltage())] + ") " + EnumChatFormatting.RESET +
+                                    trans("182"," EU at ") + EnumChatFormatting.RED + formatNumbers(((IBasicEnergyContainer)tTileEntity).getInputAmperage()) + EnumChatFormatting.RESET + trans("183"," A"));
+                    tList.add(
+                            trans("181","Max OUT: ") + EnumChatFormatting.RED + formatNumbers(((IBasicEnergyContainer) tTileEntity).getOutputVoltage()) + " (" + GT_Values.VN[getTier(((IBasicEnergyContainer) tTileEntity).getOutputVoltage())] + ") " + EnumChatFormatting.RESET +
+                                    trans("182"," EU at ") + EnumChatFormatting.RED + formatNumbers(((IBasicEnergyContainer) tTileEntity).getOutputAmperage()) + EnumChatFormatting.RESET + trans("183"," A"));
+                    tList.add(
+                            trans("184","Energy: ") + EnumChatFormatting.GREEN + formatNumbers(((IBasicEnergyContainer) tTileEntity).getStoredEU()) + EnumChatFormatting.RESET + " EU / " +
+                                    EnumChatFormatting.YELLOW + formatNumbers(((IBasicEnergyContainer) tTileEntity).getEUCapacity()) + EnumChatFormatting.RESET + " EU");
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
             }
             try {
                 if (tTileEntity instanceof IGregTechTileEntity) {
-                    tList.add(trans("186","Owned by: ") +EnumChatFormatting.BLUE+ ((IGregTechTileEntity) tTileEntity).getOwnerName()+EnumChatFormatting.RESET);
+                    tList.add(trans("186","Owned by: ") + EnumChatFormatting.BLUE + ((IGregTechTileEntity) tTileEntity).getOwnerName() + EnumChatFormatting.RESET);
                 }
             } catch (Throwable e) {
                 if (D1) e.printStackTrace(GT_Log.err);
@@ -2097,15 +2163,15 @@ public class GT_Utility {
         if (aPlayer.capabilities.isCreativeMode) {
             FluidStack tFluid = undergroundOilReadInformation(aWorld.getChunkFromBlockCoords(aX,aZ));//-# to only read
             if (tFluid!=null)
-            	tList.add(EnumChatFormatting.GOLD+tFluid.getLocalizedName()+EnumChatFormatting.RESET+": " +EnumChatFormatting.YELLOW+ tFluid.amount +EnumChatFormatting.RESET+" L");
+            	tList.add(EnumChatFormatting.GOLD + tFluid.getLocalizedName() + EnumChatFormatting.RESET + ": " + EnumChatFormatting.YELLOW + formatNumbers(tFluid.amount) + EnumChatFormatting.RESET + " L");
             else
-                tList.add(EnumChatFormatting.GOLD+trans("201","Nothing")+EnumChatFormatting.RESET+": " +EnumChatFormatting.YELLOW+ '0' +EnumChatFormatting.RESET+" L");
+                tList.add(EnumChatFormatting.GOLD + trans("201","Nothing") + EnumChatFormatting.RESET + ": " + EnumChatFormatting.YELLOW + '0' + EnumChatFormatting.RESET + " L");
         }
 //      if(aPlayer.capabilities.isCreativeMode){
         int[] chunkData = GT_Proxy.dimensionWiseChunkData.get(aWorld.provider.dimensionId).get(aWorld.getChunkFromBlockCoords(aX,aZ).getChunkCoordIntPair());
-        if(chunkData !=null){
+        if(chunkData != null){
             if(chunkData[GTPOLLUTION]>0){
-                tList.add(trans("202","Pollution in Chunk: ")+EnumChatFormatting.RED+chunkData[GTPOLLUTION]+EnumChatFormatting.RESET+trans("203"," gibbl"));
+                tList.add(trans("202","Pollution in Chunk: ") + EnumChatFormatting.RED + formatNumbers(chunkData[GTPOLLUTION]) + EnumChatFormatting.RESET + trans("203"," gibbl"));
             }else{
                 tList.add(EnumChatFormatting.GREEN+trans("204","No Pollution in Chunk! HAYO!")+EnumChatFormatting.RESET);
             }
@@ -2213,10 +2279,11 @@ public class GT_Utility {
     }
 
     public static String formatNumbers(long aNumber) {
-        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
-        DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
-        symbols.setGroupingSeparator(' ');
-        return formatter.format(aNumber);
+        return decimalFormat.format(aNumber);
+    }
+
+    public static String formatNumbers(double aNumber) {
+        return decimalFormat.format(aNumber);
     }
 
     /*

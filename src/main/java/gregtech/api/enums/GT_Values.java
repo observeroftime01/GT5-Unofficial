@@ -174,7 +174,8 @@ public class GT_Values {
             MOD_ID_BC_CORE = "BuildCraft|Core",
             MOD_ID_GC_CORE = "GalacticraftCore",
             MOD_ID_GC_MARS = "GalacticraftMars",
-            MOD_ID_GC_PLANETS = "GalacticraftPlanets";
+            MOD_ID_GC_PLANETS = "GalacticraftPlanets",
+            MOD_ID_DC = "dreamcraft";
     /**
      * File Paths and Resource Paths
      */
@@ -302,4 +303,8 @@ public class GT_Values {
     public static boolean hideAssLineRecipes = false;
     public static boolean updateFluidDisplayItems = true;
     public static final int STEAM_PER_WATER = 160;
+    /**
+     *  If true, then digital chest with AE2 storage bus will be accessible only through AE2
+     */
+    public static boolean disableDigitalChestsExternalAccess = false;
 }
