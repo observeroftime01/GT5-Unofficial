@@ -34,7 +34,7 @@ public class GT_CustomRecipeLoader implements Runnable {
                 GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(dust, Platinum, 1), GT_Utility.getIntegratedCircuit(11), Nitrogen.getGas(1000), null, GT_OreDictUnificator.get(ingot, Platinum, 1), null, 1200, 1900, 3500);
                 GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(dust, Aluminium, 1), GT_Utility.getIntegratedCircuit(11), Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingot, Aluminium, 1), null, 1200, 120, 1000);
                 GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(dust, Aluminium, 1), GT_Utility.getIntegratedCircuit(11), null, null, GT_OreDictUnificator.get(ingot, Aluminium, 1), null, 1315, 120, 1000);
-
+                GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(dust, GT5uTestMaterial, 1), GT_Utility.getIntegratedCircuit(11), Nitrogen.getGas(144L), null, GT_OreDictUnificator.get(ingotHot, GT5uTestMaterial, 1), null, 3500, Voltage.LUV.getVoltage(), 8900);
                 //Mixer Recipes
                 GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(dust, StainlessSteel, 4), GT_OreDictUnificator.get(dust, Electrum, 1), GT_OreDictUnificator.get(dust, Carbon, 12), GT_OreDictUnificator.get(dust, Oriharukon, 6), null, null, GT_OreDictUnificator.get(dust, TurbineSteel, 11), 4800, Voltage.UV.getVoltage());
                 GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(dust, TurbineSteel, 10), GT_OreDictUnificator.get(dust, Neutronium, 1), GT_OreDictUnificator.get(dust, Indium, 2), GT_OreDictUnificator.get(dust, InfinityCatalyst, 1), null, null, GT_OreDictUnificator.get(dust, ExtremeTurbineSteel, 14), 4800, Voltage.UHV.getVoltage());
