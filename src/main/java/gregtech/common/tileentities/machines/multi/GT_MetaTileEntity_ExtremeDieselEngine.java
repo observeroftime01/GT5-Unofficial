@@ -41,8 +41,8 @@ public class GT_MetaTileEntity_ExtremeDieselEngine extends GT_MetaTileEntity_Die
                 .addInfo("Supply High Octane Gasoline and 8000L of Lubricant per hour to run")
                 .addInfo("Supply 320L/s of Liquid Oxygen to boost output (optional)")
                 .addInfo("Default: Produces 8192EU/t at 100% fuel efficiency")
-                .addInfo("Boosted: Produces 32768EU/t at 400% fuel efficiency")
-                .addInfo("You need to wait for it to reach 400% to output full power")
+                .addInfo("Boosted: Produces 81920EU/t at 1000% fuel efficiency")
+                .addInfo("You need to wait for it to reach 1000% to output full power")
                 .addPollutionAmount(20 * getPollutionPerTick(null))
                 .addSeparator()
                 .beginStructureBlock(3, 3, 4, false)
@@ -133,7 +133,7 @@ public class GT_MetaTileEntity_ExtremeDieselEngine extends GT_MetaTileEntity_Die
 
     @Override
     protected int getBoostFactor() {
-        return 4;
+        return 2;
     }
 
     @Override
@@ -143,7 +143,7 @@ public class GT_MetaTileEntity_ExtremeDieselEngine extends GT_MetaTileEntity_Die
 
     @Override
     protected int getAdditiveFactor() {
-        return 8;
+        return 2;
     }
 
     @Override
@@ -153,7 +153,7 @@ public class GT_MetaTileEntity_ExtremeDieselEngine extends GT_MetaTileEntity_Die
 
     @Override
     public int getMaxEfficiency(ItemStack aStack) {
-        return boostEu ? 40000 : 10000;
+        return boostEu ? 100000 : 10000;
     }
 
     @Override
