@@ -133,7 +133,7 @@ public class GT_MetaTileEntity_ExtremeDieselEngine extends GT_MetaTileEntity_Die
 
     @Override
     protected int getBoostFactor() {
-        return 2;
+        return 1;
     }
 
     @Override

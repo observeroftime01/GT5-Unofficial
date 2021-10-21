@@ -96,15 +96,13 @@ public class GT_CustomRecipeLoader implements Runnable {
 
                 //Fusion Recipes, custom tailored to work with my turbines and their respective values. Don't like 'em, fork it and remove this section.
                 //v- This feeds an extra efficient turbine made from turbine steel at perfect flow rate and produces a metric shitton of EU.
-                GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(120L), Gallium.getMolten(120L), Neutronium.getPlasma(240L), 20, 131000, 320000000);
+                GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(144L), Gallium.getMolten(144L), Neutronium.getPlasma(240L), 20, 131000, 320000000);
                 GT_Values.RA.addFusionReactorRecipe(Beryllium.getMolten(120L), Gallium.getMolten(120L), DraconiumAwakened.getPlasma(240L), 20, 524288, 320000000);
                 GT_Values.RA.addFusionReactorRecipe(Aluminium.getMolten(272L), Helium_3.getGas(272L), Radon.getPlasma(545L), 20, 131000, 480000000);
                 GT_Values.RA.addFusionReactorRecipe(Deuterium.getGas(72L), Tritium.getGas(72L), Radon.getPlasma(144L), 20, 131000, 320000000);
                 GT_Values.RA.addFusionReactorRecipe(Neutronium.getMolten(72L), Radon.getGas(72L), CosmicNeutronium.getPlasma(144L), 20, 196608,  640000000);
-                GT_Values.RA.addFusionReactorRecipe(Materials.Beryllium.getMolten(16), Materials.Deuterium.getGas(109), Materials.Nitrogen.getPlasma(125), 20, 16384, 180000000);
+                GT_Values.RA.addFusionReactorRecipe(Beryllium.getMolten(16), Deuterium.getGas(109), Nitrogen.getPlasma(125), 20, 16384, 180000000);
                 GT_Values.RA.addFusionReactorRecipe(Neutronium.getMolten(72L), InfinityCatalyst.getMolten(72L), Infinity.getPlasma(144L), 40, 131000,  480000000);
-                //Test Recipes
-                GT_Values.RA.addMixerRecipe(EnderPearl.getGems(4), Redstone.getDust(4), Neutronium.getDustTiny(1), GT_Utility.getIntegratedCircuit(14), null, null, Infinity.getDustTiny(1), 2400, Voltage.UHV.getVoltage());
 
                 // Assembly line recipes
                 GT_Values.RA.addAssemblylineRecipe(ItemList.Casing_Coil_Infinity.get(1L), 432000, new Object[]{
