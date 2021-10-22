@@ -50,31 +50,32 @@ public class GT_MetaTileEntity_BasicMachine_GT_Recipe extends GT_MetaTileEntity_
             int aInputSlots, int aOutputSlots, int aTankCapacity, int aGUIParameterA, int aGUIParameterB, String aGUIName, String aSound, boolean aSharedTank,
             boolean aRequiresFluidForFiltering, int aSpecialEffect, String aOverlays, Object[] aRecipe
     ) {
+        //TODO: Revert back to proper glowing textures "_GLOW" once I solve the texture pack issue
         super(aID, aName, aNameRegional, aTier, aRecipes.mAmperage, aDescription, aInputSlots, aOutputSlots, aGUIName, aRecipes.mNEIName,
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE_ACTIVE")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE_ACTIVE_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE_ACTIVE"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_SIDE"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT_ACTIVE")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT_ACTIVE_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT_ACTIVE"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_FRONT"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP_ACTIVE")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP_ACTIVE_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP_ACTIVE"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_TOP"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM_ACTIVE")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM_ACTIVE_GLOW"))).glow().build()),
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM_ACTIVE"))).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM")),
-                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM_GLOW"))).glow().build())
+                        TextureFactory.builder().addIcon((new CustomIcon("basicmachines/" + aOverlays.toLowerCase(Locale.ENGLISH) + "/OVERLAY_BOTTOM"))).glow().build())
                 );
         this.mSharedTank = aSharedTank;
         this.mTankCapacity = aTankCapacity;
