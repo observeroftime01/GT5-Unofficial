@@ -48,7 +48,7 @@ public class GT_MetaTileEntity_Regulator
     public ITexture getOverlayIcon() {
         return TextureFactory.of(
                 TextureFactory.of(AUTOMATION_REGULATOR),
-                TextureFactory.builder().addIcon(AUTOMATION_REGULATOR_GLOW).glow().build());
+                TextureFactory.builder().addIcon(AUTOMATION_REGULATOR).glow().build());
     }
 
     @Override

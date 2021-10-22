@@ -94,7 +94,7 @@ public class GT_MetaTileEntity_QuantumTank extends GT_MetaTileEntity_BasicTank {
         return new ITexture[]{
                 MACHINE_CASINGS[mTier][aColorIndex + 1],
                 TextureFactory.of(OVERLAY_QTANK),
-                TextureFactory.builder().addIcon(OVERLAY_QTANK_GLOW).glow().build()
+                TextureFactory.builder().addIcon(OVERLAY_QTANK).glow().build()
         };
     }
 

@@ -48,16 +48,16 @@ public abstract class GT_MetaTileEntity_Buffer extends GT_MetaTileEntity_TieredM
         ITexture tOut = TextureFactory.of(OVERLAY_PIPE_OUT);
         ITexture tUp = TextureFactory.of(
                 TextureFactory.of(ARROW_UP),
-                TextureFactory.builder().addIcon(ARROW_UP_GLOW).glow().build());
+                TextureFactory.builder().addIcon(ARROW_UP).glow().build());
         ITexture tDown = TextureFactory.of(
                 TextureFactory.of(ARROW_DOWN),
-                TextureFactory.builder().addIcon(ARROW_DOWN_GLOW).glow().build());
+                TextureFactory.builder().addIcon(ARROW_DOWN).glow().build());
         ITexture tLeft = TextureFactory.of(
                 TextureFactory.of(ARROW_LEFT),
-                TextureFactory.builder().addIcon(ARROW_LEFT_GLOW).glow().build());
+                TextureFactory.builder().addIcon(ARROW_LEFT).glow().build());
         ITexture tRight = TextureFactory.of(
                 TextureFactory.of(ARROW_RIGHT),
-                TextureFactory.builder().addIcon(ARROW_RIGHT_GLOW).glow().build());
+                TextureFactory.builder().addIcon(ARROW_RIGHT).glow().build());
         for (int i = 0; i < rTextures[0].length; i++) {
             rTextures[OUTPUT_INDEX][i] = new ITexture[]{MACHINE_CASINGS[mTier][i], tOut};
             rTextures[ARROW_RIGHT_INDEX][i] = new ITexture[]{MACHINE_CASINGS[mTier][i], tRight, tIcon};

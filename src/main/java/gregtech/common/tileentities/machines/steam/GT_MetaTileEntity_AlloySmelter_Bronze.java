@@ -66,7 +66,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getSideFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_ALLOY_SMELTER_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_ALLOY_SMELTER_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_ALLOY_SMELTER_ACTIVE).glow().build()};
     }
 
     @Override
@@ -74,7 +74,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getSideFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_ALLOY_SMELTER),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_ALLOY_SMELTER_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_ALLOY_SMELTER).glow().build()};
     }
 
     @Override
@@ -82,7 +82,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getFrontFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_ALLOY_SMELTER_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_ALLOY_SMELTER_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_ALLOY_SMELTER_ACTIVE).glow().build()};
     }
 
     @Override
@@ -90,7 +90,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getFrontFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_ALLOY_SMELTER),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_ALLOY_SMELTER_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_ALLOY_SMELTER).glow().build()};
     }
 
     @Override
@@ -98,7 +98,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getTopFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_ALLOY_SMELTER_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_ALLOY_SMELTER_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_ALLOY_SMELTER_ACTIVE).glow().build()};
     }
 
     @Override
@@ -106,7 +106,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getTopFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_ALLOY_SMELTER),
-                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_ALLOY_SMELTER_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_ALLOY_SMELTER).glow().build()};
     }
 
     @Override
@@ -114,7 +114,7 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getBottomFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER_ACTIVE).glow().build()};
     }
 
     @Override
@@ -122,6 +122,6 @@ public class GT_MetaTileEntity_AlloySmelter_Bronze extends GT_MetaTileEntity_Bas
         return new ITexture[]{
                 super.getBottomFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_ALLOY_SMELTER).glow().build()};
     }
 }

@@ -22,28 +22,28 @@ public class GT_MetaTileEntity_Boxinator extends GT_MetaTileEntity_BasicMachine 
         super(aID, aName, aNameRegional, aTier, 1, "Puts things into Boxes", 2, 1, "Packager.png", "",
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_SIDE_BOXINATOR_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_SIDE_BOXINATOR_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_SIDE_BOXINATOR_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_SIDE_BOXINATOR),
-                        TextureFactory.builder().addIcon(OVERLAY_SIDE_BOXINATOR_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_SIDE_BOXINATOR).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_FRONT_BOXINATOR_ACTIVE),
                         TextureFactory.builder().addIcon(OVERLAY_FRONT_BOXINATOR_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_FRONT_BOXINATOR),
-                        TextureFactory.builder().addIcon(OVERLAY_FRONT_BOXINATOR_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_FRONT_BOXINATOR).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_TOP_BOXINATOR_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_TOP_BOXINATOR_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_TOP_BOXINATOR_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_TOP_BOXINATOR),
-                        TextureFactory.builder().addIcon(OVERLAY_TOP_BOXINATOR_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_TOP_BOXINATOR).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_BOTTOM_BOXINATOR_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_BOXINATOR_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_BOXINATOR_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_BOTTOM_BOXINATOR),
-                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_BOXINATOR_GLOW).glow().build()));
+                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_BOXINATOR).glow().build()));
     }
 
     public GT_MetaTileEntity_Boxinator(String aName, int aTier, String aDescription, ITexture[][][] aTextures, String aGUIName, String aNEIName) {

@@ -60,7 +60,7 @@ public class GT_MetaTileEntity_Boiler_Lava extends GT_MetaTileEntity_Boiler {
                 texFrontActive = {
                         TextureFactory.of(MACHINE_STEELBRICKS_SIDE),
                         TextureFactory.of(BOILER_LAVA_FRONT_ACTIVE),
-                        TextureFactory.builder().addIcon(BOILER_LAVA_FRONT_ACTIVE_GLOW).glow().build()};
+                        TextureFactory.builder().addIcon(BOILER_LAVA_FRONT_ACTIVE).glow().build()};
         for (byte i = 0; i < 17; i++) {
             rTextures[0][i] = texBottom;
             rTextures[1][i] = texTop;

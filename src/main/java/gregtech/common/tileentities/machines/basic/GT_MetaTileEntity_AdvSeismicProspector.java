@@ -49,28 +49,28 @@ public class GT_MetaTileEntity_AdvSeismicProspector extends GT_MetaTileEntity_Ba
                 "", // NEI name
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_SIDE_ROCK_BREAKER_ACTIVE),
-                      TextureFactory.builder().addIcon(OVERLAY_SIDE_ROCK_BREAKER_ACTIVE_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_SIDE_ROCK_BREAKER_ACTIVE).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_SIDE_ROCK_BREAKER),
-                      TextureFactory.builder().addIcon(OVERLAY_SIDE_ROCK_BREAKER_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_SIDE_ROCK_BREAKER).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_TOP_ROCK_BREAKER_ACTIVE),
-                      TextureFactory.builder().addIcon(OVERLAY_TOP_ROCK_BREAKER_ACTIVE_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_TOP_ROCK_BREAKER_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_TOP_ROCK_BREAKER),
-                        TextureFactory.builder().addIcon(OVERLAY_TOP_ROCK_BREAKER_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_TOP_ROCK_BREAKER).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_FRONT_ROCK_BREAKER_ACTIVE),
-                      TextureFactory.builder().addIcon(OVERLAY_FRONT_ROCK_BREAKER_ACTIVE_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_FRONT_ROCK_BREAKER_ACTIVE).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_FRONT_ROCK_BREAKER),
-                      TextureFactory.builder().addIcon(OVERLAY_FRONT_ROCK_BREAKER_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_FRONT_ROCK_BREAKER).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_BOTTOM_ROCK_BREAKER_ACTIVE),
-                      TextureFactory.builder().addIcon(OVERLAY_BOTTOM_ROCK_BREAKER_ACTIVE_GLOW).glow().build()),
+                      TextureFactory.builder().addIcon(OVERLAY_BOTTOM_ROCK_BREAKER_ACTIVE).glow().build()),
               TextureFactory.of(
                       TextureFactory.of(OVERLAY_BOTTOM_ROCK_BREAKER),
-                      TextureFactory.builder().addIcon(OVERLAY_BOTTOM_ROCK_BREAKER_GLOW).glow().build()));
+                      TextureFactory.builder().addIcon(OVERLAY_BOTTOM_ROCK_BREAKER).glow().build()));
         radius = aRadius;
         step = aStep;
     }

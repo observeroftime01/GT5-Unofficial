@@ -138,11 +138,11 @@ public abstract class GT_MetaTileEntity_LargeBoiler extends GT_MetaTileEntity_En
             if (aActive) return new ITexture[]{
                     BlockIcons.getCasingTextureForId(getCasingTextureIndex()),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER_ACTIVE).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER_ACTIVE_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER_ACTIVE).extFacing().glow().build()};
             return new ITexture[]{
                     BlockIcons.getCasingTextureForId(getCasingTextureIndex()),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_LARGE_BOILER).extFacing().glow().build()};
         }
         return new ITexture[]{Textures.BlockIcons.getCasingTextureForId(getCasingTextureIndex())};
     }

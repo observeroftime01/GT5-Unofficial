@@ -15,7 +15,7 @@ public class GT_MetaTileEntity_FusionComputer3 extends GT_MetaTileEntity_FusionC
 
     private static final ITexture textureOverlay = TextureFactory.of(
             TextureFactory.builder().addIcon(OVERLAY_FUSION3).extFacing().build(),
-            TextureFactory.builder().addIcon(OVERLAY_FUSION3_GLOW).extFacing().glow().build());
+            TextureFactory.builder().addIcon(OVERLAY_FUSION3).extFacing().glow().build());
 
     public GT_MetaTileEntity_FusionComputer3(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional, 6);

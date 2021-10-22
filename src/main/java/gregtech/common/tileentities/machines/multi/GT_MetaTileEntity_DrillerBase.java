@@ -119,11 +119,11 @@ public abstract class GT_MetaTileEntity_DrillerBase extends GT_MetaTileEntity_En
             if (aActive) return new ITexture[]{
                     getCasingTextureForId(casingTextureIndex),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL_ACTIVE).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL_ACTIVE_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL_ACTIVE).extFacing().glow().build()};
             return new ITexture[]{
                     getCasingTextureForId(casingTextureIndex),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_ORE_DRILL).extFacing().glow().build()};
         }
         return new ITexture[]{getCasingTextureForId(casingTextureIndex)};
     }

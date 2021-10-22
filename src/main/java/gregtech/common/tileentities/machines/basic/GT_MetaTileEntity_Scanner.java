@@ -37,28 +37,28 @@ public class GT_MetaTileEntity_Scanner extends GT_MetaTileEntity_BasicMachine {
         super(aID, aName, aNameRegional, aTier, 1, "Scans Crops and other things.", 1, 1, "Scanner.png", "",
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_SIDE_SCANNER_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_SIDE_SCANNER_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_SIDE_SCANNER_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_SIDE_SCANNER),
-                        TextureFactory.builder().addIcon(OVERLAY_SIDE_SCANNER_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_SIDE_SCANNER).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_FRONT_SCANNER_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_FRONT_SCANNER_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_FRONT_SCANNER_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_FRONT_SCANNER),
-                        TextureFactory.builder().addIcon(OVERLAY_FRONT_SCANNER_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_FRONT_SCANNER).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_TOP_SCANNER_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_TOP_SCANNER_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_TOP_SCANNER_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_TOP_SCANNER),
-                        TextureFactory.builder().addIcon(OVERLAY_TOP_SCANNER_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_TOP_SCANNER).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_BOTTOM_SCANNER_ACTIVE),
-                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_SCANNER_ACTIVE_GLOW).glow().build()),
+                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_SCANNER_ACTIVE).glow().build()),
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_BOTTOM_SCANNER),
-                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_SCANNER_GLOW).glow().build()));
+                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_SCANNER).glow().build()));
     }
 
     public GT_MetaTileEntity_Scanner(String aName, int aTier, String aDescription, ITexture[][][] aTextures, String aGUIName, String aNEIName) {

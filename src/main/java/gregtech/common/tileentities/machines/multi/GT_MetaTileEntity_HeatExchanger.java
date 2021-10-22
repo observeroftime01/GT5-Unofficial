@@ -114,11 +114,11 @@ public class GT_MetaTileEntity_HeatExchanger extends GT_MetaTileEntity_EnhancedM
                 return new ITexture[]{
                         casingTexturePages[0][CASING_INDEX],
                         TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER_ACTIVE).extFacing().build(),
-                        TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER_ACTIVE_GLOW).extFacing().glow().build()};
+                        TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER_ACTIVE).extFacing().glow().build()};
             return new ITexture[]{
                     casingTexturePages[0][CASING_INDEX],
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_HEAT_EXCHANGER).extFacing().glow().build()};
         }
         return new ITexture[]{casingTexturePages[0][CASING_INDEX]};
     }

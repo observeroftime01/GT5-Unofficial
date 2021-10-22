@@ -43,7 +43,7 @@ public class GT_MetaTileEntity_Filter extends GT_MetaTileEntity_Buffer {
     public ITexture getOverlayIcon() {
         return TextureFactory.of(
                 TextureFactory.of(AUTOMATION_FILTER),
-                TextureFactory.builder().addIcon(AUTOMATION_FILTER_GLOW).glow().build());
+                TextureFactory.builder().addIcon(AUTOMATION_FILTER).glow().build());
     }
 
     @Override

@@ -70,7 +70,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getSideFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_FURNACE_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_FURNACE_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_FURNACE_ACTIVE).glow().build()};
     }
 
     @Override
@@ -78,7 +78,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getSideFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_FURNACE),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_FURNACE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_FURNACE).glow().build()};
     }
 
     @Override
@@ -86,7 +86,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getFrontFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_FURNACE_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_FURNACE_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_FURNACE_ACTIVE).glow().build()};
     }
 
     @Override
@@ -94,7 +94,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getFrontFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_FURNACE),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_FURNACE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_FURNACE).glow().build()};
     }
 
     @Override
@@ -102,7 +102,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getTopFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_FURNACE_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE_ACTIVE).glow().build()};
     }
 
     @Override
@@ -110,7 +110,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getTopFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_FURNACE),
-                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_FURNACE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_FURNACE).glow().build()};
     }
 
     @Override
@@ -118,7 +118,7 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
         return new ITexture[]{
                 super.getBottomFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_BOTTOM_STEAM_FURNACE_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE_ACTIVE).glow().build()};
     }
 
     @Override
@@ -127,6 +127,6 @@ public class GT_MetaTileEntity_Furnace_Bronze extends GT_MetaTileEntity_BasicMac
                 super.getBottomFacingInactive(aColor)[0],
                 TextureFactory.of(
                         TextureFactory.of(OVERLAY_BOTTOM_STEAM_FURNACE),
-                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE_GLOW).glow().build())};
+                        TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_FURNACE).glow().build())};
     }
 }

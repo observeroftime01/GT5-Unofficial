@@ -95,7 +95,7 @@ public class GT_MetaTileEntity_DieselGenerator extends GT_MetaTileEntity_BasicGe
     public ITexture[] getFront(byte aColor) {
         return new ITexture[]{super.getFront(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_FRONT),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_FRONT_GLOW).glow().build()),
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_FRONT).glow().build()),
                 OVERLAYS_ENERGY_OUT[this.mTier]};
     }
 
@@ -103,35 +103,35 @@ public class GT_MetaTileEntity_DieselGenerator extends GT_MetaTileEntity_BasicGe
     public ITexture[] getBack(byte aColor) {
         return new ITexture[]{super.getBack(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_BACK),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BACK_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BACK).glow().build())};
     }
 
     @Override
     public ITexture[] getBottom(byte aColor) {
         return new ITexture[]{super.getBottom(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_BOTTOM),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BOTTOM_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BOTTOM).glow().build())};
     }
 
     @Override
     public ITexture[] getTop(byte aColor) {
         return new ITexture[]{super.getTop(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_TOP),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_TOP_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_TOP).glow().build())};
     }
 
     @Override
     public ITexture[] getSides(byte aColor) {
         return new ITexture[]{super.getSides(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_SIDE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_SIDE_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_SIDE).glow().build())};
     }
 
     @Override
     public ITexture[] getFrontActive(byte aColor) {
         return new ITexture[]{super.getFrontActive(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_FRONT_ACTIVE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_FRONT_ACTIVE_GLOW).glow().build()),
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_FRONT_ACTIVE).glow().build()),
                 OVERLAYS_ENERGY_OUT[this.mTier]};
     }
 
@@ -139,28 +139,28 @@ public class GT_MetaTileEntity_DieselGenerator extends GT_MetaTileEntity_BasicGe
     public ITexture[] getBackActive(byte aColor) {
         return new ITexture[]{super.getBackActive(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_BACK_ACTIVE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BACK_ACTIVE_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BACK_ACTIVE).glow().build())};
     }
 
     @Override
     public ITexture[] getBottomActive(byte aColor) {
         return new ITexture[]{super.getBottomActive(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_BOTTOM_ACTIVE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BOTTOM_ACTIVE_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_BOTTOM_ACTIVE).glow().build())};
     }
 
     @Override
     public ITexture[] getTopActive(byte aColor) {
         return new ITexture[]{super.getTopActive(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_TOP_ACTIVE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_TOP_ACTIVE_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_TOP_ACTIVE).glow().build())};
     }
 
     @Override
     public ITexture[] getSidesActive(byte aColor) {
         return new ITexture[]{super.getSidesActive(aColor)[0], TextureFactory.of(
                 TextureFactory.of(DIESEL_GENERATOR_SIDE_ACTIVE),
-                TextureFactory.builder().addIcon(DIESEL_GENERATOR_SIDE_ACTIVE_GLOW).glow().build())};
+                TextureFactory.builder().addIcon(DIESEL_GENERATOR_SIDE_ACTIVE).glow().build())};
     }
 
     @Override

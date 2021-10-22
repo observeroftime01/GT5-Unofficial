@@ -66,7 +66,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getSideFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_COMPRESSOR_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_COMPRESSOR_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_COMPRESSOR_ACTIVE).glow().build()};
     }
 
     @Override
@@ -74,7 +74,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getSideFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_SIDE_STEAM_COMPRESSOR),
-                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_COMPRESSOR_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_SIDE_STEAM_COMPRESSOR).glow().build()};
     }
 
     @Override
@@ -82,7 +82,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getFrontFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_COMPRESSOR_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_COMPRESSOR_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_COMPRESSOR_ACTIVE).glow().build()};
     }
 
     @Override
@@ -90,7 +90,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getFrontFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_FRONT_STEAM_COMPRESSOR),
-                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_COMPRESSOR_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_FRONT_STEAM_COMPRESSOR).glow().build()};
     }
 
     @Override
@@ -98,7 +98,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getTopFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_COMPRESSOR_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_COMPRESSOR_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_COMPRESSOR_ACTIVE).glow().build()};
     }
 
     @Override
@@ -106,7 +106,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getTopFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_TOP_STEAM_COMPRESSOR),
-                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_COMPRESSOR_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TOP_STEAM_COMPRESSOR).glow().build()};
     }
 
     @Override
@@ -114,7 +114,7 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getBottomFacingActive(aColor)[0],
                 TextureFactory.of(OVERLAY_BOTTOM_STEAM_COMPRESSOR_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_COMPRESSOR_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_COMPRESSOR_ACTIVE).glow().build()};
     }
 
     @Override
@@ -122,6 +122,6 @@ public class GT_MetaTileEntity_Compressor_Steel extends GT_MetaTileEntity_BasicM
         return new ITexture[]{
                 super.getBottomFacingInactive(aColor)[0],
                 TextureFactory.of(OVERLAY_BOTTOM_STEAM_COMPRESSOR),
-                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_COMPRESSOR_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_BOTTOM_STEAM_COMPRESSOR).glow().build()};
     }
 }

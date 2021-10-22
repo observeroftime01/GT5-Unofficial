@@ -73,7 +73,7 @@ public class GT_MetaTileEntity_ItemDistributor extends GT_MetaTileEntity_Buffer 
     public ITexture getOverlayIcon() {
         return TextureFactory.of(
                 TextureFactory.of(AUTOMATION_ITEMDISTRIBUTOR),
-                TextureFactory.builder().addIcon(AUTOMATION_ITEMDISTRIBUTOR_GLOW).glow().build());
+                TextureFactory.builder().addIcon(AUTOMATION_ITEMDISTRIBUTOR).glow().build());
     }
 
     @Override

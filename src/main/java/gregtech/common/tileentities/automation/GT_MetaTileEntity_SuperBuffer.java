@@ -37,7 +37,7 @@ public class GT_MetaTileEntity_SuperBuffer extends GT_MetaTileEntity_ChestBuffer
     public ITexture getOverlayIcon() {
         return TextureFactory.of(
                 TextureFactory.of(AUTOMATION_SUPERBUFFER),
-                TextureFactory.builder().addIcon(AUTOMATION_SUPERBUFFER_GLOW).glow().build());
+                TextureFactory.builder().addIcon(AUTOMATION_SUPERBUFFER).glow().build());
     }
 
     @Override

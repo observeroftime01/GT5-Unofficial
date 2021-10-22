@@ -310,10 +310,10 @@ public class GT_MetaTileEntity_Cleanroom extends GT_MetaTileEntity_MultiBlockBas
                     aActive ?
                             TextureFactory.of(
                                     TextureFactory.of(OVERLAY_TOP_CLEANROOM_ACTIVE),
-                                    TextureFactory.builder().addIcon(OVERLAY_TOP_CLEANROOM_ACTIVE_GLOW).glow().build()) :
+                                    TextureFactory.builder().addIcon(OVERLAY_TOP_CLEANROOM_ACTIVE).glow().build()) :
                             TextureFactory.of(
                                     TextureFactory.of(OVERLAY_TOP_CLEANROOM),
-                                    TextureFactory.builder().addIcon(OVERLAY_TOP_CLEANROOM_GLOW).glow().build())};
+                                    TextureFactory.builder().addIcon(OVERLAY_TOP_CLEANROOM).glow().build())};
         }
         return new ITexture[]{TextureFactory.of(BLOCK_PLASCRETE)};
     }

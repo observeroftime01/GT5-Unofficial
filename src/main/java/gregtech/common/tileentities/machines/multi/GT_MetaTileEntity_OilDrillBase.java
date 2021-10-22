@@ -52,11 +52,11 @@ public abstract class GT_MetaTileEntity_OilDrillBase extends GT_MetaTileEntity_D
             if (aActive) return new ITexture[]{
                     getCasingTextureForId(casingTextureIndex),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL_ACTIVE).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL_ACTIVE_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL_ACTIVE).extFacing().glow().build()};
             return new ITexture[]{
                     getCasingTextureForId(casingTextureIndex),
                     TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL).extFacing().build(),
-                    TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL_GLOW).extFacing().glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_FRONT_OIL_DRILL).extFacing().glow().build()};
         }
         return new ITexture[]{getCasingTextureForId(casingTextureIndex)};
     }

@@ -440,7 +440,7 @@ public abstract class GT_MetaTileEntity_DigitalChestBase extends GT_MetaTileEnti
         return new ITexture[]{
                 MACHINE_CASINGS[mTier][aColorIndex + 1],
                 TextureFactory.of(OVERLAY_SCHEST),
-                TextureFactory.builder().addIcon(OVERLAY_SCHEST_GLOW).glow().build()
+                TextureFactory.builder().addIcon(OVERLAY_SCHEST).glow().build()
         };
     }
 }

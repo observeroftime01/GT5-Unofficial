@@ -118,6 +118,6 @@ public class GT_MetaTileEntity_LongDistancePipelineFluid extends GT_MetaTileEnti
             return new ITexture[]{
                     MACHINE_CASINGS[mTier][aColorIndex + 1],
                     TextureFactory.of(OVERLAY_PIPELINE_FLUID_SIDE),
-                    TextureFactory.builder().addIcon(OVERLAY_PIPELINE_FLUID_SIDE_GLOW).glow().build()};
+                    TextureFactory.builder().addIcon(OVERLAY_PIPELINE_FLUID_SIDE).glow().build()};
     }
 }

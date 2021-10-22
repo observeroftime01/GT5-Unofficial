@@ -112,7 +112,7 @@ public abstract class GT_MetaTileEntity_FusionComputer extends GT_MetaTileEntity
         Textures.BlockIcons.setCasingTextureForId(52,
                 TextureFactory.of(
                         TextureFactory.builder().addIcon(MACHINE_CASING_FUSION_GLASS_YELLOW).extFacing().build(),
-                        TextureFactory.builder().addIcon(MACHINE_CASING_FUSION_GLASS_YELLOW_GLOW).extFacing().glow().build()
+                        TextureFactory.builder().addIcon(MACHINE_CASING_FUSION_GLASS_YELLOW).extFacing().glow().build()
                 ));
     }
 

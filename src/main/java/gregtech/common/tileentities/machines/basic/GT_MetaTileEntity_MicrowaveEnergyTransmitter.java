@@ -107,11 +107,11 @@ public class GT_MetaTileEntity_MicrowaveEnergyTransmitter extends GT_MetaTileEnt
         if (aActive) return new ITexture[]{
                 MACHINE_CASINGS[mTier][aColorIndex + 1],
                 TextureFactory.of(OVERLAY_TELEPORTER_ACTIVE),
-                TextureFactory.builder().addIcon(OVERLAY_TELEPORTER_ACTIVE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TELEPORTER_ACTIVE).glow().build()};
         return new ITexture[]{
                 MACHINE_CASINGS[mTier][aColorIndex + 1],
                 TextureFactory.of(OVERLAY_TELEPORTER),
-                TextureFactory.builder().addIcon(OVERLAY_TELEPORTER_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_TELEPORTER).glow().build()};
     }
 
     @Override

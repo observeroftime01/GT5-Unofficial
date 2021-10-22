@@ -75,7 +75,7 @@ public class GT_MetaTileEntity_Hatch_Maintenance extends GT_MetaTileEntity_Hatch
         if (mAuto) return new ITexture[]{
                 aBaseTexture,
                 TextureFactory.of(OVERLAY_AUTOMAINTENANCE_IDLE),
-                TextureFactory.builder().addIcon(OVERLAY_AUTOMAINTENANCE_IDLE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_AUTOMAINTENANCE_IDLE).glow().build()};
         return new ITexture[]{
                 aBaseTexture,
                 TextureFactory.of(OVERLAY_MAINTENANCE)};
@@ -86,7 +86,7 @@ public class GT_MetaTileEntity_Hatch_Maintenance extends GT_MetaTileEntity_Hatch
         if (mAuto) return new ITexture[]{
                 aBaseTexture,
                 TextureFactory.of(OVERLAY_AUTOMAINTENANCE),
-                TextureFactory.builder().addIcon(OVERLAY_AUTOMAINTENANCE_GLOW).glow().build()};
+                TextureFactory.builder().addIcon(OVERLAY_AUTOMAINTENANCE).glow().build()};
         return new ITexture[]{
                 aBaseTexture,
                 TextureFactory.of(OVERLAY_MAINTENANCE),
