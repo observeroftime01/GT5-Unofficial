@@ -99,6 +99,7 @@ public class ProcessingIngot implements gregtech.api.interfaces.IOreRecipeRegist
                 }
                 break;
             case ingotHot:
+                GT_Values.RA.addFluidExtractionRecipe(GT_Utility.copyAmount(1L , aStack), null, aMaterial.getMolten(144L), 10000,48, 120);
                 GT_Values.RA.addVacuumFreezerRecipe(GT_Utility.copyAmount(1L, aStack), GT_OreDictUnificator.get(OrePrefixes.ingot, aMaterial, 1L), (int) Math.max(aMaterialMass * 3L, 1L));
                 break;
 		default:
